@@ -1,0 +1,10 @@
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.AssemblyInfoInputs.cache
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.AssemblyInfo.cs
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.csproj.AssemblyReference.cache
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\bin\Debug\netcoreapp3.1\ReactChan.Domain.deps.json
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\bin\Debug\netcoreapp3.1\ReactChan.Domain.dll
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\bin\Debug\netcoreapp3.1\ReactChan.Domain.pdb
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.dll
+C:\Users\Oliver\source\repos\ReactChan\ReactChan.Domain\obj\Debug\netcoreapp3.1\ReactChan.Domain.pdb
