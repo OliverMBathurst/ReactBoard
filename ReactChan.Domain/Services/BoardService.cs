@@ -1,26 +1,16 @@
-﻿using ReactChan.Domain.Entities.Board;
+﻿using ReactChan.Domain.Common;
+using ReactChan.Domain.Entities.Board;
 using System;
-using System.Linq;
 
 namespace ReactChan.Domain.Services
 {
-    public class BoardService : IBoardService
+    public class BoardService : EntityService<IBoard, Guid>, IBoardService
     {
         private readonly IBoardRepository _boardRepository;
 
-        public BoardService(IBoardRepository boardRepository)
+        public BoardService(IBoardRepository boardRepository) : base(boardRepository)
         {
             _boardRepository = boardRepository;
-        }
-
-        public IQueryable<IBoard> GetAll()
-        {
-            return _boardRepository.GetAll();
-        }
-
-        public IQueryable<IBoard> GeyByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

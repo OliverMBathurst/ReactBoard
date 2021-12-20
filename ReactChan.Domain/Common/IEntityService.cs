@@ -9,6 +9,6 @@ namespace ReactChan.Domain.Common
     {
         IQueryable<TEntity> GetAll();
 
-        IQueryable<TEntity> GeyByIdAsync(TId id);
+        IQueryable<TEntity> GetByIdAsync(TId id);
     }
 }
