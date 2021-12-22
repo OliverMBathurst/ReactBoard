@@ -2,10 +2,11 @@
 
 namespace ReactChan.Domain.Common
 {
-    public class Entity<TEntity> : IEntity<TEntity> where TEntity : struct
+    public abstract class Entity<TEntity> : IEntity<TEntity>
+        where TEntity : struct
     {
-        public Entity(TEntity id) => Id = id;
+        protected Entity(TEntity id) => Id = id;
 
-        public TEntity Id { get; set; }
+        public virtual TEntity Id { get; set; }
     }
 }

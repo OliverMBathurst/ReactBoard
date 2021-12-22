@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using ReactChan.Domain.Entities.Board;
+using ReactChan.Domain.Entities.Image;
 using ReactChan.Domain.Entities.Post;
 using ReactChan.Domain.Entities.Thread;
 using ReactChan.Infrastructure.Models;
@@ -22,5 +23,7 @@ namespace ReactChan.Infrastructure.DAL
         public DbSet<Thread> Threads { get; set; }
 
         public DbSet<Post> Posts { get; set; }
+
+        public DbSet<ImageMetadata> ImageMetadata { get; set; }
     }
 }

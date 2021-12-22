@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ReactChan.Domain.Interfaces
+﻿namespace ReactChan.Domain.Interfaces
 {
     public interface IEntity<TEntity> where TEntity : struct
     {

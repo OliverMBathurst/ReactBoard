@@ -28,8 +28,32 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\global\enums\user\enums.ts" />
+    <None Remove="ClientApp\src\global\interfaces\board\interfaces.ts" />
+    <None Remove="ClientApp\src\global\interfaces\common\interfaces.ts" />
+    <None Remove="ClientApp\src\global\interfaces\image\interfaces.ts" />
+    <None Remove="ClientApp\src\global\interfaces\post\interfaces.ts" />
+    <None Remove="ClientApp\src\global\interfaces\thread\interfaces.ts" />
+    <None Remove="ClientApp\src\global\interfaces\user\interfaces.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ReactChan.Domain\ReactChan.Domain.csproj" />
     <ProjectReference Include="..\ReactChan.Infrastructure\ReactChan.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\global\types\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\global\enums\user\enums.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\interfaces\board\interfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\interfaces\common\interfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\interfaces\image\interfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\interfaces\post\interfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\interfaces\thread\interfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\interfaces\user\interfaces.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

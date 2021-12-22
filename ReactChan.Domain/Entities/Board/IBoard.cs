@@ -7,9 +7,13 @@ namespace ReactChan.Domain.Entities.Board
 {
     public interface IBoard : IEntity<Guid>
     {
-        Guid BoardId { get; set; }
-
         string Name { get; set; }
+
+        string Suffix { get; set; }
+
+        string Description { get; set; }
+
+        bool IsWorkSafe { get; set; }
 
         IEnumerable<IThread> Threads { get; set; }
     }

@@ -1,7 +1,12 @@
-﻿namespace ReactChan.Domain.Entities.Image
+﻿using ReactChan.Domain.Common;
+using System;
+
+namespace ReactChan.Domain.Entities.Image
 {
-    public class ImageMetadata : IImageMetadata
+    public class ImageMetadata : Entity<Guid>, IImageMetadata
     {
+        public ImageMetadata(Guid id) : base(id) { }
+
         public float Size { get; set; }
 
         public int Width { get; set; }

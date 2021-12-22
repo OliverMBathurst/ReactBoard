@@ -1,6 +1,9 @@
-﻿namespace ReactChan.Domain.Entities.Image
+﻿using ReactChan.Domain.Interfaces;
+using System;
+
+namespace ReactChan.Domain.Entities.Image
 {
-    public interface IImageMetadata
+    public interface IImageMetadata : IEntity<Guid>
     {
         float Size { get; set; }
 

@@ -9,9 +9,13 @@ namespace ReactChan.Domain.Entities.Board
     {
         public Board(Guid guid) : base(guid) { }
 
-        public Guid BoardId { get; set; }
-
         public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        public string Suffix { get; set; }
+
+        public bool IsWorkSafe { get; set; }
 
         public IEnumerable<IThread> Threads { get; set; }
     }
