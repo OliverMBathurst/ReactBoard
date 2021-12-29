@@ -107,3 +107,4 @@ C:\Users\Oliver\source\repos\ReactChan\ReactChan\bin\Debug\netcoreapp3.1\ReactCh
 C:\Users\Oliver\source\repos\ReactChan\ReactChan\bin\Debug\netcoreapp3.1\ReactChan.Infrastructure.dll
 C:\Users\Oliver\source\repos\ReactChan\ReactChan\bin\Debug\netcoreapp3.1\ReactChan.Domain.pdb
 C:\Users\Oliver\source\repos\ReactChan\ReactChan\bin\Debug\netcoreapp3.1\ReactChan.Infrastructure.pdb
+C:\Users\Oliver\source\repos\ReactChan\ReactChan\bin\Debug\netcoreapp3.1\FluentValidation.dll

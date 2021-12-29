@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IoTwdEbMvIpbWsGCrpuj59TfwlMG+zPfgRj8HIKWI4f3HnJpYj7dJff0KKAQxS8DL8QKcvGNJMpCxBzMsiLDiA==",
+  "dgSpecHash": "dIg1i3b2Da6UJzPPzsGiElaN4NWFq2BtTAgluXYTOrFS+ddXYMrErPNX2+z3XxxSeYTYXubHEElNkmd4PIe9ew==",
   "success": true,
   "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactChan\\ReactChan.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oliver\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\Oliver\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\Oliver\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
     "C:\\Users\\Oliver\\.nuget\\packages\\identityserver4\\3.0.0\\identityserver4.3.0.0.nupkg.sha512",
     "C:\\Users\\Oliver\\.nuget\\packages\\identityserver4.aspnetidentity\\3.0.0\\identityserver4.aspnetidentity.3.0.0.nupkg.sha512",
