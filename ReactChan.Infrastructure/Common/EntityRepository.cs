@@ -34,5 +34,11 @@ namespace ReactChan.Infrastructure.Common
         {
             return _context.Set<TEntity>().Where(predicate);
         }
+
+        public virtual async Task SaveOrUpdateAsync(TEntity entity)
+        {
+            _context.Add(entity);
+            await _context.SaveChangesAsync();
+        }
     }
 }

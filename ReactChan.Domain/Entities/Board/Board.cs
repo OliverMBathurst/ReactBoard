@@ -17,6 +17,8 @@ namespace ReactChan.Domain.Entities.Board
 
         public bool IsWorkSafe { get; set; }
 
+        public int MaxThreads { get; set; }
+
         public IEnumerable<IThread> Threads { get; set; }
     }
 }

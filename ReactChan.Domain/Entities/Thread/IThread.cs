@@ -10,5 +10,7 @@ namespace ReactChan.Domain.Entities.Thread
         Guid BoardId { get; set; }
 
         IEnumerable<IPost> Posts { get; set; }
+
+        bool Locked { get; set; }
     }
 }

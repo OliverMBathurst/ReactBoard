@@ -15,5 +15,7 @@ namespace ReactChan.Domain.Common
         Task<TEntity> GetByIdAsync(TId id);
 
         IEnumerable<TEntity> Fetch(Func<TEntity, bool> predicate);
+
+        Task SaveOrUpdateAsync(TEntity entity);
     }
 }

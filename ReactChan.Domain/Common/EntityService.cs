@@ -31,5 +31,10 @@ namespace ReactChan.Domain.Common
         {
             return _repository.Fetch(predicate);
         }
+
+        public virtual async Task SaveOrUpdateAsync(TEntity entity)
+        {
+            await _repository.SaveOrUpdateAsync(entity);
+        }
     }
 }

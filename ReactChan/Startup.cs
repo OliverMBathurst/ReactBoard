@@ -25,6 +25,10 @@ namespace ReactChan
         {
             services.AddDependencies();
 
+            services.AddOptions<AppSettings>()
+                .Bind(Configuration.GetSection(nameof(AppSettings)))
+                .ValidateDataAnnotations();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
