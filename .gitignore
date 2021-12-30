@@ -2,3 +2,7 @@
 /ReactChan.Domain/bin
 /ReactChan.Infrastructure/bin
 /ReactChan/obj
+/ReactChan.Domain/obj
+/ReactChan.Infrastructure/obj
+/ReactChan/ClientApp/node_modules
+/ReactChan/.vs
