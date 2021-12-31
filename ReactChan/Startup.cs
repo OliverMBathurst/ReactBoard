@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReactChan.Infrastructure.DAL;
 using ReactChan.Infrastructure.Models;
+using static ReactChan.Domain.Entities.User.Enums;
 
 namespace ReactChan
 {

@@ -17,7 +17,7 @@ namespace ReactChan.Controllers.Entities
         public BoardController(IBoardService boardService) : base(boardService) { }
 
         [HttpPost]
-        [Authorise(UserRole.Admin)]
+        [Attributes.Authorise(UserRole.Admin)]
         public async Task<IActionResult> CreateNewBoard([FromBody] CreateBoardDto dto)
         {
             Board newBoard = dto;
@@ -27,7 +27,7 @@ namespace ReactChan.Controllers.Entities
 
         [HttpDelete]
         [Route("delete")]
-        [Authorise(UserRole.Admin, UserRole.BoardAdmin)]
+        [Attributes.Authorise(UserRole.Admin, UserRole.BoardAdmin)]
         public async Task<IActionResult> DeleteBoard([FromRoute] Guid boardId) 
         {
             if (boardId == Guid.Empty)
