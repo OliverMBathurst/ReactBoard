@@ -10,7 +10,7 @@ namespace ReactChan.Domain.Common
         where TEntity : class, IEntity<TId>
         where TId : struct, IEquatable<TId>
     {
-        private readonly IEntityRepository<TEntity, TId> _repository;
+        protected readonly IEntityRepository<TEntity, TId> _repository;
 
         protected EntityService(IEntityRepository<TEntity, TId> repository)
         {
@@ -35,6 +35,11 @@ namespace ReactChan.Domain.Common
         public virtual async Task SaveOrUpdateAsync(TEntity entity)
         {
             await _repository.SaveOrUpdateAsync(entity);
+        }
+
+        public virtual async Task DeleteAsync(TId id)
+        {
+            await _repository.DeleteAsync(id);
         }
     }
 }

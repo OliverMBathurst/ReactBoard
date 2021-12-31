@@ -9,7 +9,7 @@ namespace ReactChan.Domain.Entities.Board
     {
         string Name { get; set; }
 
-        string Suffix { get; set; }
+        string BoardUrlName { get; set; }
 
         string Description { get; set; }
 

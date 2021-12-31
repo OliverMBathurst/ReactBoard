@@ -3,7 +3,7 @@ using System;
 
 namespace ReactChan.Domain.Entities.User
 {
-    public interface IUserRoleMappingService : IEntityService<IUserRoleMapping, Guid>
+    public interface IUserRoleMappingService : IEntityService<UserRoleMapping, Guid>
     {
     }
 }

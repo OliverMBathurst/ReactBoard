@@ -3,7 +3,7 @@ using System;
 
 namespace ReactChan.Domain.Entities.Thread
 {
-    public interface IThreadService : IEntityService<IThread, Guid>
+    public interface IThreadService : IEntityService<Thread, Guid>
     {
     }
 }

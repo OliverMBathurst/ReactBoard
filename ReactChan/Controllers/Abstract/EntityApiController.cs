@@ -26,7 +26,7 @@ namespace ReactChan.Controllers.Abstract
 
         [HttpGet]
         [Route("{id}")]
-        public virtual async Task<IActionResult> GetBoard(TId id)
+        public virtual async Task<IActionResult> GetEntityById([FromRoute] TId id)
         {
             var entity = await _service.GetByIdAsync(id);
             if (entity == null)

@@ -6,7 +6,7 @@ using System;
 namespace ReactChan.Controllers.Entities
 {
     [ApiController]
-    public class ThreadController : EntityApiController<IThread, Guid>
+    public class ThreadController : EntityApiController<Thread, Guid>
     {
         public ThreadController(IThreadService threadService) : base(threadService) { }
     }

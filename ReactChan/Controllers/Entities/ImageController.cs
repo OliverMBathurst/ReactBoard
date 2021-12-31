@@ -6,7 +6,7 @@ using System;
 namespace ReactChan.Controllers.Entities
 {
     [ApiController]
-    public class ImageController : EntityApiController<IImage, Guid>
+    public class ImageController : EntityApiController<Image, Guid>
     {
         public ImageController(IImageService imageService) : base(imageService) { }
     }

@@ -4,8 +4,8 @@ using System;
 
 namespace ReactChan.Domain.Services.Image
 {
-    public class ImageMetadataService : EntityService<IImageMetadata, Guid>, IImageMetadataService
+    public class ImageMetadataService : EntityService<ImageMetadata, Guid>, IImageMetadataService
     {
-        public ImageMetadataService(IEntityRepository<IImageMetadata, Guid> repository) : base(repository) { }
+        public ImageMetadataService(IEntityRepository<ImageMetadata, Guid> repository) : base(repository) { }
     }
 }

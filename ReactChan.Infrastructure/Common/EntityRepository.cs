@@ -13,7 +13,7 @@ namespace ReactChan.Infrastructure.Common
         where TEntity : class, IEntity<TId>
         where TId : struct, IEquatable<TId>
     {
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
 
         protected EntityRepository(ApplicationDbContext context) 
         {
@@ -39,6 +39,16 @@ namespace ReactChan.Infrastructure.Common
         {
             _context.Add(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public virtual async Task DeleteAsync(TId id)
+        {
+            var removal = _context.Set<TEntity>().FirstOrDefaultAsync(x => x.Id.Equals(id));
+            if (removal != null)
+            {
+                _context.Remove(removal);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

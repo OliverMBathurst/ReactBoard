@@ -17,5 +17,7 @@ namespace ReactChan.Domain.Common
         IEnumerable<TEntity> Fetch(Func<TEntity, bool> predicate);
 
         Task SaveOrUpdateAsync(TEntity entity);
+
+        Task DeleteAsync(TId id);
     }
 }

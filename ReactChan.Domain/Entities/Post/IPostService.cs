@@ -3,7 +3,7 @@ using System;
 
 namespace ReactChan.Domain.Entities.Post
 {
-    public interface IPostService : IEntityService<IPost, Guid>
+    public interface IPostService : IEntityService<Post, Guid>
     {
     }
 }

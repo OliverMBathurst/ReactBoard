@@ -13,7 +13,7 @@ namespace ReactChan.Domain.Entities.Board
 
         public string Description { get; set; }
 
-        public string Suffix { get; set; }
+        public string BoardUrlName { get; set; }
 
         public bool IsWorkSafe { get; set; }
 

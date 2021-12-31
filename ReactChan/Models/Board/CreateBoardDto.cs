@@ -21,7 +21,7 @@ namespace ReactChan.Models.Board
             {
                 Name = dto.Name,
                 Description = dto.Description,
-                Suffix = dto.Suffix,
+                BoardUrlName = dto.Suffix,
                 IsWorkSafe = dto.IsWorkSafe,
                 MaxThreads = dto.MaxThreads
             };

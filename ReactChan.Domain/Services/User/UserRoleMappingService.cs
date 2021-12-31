@@ -4,8 +4,8 @@ using System;
 
 namespace ReactChan.Domain.Services.User
 {
-    public class UserRoleMappingService : EntityService<IUserRoleMapping, Guid>, IUserRoleMappingService
+    public class UserRoleMappingService : EntityService<UserRoleMapping, Guid>, IUserRoleMappingService
     {
-        public UserRoleMappingService(IEntityRepository<IUserRoleMapping, Guid> repository) : base(repository) { }
+        public UserRoleMappingService(IEntityRepository<UserRoleMapping, Guid> repository) : base(repository) { }
     }
 }

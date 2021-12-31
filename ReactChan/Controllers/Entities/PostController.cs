@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ReactChan.Controllers.Entities
 {
     [ApiController]
-    public class PostController : EntityApiController<IPost, Guid>
+    public class PostController : EntityApiController<Post, Guid>
     {
         public PostController(IPostService postService) : base(postService) { }
 
