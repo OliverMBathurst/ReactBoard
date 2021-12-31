@@ -15,8 +15,8 @@ namespace ReactChan.Controllers.Entities
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreatePostDto postDto) 
         {
-            //Add post
-
+            Post newPost = postDto;
+            await _service.SaveOrUpdateAsync(newPost);
 
             return Ok();
         }

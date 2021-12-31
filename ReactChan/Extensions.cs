@@ -36,6 +36,7 @@ namespace ReactChan
             collection.AddTransient<IThreadService, ThreadService>();
             collection.AddTransient<IUserRoleMappingService, UserRoleMappingService>();
             collection.AddTransient<IUserService, UserService>();
+            collection.AddTransient<IImageDeletionService, ImageDeletionService>();
             collection.AddTransient(typeof(IEntityService<,>), typeof(EntityService<,>));
         }
 

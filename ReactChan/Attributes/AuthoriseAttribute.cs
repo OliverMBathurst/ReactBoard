@@ -24,10 +24,15 @@ namespace ReactChan.Attributes
                 return;
             }
 
-            var c = (IUser)user; //todo
-            context.Result = c.HasAnyRole(_roles) 
-                ? new OkResult() 
-                : new ForbidResult();
+            var c = (IUser)user; //todo sort out auth
+
+            if (c.HasAnyRole(_roles)) 
+            {
+                context.Result = new OkResult();
+                return;
+            }
+
+            context.Result = new ForbidResult();
         }
     }
 }

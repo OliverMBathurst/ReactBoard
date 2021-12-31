@@ -5,7 +5,7 @@ using System;
 
 namespace ReactChan.Infrastructure.Repositories.User
 {
-    public class UserRoleMappingRepository : EntityRepository<IUserRoleMapping, Guid>, IUserRoleMappingRepository
+    public class UserRoleMappingRepository : EntityRepository<UserRoleMapping, Guid>, IUserRoleMappingRepository
     {
         public UserRoleMappingRepository(ApplicationDbContext context) : base(context) { }
     }

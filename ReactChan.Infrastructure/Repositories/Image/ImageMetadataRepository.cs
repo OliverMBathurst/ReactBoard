@@ -5,7 +5,7 @@ using System;
 
 namespace ReactChan.Infrastructure.Repositories.Image
 {
-    public class ImageMetadataRepository : EntityRepository<IImageMetadata, Guid>, IImageMetadataRepository
+    public class ImageMetadataRepository : EntityRepository<ImageMetadata, Guid>, IImageMetadataRepository
     {
         public ImageMetadataRepository(ApplicationDbContext context) : base(context) { }
     }

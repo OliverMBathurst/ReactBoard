@@ -1,10 +1,10 @@
 ﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Thread;
 using System;
+using _Thread = ReactChan.Domain.Entities.Thread.Thread;
 
 namespace ReactChan.Domain.Entities.Image
 {
-    public interface IThreadRepository : IEntityRepository<IThread, Guid>
+    public interface IThreadRepository : IEntityRepository<_Thread, Guid>
     {
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace ReactChan.Domain.Entities.Image
 {
-    public interface IImageRepository : IEntityRepository<IImage, Guid>
+    public interface IImageRepository : IEntityRepository<Image, Guid>
     {
     }
 }
