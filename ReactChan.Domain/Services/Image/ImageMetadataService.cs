@@ -1,11 +1,10 @@
 ﻿using ReactChan.Domain.Common;
 using ReactChan.Domain.Entities.Image;
-using System;
 
 namespace ReactChan.Domain.Services.Image
 {
-    public class ImageMetadataService : EntityService<ImageMetadata, Guid>, IImageMetadataService
+    public class ImageMetadataService : EntityService<ImageMetadata, ImageKey>, IImageMetadataService
     {
-        public ImageMetadataService(IEntityRepository<ImageMetadata, Guid> repository) : base(repository) { }
+        public ImageMetadataService(IEntityRepository<ImageMetadata, ImageKey> repository) : base(repository) { }
     }
 }

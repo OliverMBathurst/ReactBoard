@@ -5,13 +5,9 @@ using System.Collections.Generic;
 
 namespace ReactChan.Domain.Entities.Post
 {
-    public class Post : Entity<Guid>, IPost
+    public class Post : Entity<PostKey>, IPost
     {
-        public Post(Guid postId): base(postId) { }
-
-        public Guid ThreadId { get; set; }
-
-        public Guid BoardId { get; set; }
+        public Post(PostKey key): base(key) { }
 
         public DateTime Time { get; set; } = DateTime.Now;
 

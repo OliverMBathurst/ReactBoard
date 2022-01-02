@@ -1,9 +1,8 @@
 ﻿using ReactChan.Domain.Interfaces;
-using System;
 
 namespace ReactChan.Domain.Entities.Image
 {
-    public interface IImageMetadata : IEntity<Guid>
+    public interface IImageMetadata : IEntity<ImageKey>
     {
         float Size { get; set; }
 

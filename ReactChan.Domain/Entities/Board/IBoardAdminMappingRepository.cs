@@ -1,5 +1,4 @@
 ﻿using ReactChan.Domain.Common;
-using System;
 
 namespace ReactChan.Domain.Entities.Board
 {

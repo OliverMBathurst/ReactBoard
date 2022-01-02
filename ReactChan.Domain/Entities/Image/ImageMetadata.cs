@@ -1,11 +1,10 @@
 ﻿using ReactChan.Domain.Common;
-using System;
 
 namespace ReactChan.Domain.Entities.Image
 {
-    public class ImageMetadata : Entity<Guid>, IImageMetadata
+    public class ImageMetadata : Entity<ImageKey>, IImageMetadata
     {
-        public ImageMetadata(Guid id) : base(id) { }
+        public ImageMetadata(ImageKey key) : base(key) { }
 
         public float Size { get; set; }
 

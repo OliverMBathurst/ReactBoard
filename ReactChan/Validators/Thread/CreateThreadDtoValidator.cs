@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using Microsoft.Extensions.Options;
 using ReactChan.Domain.Entities.Board;
 using ReactChan.Models.Thread;
 using System.Linq;
@@ -10,14 +9,10 @@ namespace ReactChan.Validators.Thread
     public class CreateThreadDtoValidator : AbstractValidator<CreateThreadDto>
     {
         private readonly IBoardService _boardService;
-        private readonly AppSettings _appSettings;
 
-        public CreateThreadDtoValidator(
-            IBoardService boardService,
-            IOptions<AppSettings> options)
+        public CreateThreadDtoValidator(IBoardService boardService)
         {
             _boardService = boardService;
-            _appSettings = options.Value;
 
             RuleFor(x => x).CustomAsync(async (dto, ctx, _) => await ValidateDto(dto, ctx));
         }

@@ -1,9 +1,8 @@
 ﻿using ReactChan.Domain.Interfaces;
-using System;
 
 namespace ReactChan.Domain.Entities.Image
 {
-    public interface IImage : IEntity<Guid>
+    public interface IImage : IEntity<ImageKey>
     {
         string Location { get; set; }
 

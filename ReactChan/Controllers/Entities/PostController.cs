@@ -2,13 +2,12 @@
 using ReactChan.Controllers.Abstract;
 using ReactChan.Domain.Entities.Post;
 using ReactChan.Models.Post;
-using System;
 using System.Threading.Tasks;
 
 namespace ReactChan.Controllers.Entities
 {
     [ApiController]
-    public class PostController : EntityApiController<Post, Guid>
+    public class PostController : EntityApiController<Post, PostKey>
     {
         public PostController(IPostService postService) : base(postService) { }
 
