@@ -3,7 +3,7 @@ using System;
 
 namespace ReactChan.Domain.Entities.Board
 {
-    public interface IBoardAdminMappingRepository : IEntityRepository<BoardAdminMapping, Guid>
+    public interface IBoardAdminMappingRepository : IEntityRepository<BoardAdminMapping, BoardAdminMappingKey>
     {
     }
 }

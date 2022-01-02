@@ -1,14 +1,9 @@
 ﻿using ReactChan.Domain.Common;
-using System;
 
 namespace ReactChan.Domain.Entities.Board
 {
-    public class BoardAdminMapping : Entity<Guid>, IBoardAdminMapping
+    public class BoardAdminMapping : Entity<BoardAdminMappingKey>, IBoardAdminMapping
     {
-        public BoardAdminMapping(Guid id) : base(id) { }
-
-        public Guid BoardId { get; set; }
-
-        public Guid UserId { get; set; }
+        public BoardAdminMapping(BoardAdminMappingKey key) : base(key) { }
     }
 }

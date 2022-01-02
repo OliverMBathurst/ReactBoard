@@ -4,7 +4,6 @@ using ReactChan.Attributes;
 using ReactChan.Controllers.Abstract;
 using ReactChan.Domain.Entities.Board;
 using ReactChan.Models.Board;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using static ReactChan.Domain.Entities.User.Enums;
@@ -12,12 +11,12 @@ using static ReactChan.Domain.Entities.User.Enums;
 namespace ReactChan.Controllers.Entities
 {
     [ApiController]
-    public class BoardController : EntityApiController<Board, Guid>
+    public class BoardController : EntityApiController<Board, BoardKey>
     {
         public BoardController(IBoardService boardService) : base(boardService) { }
 
         [HttpPost]
-        [Attributes.Authorise(UserRole.Admin)]
+        [Authorise(UserRole.Admin)]
         public async Task<IActionResult> CreateNewBoard([FromBody] CreateBoardDto dto)
         {
             Board newBoard = dto;
@@ -27,13 +26,10 @@ namespace ReactChan.Controllers.Entities
 
         [HttpDelete]
         [Route("delete")]
-        [Attributes.Authorise(UserRole.Admin, UserRole.BoardAdmin)]
-        public async Task<IActionResult> DeleteBoard([FromRoute] Guid boardId) 
+        [Authorise(UserRole.Admin, UserRole.BoardAdmin)]
+        public async Task<IActionResult> DeleteBoard([FromBody] BoardKey key) 
         {
-            if (boardId == Guid.Empty)
-                return BadRequest("Invalid board identifier");
-
-            await _service.DeleteAsync(boardId);
+            await _service.DeleteAsync(key);
 
             return Ok();
         }
@@ -55,12 +51,9 @@ namespace ReactChan.Controllers.Entities
         [HttpGet]
         [AllowAnonymous]
         [Route("{boardId}/catalog")]
-        public async Task<IActionResult> GetBoardCatalog([FromRoute] Guid boardId)
+        public async Task<IActionResult> GetBoardCatalog([FromBody] BoardKey key)
         {
-            if (boardId == Guid.Empty)
-                return BadRequest("Invalid identifier");
-
-            var board = await _service.GetByIdAsync(boardId);
+            var board = await _service.GetByIdAsync(key);
             if (board == null)
                 return NotFound();
 

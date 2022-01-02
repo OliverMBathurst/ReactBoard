@@ -1,12 +1,8 @@
 ﻿using ReactChan.Domain.Interfaces;
-using System;
 
 namespace ReactChan.Domain.Entities.Board
 {
-    public interface IBoardAdminMapping : IEntity<Guid>
+    public interface IBoardAdminMapping : IEntity<BoardAdminMappingKey>
     {
-        Guid BoardId { get; set; }
-
-        Guid UserId { get; set; }
     }
 }

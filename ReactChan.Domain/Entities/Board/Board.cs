@@ -1,13 +1,12 @@
 ﻿using ReactChan.Domain.Common;
 using ReactChan.Domain.Entities.Thread;
-using System;
 using System.Collections.Generic;
 
 namespace ReactChan.Domain.Entities.Board
 {
-    public class Board : Entity<Guid>, IBoard
+    public class Board : Entity<BoardKey>, IBoard
     {
-        public Board(Guid guid) : base(guid) { }
+        public Board(BoardKey key) : base(key) { }
 
         public string Name { get; set; }
 

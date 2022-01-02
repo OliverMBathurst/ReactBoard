@@ -42,7 +42,7 @@ namespace ReactChan.Validators.Thread
                     }
                     else
                     {
-                        var board = await _boardService.GetByIdAsync(dto.BoardId);
+                        var board = await _boardService.GetByIdAsync(new BoardKey(dto.BoardId));
                         if (board == null)
                         {
                             context.AddFailure(nameof(CreateThreadDto.BoardId), "Invalid Board identifier");

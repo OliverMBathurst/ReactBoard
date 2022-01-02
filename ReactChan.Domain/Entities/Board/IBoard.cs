@@ -1,11 +1,10 @@
 ﻿using ReactChan.Domain.Entities.Thread;
 using ReactChan.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace ReactChan.Domain.Entities.Board
 {
-    public interface IBoard : IEntity<Guid>
+    public interface IBoard : IEntity<BoardKey>
     {
         string Name { get; set; }
 

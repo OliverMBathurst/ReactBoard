@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ReactChan.Domain.Entities.Board;
 using _Board = ReactChan.Domain.Entities.Board.Board;
 
 namespace ReactChan.Models.Board
@@ -17,7 +17,7 @@ namespace ReactChan.Models.Board
 
         public static implicit operator _Board(CreateBoardDto dto) 
         {
-            return new _Board(Guid.NewGuid())
+            return new _Board(new BoardKey(null))
             {
                 Name = dto.Name,
                 Description = dto.Description,
