@@ -1,9 +1,9 @@
-/ReactChan/bin
-/ReactChan.Domain/bin
-/ReactChan.Infrastructure/bin
-/ReactChan/obj
-/ReactChan.Domain/obj
-/ReactChan.Infrastructure/obj
-/ReactChan/ClientApp/node_modules
-/ReactChan/.vs
+/ReactBoard/bin
+/ReactBoard.Domain/bin
+/ReactBoard.Infrastructure/bin
+/ReactBoard/obj
+/ReactBoard.Domain/obj
+/ReactBoard.Infrastructure/obj
+/ReactBoard/ClientApp/node_modules
+/ReactBoard/.vs
 /.vs

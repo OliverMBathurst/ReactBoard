@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReactChan.Domain\ReactBoard.Domain.csproj" />
+    <ProjectReference Include="..\ReactBoard.Domain\ReactBoard.Domain.csproj" />
   </ItemGroup>
 
 </Project>
