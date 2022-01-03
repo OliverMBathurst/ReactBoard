@@ -6,6 +6,6 @@ namespace ReactBoard.Domain.Services.Post
 {
     public sealed class PostService : EntityService<_Post, PostKey>, IPostService
     {
-        public PostService(IEntityRepository<_Post, PostKey> repository) : base(repository) { }
+        public PostService(IPostRepository repository) : base(repository) { }
     }
 }

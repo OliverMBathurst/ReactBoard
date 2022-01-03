@@ -6,6 +6,6 @@ namespace ReactBoard.Domain.Services.Thread
 {
     public sealed class ThreadService : EntityService<_Thread, ThreadKey>, IThreadService
     {
-        public ThreadService(IEntityRepository<_Thread, ThreadKey> repository) : base(repository) { }
+        public ThreadService(IThreadRepository repository) : base(repository) { }
     }
 }

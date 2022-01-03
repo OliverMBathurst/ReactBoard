@@ -12,6 +12,7 @@ namespace ReactBoard.Controllers.Entities
         public PostController(IPostService postService) : base(postService) { }
 
         [HttpPost]
+        [Route("post")]
         public async Task<IActionResult> Post([FromBody] CreatePostDto postDto) 
         {
             Post newPost = postDto;

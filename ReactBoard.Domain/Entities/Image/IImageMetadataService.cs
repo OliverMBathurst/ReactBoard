@@ -1,6 +1,8 @@
-﻿namespace ReactBoard.Domain.Entities.Image
+﻿using ReactBoard.Domain.Common;
+
+namespace ReactBoard.Domain.Entities.Image
 {
-    public interface IImageMetadataService
+    public interface IImageMetadataService : IEntityService<ImageMetadata, ImageKey>
     {
     }
 }

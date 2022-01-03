@@ -6,6 +6,6 @@ namespace ReactBoard.Domain.Services.Image
 {
     public sealed class ImageService : EntityService<_Image, ImageKey>, IImageService
     {
-        public ImageService(IEntityRepository<_Image, ImageKey> repository) : base(repository) { }
+        public ImageService(IImageRepository repository) : base(repository) { }
     }
 }

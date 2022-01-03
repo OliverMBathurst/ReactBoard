@@ -37,7 +37,6 @@ namespace ReactBoard
             collection.AddTransient<IUserRoleMappingService, UserRoleMappingService>();
             collection.AddTransient<IUserService, UserService>();
             collection.AddTransient<IImageDeletionService, ImageDeletionService>();
-            collection.AddTransient(typeof(IEntityService<,>), typeof(EntityService<,>));
         }
 
         private static void AddRepositories(IServiceCollection collection) 
@@ -50,7 +49,6 @@ namespace ReactBoard
             collection.AddTransient<IThreadRepository, ThreadRepository>();
             collection.AddTransient<IUserRoleMappingRepository, UserRoleMappingRepository>();
             collection.AddTransient<IUserRepository, UserRepository>();
-            collection.AddTransient(typeof(IEntityRepository<,>), typeof(EntityRepository<,>));
         }
     }
 }

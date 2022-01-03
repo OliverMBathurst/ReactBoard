@@ -16,6 +16,7 @@ namespace ReactBoard.Controllers.Entities
         public BoardController(IBoardService boardService) : base(boardService) { }
 
         [HttpPost]
+        [Route("create")]
         [Authorise(UserRole.Admin)]
         public async Task<IActionResult> CreateNewBoard([FromBody] CreateBoardDto dto)
         {
@@ -35,6 +36,7 @@ namespace ReactBoard.Controllers.Entities
         }
 
         [HttpGet]
+        [Route("{boardUrlName}")]
         [AllowAnonymous]
         public IActionResult GetBoardByUrlName([FromRoute] string boardUrlName)
         {

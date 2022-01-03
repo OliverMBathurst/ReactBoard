@@ -6,6 +6,6 @@ namespace ReactBoard.Domain.Services.Board
 {
     public sealed class BoardService : EntityService<_Board, BoardKey>, IBoardService
     {
-        public BoardService(IEntityRepository<_Board, BoardKey> boardRepository) : base(boardRepository) { }
+        public BoardService(IBoardRepository repository) : base(repository) { }
     }
 }

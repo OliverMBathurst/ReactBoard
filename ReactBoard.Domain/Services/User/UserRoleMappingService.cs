@@ -6,6 +6,6 @@ namespace ReactBoard.Domain.Services.User
 {
     public sealed class UserRoleMappingService : EntityService<UserRoleMapping, Guid>, IUserRoleMappingService
     {
-        public UserRoleMappingService(IEntityRepository<UserRoleMapping, Guid> repository) : base(repository) { }
+        public UserRoleMappingService(IUserRoleMappingRepository repository) : base(repository) { }
     }
 }
