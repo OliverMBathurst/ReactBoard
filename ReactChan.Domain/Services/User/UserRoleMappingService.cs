@@ -4,7 +4,7 @@ using System;
 
 namespace ReactBoard.Domain.Services.User
 {
-    public class UserRoleMappingService : EntityService<UserRoleMapping, Guid>, IUserRoleMappingService
+    public sealed class UserRoleMappingService : EntityService<UserRoleMapping, Guid>, IUserRoleMappingService
     {
         public UserRoleMappingService(IEntityRepository<UserRoleMapping, Guid> repository) : base(repository) { }
     }

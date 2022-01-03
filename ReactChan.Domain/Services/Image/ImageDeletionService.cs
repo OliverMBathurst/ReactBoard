@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.Domain.Services.Image
 {
-    public class ImageDeletionService : IImageDeletionService
+    public sealed class ImageDeletionService : IImageDeletionService
     {
         public async Task DeleteImageAsync(string location) 
         {

@@ -7,7 +7,7 @@ using _Board = ReactBoard.Domain.Entities.Board.Board;
 
 namespace ReactBoard.Infrastructure.Repositories.Board
 {
-    public class BoardRepository : EntityRepository<_Board, BoardKey>, IBoardRepository
+    public sealed class BoardRepository : EntityRepository<_Board, BoardKey>, IBoardRepository
     {
         public BoardRepository(ApplicationDbContext context) : base(context) { }
 

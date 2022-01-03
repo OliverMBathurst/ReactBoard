@@ -5,7 +5,7 @@ using System;
 
 namespace ReactBoard.Infrastructure.Repositories.User
 {
-    public class UserRoleMappingRepository : EntityRepository<UserRoleMapping, Guid>, IUserRoleMappingRepository
+    public sealed class UserRoleMappingRepository : EntityRepository<UserRoleMapping, Guid>, IUserRoleMappingRepository
     {
         public UserRoleMappingRepository(ApplicationDbContext context) : base(context) { }
     }

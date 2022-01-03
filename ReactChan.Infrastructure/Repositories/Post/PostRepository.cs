@@ -6,7 +6,7 @@ using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Infrastructure.Repositories.Post
 {
-    public class PostRepository : EntityRepository<_Post, PostKey>, IPostRepository
+    public sealed class PostRepository : EntityRepository<_Post, PostKey>, IPostRepository
     {
         public PostRepository(ApplicationDbContext context) : base(context) { }
     }

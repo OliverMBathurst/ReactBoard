@@ -4,7 +4,7 @@ using _Board = ReactBoard.Domain.Entities.Board.Board;
 
 namespace ReactBoard.Domain.Services.Board
 {
-    public class BoardService : EntityService<_Board, BoardKey>, IBoardService
+    public sealed class BoardService : EntityService<_Board, BoardKey>, IBoardService
     {
         public BoardService(IEntityRepository<_Board, BoardKey> boardRepository) : base(boardRepository) { }
     }

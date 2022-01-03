@@ -1,11 +1,10 @@
 ﻿using ReactBoard.Domain.Common;
 using ReactBoard.Domain.Entities.User;
-using System;
 using _User = ReactBoard.Domain.Entities.User.User;
 
 namespace ReactBoard.Domain.Services.User
 {
-    public class UserService : EntityService<_User, UserKey>, IUserService
+    public sealed class UserService : EntityService<_User, UserKey>, IUserService
     {
         public UserService(IEntityRepository<_User, UserKey> repository) : base(repository) { }
     }

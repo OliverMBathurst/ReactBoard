@@ -7,7 +7,7 @@ using _Image = ReactBoard.Domain.Entities.Image.Image;
 
 namespace ReactBoard.Infrastructure.Repositories.Image
 {
-    public class ImageRepository : EntityRepository<_Image, ImageKey>, IImageRepository
+    public sealed class ImageRepository : EntityRepository<_Image, ImageKey>, IImageRepository
     {
         private readonly IImageDeletionService _imageDeletionService;
 
