@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReactChan.Controllers.Abstract;
-using ReactChan.Domain.Entities.Image;
+using ReactBoard.Controllers.Abstract;
+using ReactBoard.Domain.Entities.Image;
 
-namespace ReactChan.Controllers.Entities
+namespace ReactBoard.Controllers.Entities
 {
     [ApiController]
     public class ImageController : EntityApiController<Image, ImageKey>

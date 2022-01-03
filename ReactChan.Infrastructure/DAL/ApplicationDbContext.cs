@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using ReactChan.Domain.Entities.Board;
-using ReactChan.Domain.Entities.Image;
-using ReactChan.Domain.Entities.Post;
-using ReactChan.Domain.Entities.Thread;
-using ReactChan.Infrastructure.Models;
+using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Domain.Entities.Post;
+using ReactBoard.Domain.Entities.Thread;
+using ReactBoard.Infrastructure.Models;
 
-namespace ReactChan.Infrastructure.DAL
+namespace ReactBoard.Infrastructure.DAL
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {

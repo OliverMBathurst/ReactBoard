@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace ReactChan
+namespace ReactBoard
 {
     public static class Program
     {

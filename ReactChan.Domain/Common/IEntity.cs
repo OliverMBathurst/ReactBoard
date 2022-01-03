@@ -1,4 +1,4 @@
-﻿namespace ReactChan.Domain.Interfaces
+﻿namespace ReactBoard.Domain.Interfaces
 {
     public interface IEntity<TEntity> where TEntity : struct
     {

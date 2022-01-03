@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using ReactChan.Domain.Entities.Board;
-using ReactChan.Models.Thread;
+using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Models.Thread;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReactChan.Validators.Thread
+namespace ReactBoard.Validators.Thread
 {
     public class CreateThreadDtoValidator : AbstractValidator<CreateThreadDto>
     {

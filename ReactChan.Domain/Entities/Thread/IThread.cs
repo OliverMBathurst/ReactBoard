@@ -1,14 +1,11 @@
-﻿using ReactChan.Domain.Entities.Post;
-using ReactChan.Domain.Interfaces;
-using System;
+﻿using ReactBoard.Domain.Entities.Post;
+using ReactBoard.Domain.Interfaces;
 using System.Collections.Generic;
 
-namespace ReactChan.Domain.Entities.Thread
+namespace ReactBoard.Domain.Entities.Thread
 {
-    public interface IThread : IEntity<Guid>
+    public interface IThread : IEntity<ThreadKey>
     {
-        Guid BoardId { get; set; }
-
         IEnumerable<IPost> Posts { get; set; }
 
         bool Locked { get; set; }

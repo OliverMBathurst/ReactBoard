@@ -1,4 +1,4 @@
-﻿namespace ReactChan
+﻿namespace ReactBoard
 {
     public sealed class AppSettings
     {

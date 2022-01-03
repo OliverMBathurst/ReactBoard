@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReactChan.Domain.Common;
-using ReactChan.Domain.Interfaces;
+using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Interfaces;
 using System;
 using System.Threading.Tasks;
 
-namespace ReactChan.Controllers.Abstract
+namespace ReactBoard.Controllers.Abstract
 {
     public abstract class EntityApiController<TEntity, TId> : Controller
         where TEntity : class, IEntity<TId>

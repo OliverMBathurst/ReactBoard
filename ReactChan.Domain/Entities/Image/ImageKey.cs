@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReactChan.Domain.Entities.Image
+namespace ReactBoard.Domain.Entities.Image
 {
     readonly public struct ImageKey : IImageKey, IEquatable<ImageKey>
     {

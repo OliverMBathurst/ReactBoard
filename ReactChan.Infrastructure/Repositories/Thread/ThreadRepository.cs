@@ -1,12 +1,12 @@
-﻿using ReactChan.Domain.Entities.Image;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.DAL;
-using System;
-using _Thread = ReactChan.Domain.Entities.Thread.Thread;
+﻿using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Domain.Entities.Thread;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.DAL;
+using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
-namespace ReactChan.Infrastructure.Repositories.Thread
+namespace ReactBoard.Infrastructure.Repositories.Thread
 {
-    public class ThreadRepository : EntityRepository<_Thread, Guid>, IThreadRepository
+    public class ThreadRepository : EntityRepository<_Thread, ThreadKey>, IThreadRepository
     {
         public ThreadRepository(ApplicationDbContext context) : base(context) { }
     }

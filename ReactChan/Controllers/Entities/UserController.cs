@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReactChan.Attributes;
-using ReactChan.Controllers.Abstract;
-using ReactChan.Domain.Entities.User;
-using System;
-using static ReactChan.Domain.Entities.User.Enums;
+using ReactBoard.Attributes;
+using ReactBoard.Controllers.Abstract;
+using ReactBoard.Domain.Entities.User;
+using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactChan.Controllers.Entities
+namespace ReactBoard.Controllers.Entities
 {
     [ApiController]
-    public class UserController : EntityApiController<User, Guid>
+    public class UserController : EntityApiController<User, UserKey>
     {
         public UserController(IUserService userService) : base(userService) { }
 

@@ -40,8 +40,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReactChan.Domain\ReactChan.Domain.csproj" />
-    <ProjectReference Include="..\ReactChan.Infrastructure\ReactChan.Infrastructure.csproj" />
+    <ProjectReference Include="..\ReactChan.Domain\ReactBoard.Domain.csproj" />
+    <ProjectReference Include="..\ReactChan.Infrastructure\ReactBoard.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

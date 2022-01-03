@@ -1,9 +1,8 @@
-﻿using ReactChan.Domain.Entities.Image;
-using ReactChan.Domain.Entities.Post;
-using System;
-using _Post = ReactChan.Domain.Entities.Post.Post;
+﻿using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Domain.Entities.Post;
+using _Post = ReactBoard.Domain.Entities.Post.Post;
 
-namespace ReactChan.Models.Post
+namespace ReactBoard.Models.Post
 {
     public sealed class CreatePostDto
     {

@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.User;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.User;
 using System;
 
-namespace ReactChan.Domain.Services.User
+namespace ReactBoard.Domain.Services.User
 {
     public class UserRoleMappingService : EntityService<UserRoleMapping, Guid>, IUserRoleMappingService
     {

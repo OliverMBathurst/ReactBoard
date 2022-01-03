@@ -1,7 +1,7 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Image;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Image;
 
-namespace ReactChan.Domain.Services.Image
+namespace ReactBoard.Domain.Services.Image
 {
     public class ImageMetadataService : EntityService<ImageMetadata, ImageKey>, IImageMetadataService
     {

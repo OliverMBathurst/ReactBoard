@@ -1,4 +1,4 @@
-﻿namespace ReactChan.Domain.Entities.Image
+﻿namespace ReactBoard.Domain.Entities.Image
 {
     public interface IImageKey
     {

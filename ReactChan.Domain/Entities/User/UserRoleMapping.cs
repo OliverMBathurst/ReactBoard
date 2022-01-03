@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Common;
+﻿using ReactBoard.Domain.Common;
 using System;
-using static ReactChan.Domain.Entities.User.Enums;
+using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactChan.Domain.Entities.User
+namespace ReactBoard.Domain.Entities.User
 {
     public class UserRoleMapping : Entity<Guid>, IUserRoleMapping
     {

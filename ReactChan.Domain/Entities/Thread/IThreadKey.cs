@@ -1,4 +1,4 @@
-﻿namespace ReactChan.Domain.Entities.Thread
+﻿namespace ReactBoard.Domain.Entities.Thread
 {
     public interface IThreadKey
     {

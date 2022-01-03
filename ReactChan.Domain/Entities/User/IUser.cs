@@ -1,14 +1,11 @@
-﻿using ReactChan.Domain.Interfaces;
-using System;
-using static ReactChan.Domain.Entities.User.Enums;
+﻿using ReactBoard.Domain.Interfaces;
+using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactChan.Domain.Entities.User
+namespace ReactBoard.Domain.Entities.User
 {
-    public interface IUser : IEntity<Guid>
+    public interface IUser : IEntity<UserKey>
     {
         string UserName { get; set; }
-
-        string EmailAddress { get; set; }
 
         UserRole Role { get; set; }
 

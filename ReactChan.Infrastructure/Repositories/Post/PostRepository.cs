@@ -1,10 +1,10 @@
-﻿using ReactChan.Domain.Entities.Image;
-using ReactChan.Domain.Entities.Post;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.DAL;
-using _Post = ReactChan.Domain.Entities.Post.Post;
+﻿using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Domain.Entities.Post;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.DAL;
+using _Post = ReactBoard.Domain.Entities.Post.Post;
 
-namespace ReactChan.Infrastructure.Repositories.Post
+namespace ReactBoard.Infrastructure.Repositories.Post
 {
     public class PostRepository : EntityRepository<_Post, PostKey>, IPostRepository
     {

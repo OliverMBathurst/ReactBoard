@@ -1,13 +1,13 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Post;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Post;
 using System;
 using System.Collections.Generic;
 
-namespace ReactChan.Domain.Entities.Thread
+namespace ReactBoard.Domain.Entities.Thread
 {
-    public class Thread : Entity<Guid>, IThread
+    public class Thread : Entity<ThreadKey>, IThread
     {
-        public Thread(Guid id) : base(id) { }
+        public Thread(ThreadKey key) : base(key) { }
 
         public Guid BoardId { get; set; }
         

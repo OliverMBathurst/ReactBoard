@@ -1,6 +1,6 @@
-﻿using ReactChan.Domain.Interfaces;
+﻿using ReactBoard.Domain.Interfaces;
 
-namespace ReactChan.Domain.Common
+namespace ReactBoard.Domain.Common
 {
     public abstract class Entity<TEntity> : IEntity<TEntity>
         where TEntity : struct

@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Entities.Image;
+﻿using ReactBoard.Domain.Entities.Image;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ReactChan.Domain.Services.Image
+namespace ReactBoard.Domain.Services.Image
 {
     public class ImageDeletionService : IImageDeletionService
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ReactChan.Controllers.Auth
+namespace ReactBoard.Controllers.Auth
 {
     public class OidcConfigurationController : Controller
     {

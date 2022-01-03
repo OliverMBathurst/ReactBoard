@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Entities.Image;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.DAL;
+﻿using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.DAL;
 
-namespace ReactChan.Infrastructure.Repositories.Image
+namespace ReactBoard.Infrastructure.Repositories.Image
 {
     public class ImageMetadataRepository : EntityRepository<ImageMetadata, ImageKey>, IImageMetadataRepository
     {

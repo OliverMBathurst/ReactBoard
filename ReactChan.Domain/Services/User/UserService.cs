@@ -1,12 +1,12 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.User;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.User;
 using System;
-using _User = ReactChan.Domain.Entities.User.User;
+using _User = ReactBoard.Domain.Entities.User.User;
 
-namespace ReactChan.Domain.Services.User
+namespace ReactBoard.Domain.Services.User
 {
-    public class UserService : EntityService<_User, Guid>, IUserService
+    public class UserService : EntityService<_User, UserKey>, IUserService
     {
-        public UserService(IEntityRepository<_User, Guid> repository) : base(repository) { }
+        public UserService(IEntityRepository<_User, UserKey> repository) : base(repository) { }
     }
 }

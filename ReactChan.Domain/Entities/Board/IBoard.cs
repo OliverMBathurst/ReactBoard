@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Entities.Thread;
-using ReactChan.Domain.Interfaces;
+﻿using ReactBoard.Domain.Entities.Thread;
+using ReactBoard.Domain.Interfaces;
 using System.Collections.Generic;
 
-namespace ReactChan.Domain.Entities.Board
+namespace ReactBoard.Domain.Entities.Board
 {
     public interface IBoard : IEntity<BoardKey>
     {

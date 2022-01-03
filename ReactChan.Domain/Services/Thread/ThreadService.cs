@@ -1,12 +1,11 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Thread;
-using System;
-using _Thread = ReactChan.Domain.Entities.Thread.Thread;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Thread;
+using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
-namespace ReactChan.Domain.Services.Thread
+namespace ReactBoard.Domain.Services.Thread
 {
-    public class ThreadService : EntityService<_Thread, Guid>, IThreadService
+    public class ThreadService : EntityService<_Thread, ThreadKey>, IThreadService
     {
-        public ThreadService(IEntityRepository<_Thread, Guid> repository) : base(repository) { }
+        public ThreadService(IEntityRepository<_Thread, ThreadKey> repository) : base(repository) { }
     }
 }

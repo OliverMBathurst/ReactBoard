@@ -1,4 +1,4 @@
-﻿namespace ReactChan.Domain.Entities.Post
+﻿namespace ReactBoard.Domain.Entities.Post
 {
     public interface IPostKey
     {

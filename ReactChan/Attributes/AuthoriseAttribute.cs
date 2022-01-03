@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using ReactChan.Domain.Entities.User;
-using static ReactChan.Domain.Entities.User.Enums;
+using ReactBoard.Domain.Entities.User;
+using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactChan.Attributes
+namespace ReactBoard.Attributes
 {
     public class AuthoriseAttribute : AuthorizeAttribute
     {

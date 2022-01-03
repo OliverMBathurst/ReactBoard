@@ -1,6 +1,6 @@
-﻿using ReactChan.Domain.Entities.Post;
+﻿using ReactBoard.Domain.Entities.Post;
 
-namespace ReactChan.Models.Thread
+namespace ReactBoard.Models.Thread
 {
     public sealed class CreateThreadDto
     {

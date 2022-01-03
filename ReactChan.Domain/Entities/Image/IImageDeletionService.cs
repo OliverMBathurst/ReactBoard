@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ReactChan.Domain.Entities.Image
+namespace ReactBoard.Domain.Entities.Image
 {
     public interface IImageDeletionService
     {

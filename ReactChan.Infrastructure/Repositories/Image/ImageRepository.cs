@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ReactChan.Domain.Entities.Image;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.DAL;
+using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.DAL;
 using System.Threading.Tasks;
-using _Image = ReactChan.Domain.Entities.Image.Image;
+using _Image = ReactBoard.Domain.Entities.Image.Image;
 
-namespace ReactChan.Infrastructure.Repositories.Image
+namespace ReactBoard.Infrastructure.Repositories.Image
 {
     public class ImageRepository : EntityRepository<_Image, ImageKey>, IImageRepository
     {

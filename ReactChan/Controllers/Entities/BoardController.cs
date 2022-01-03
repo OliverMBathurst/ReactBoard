@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ReactChan.Attributes;
-using ReactChan.Controllers.Abstract;
-using ReactChan.Domain.Entities.Board;
-using ReactChan.Models.Board;
+using ReactBoard.Attributes;
+using ReactBoard.Controllers.Abstract;
+using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Models.Board;
 using System.Linq;
 using System.Threading.Tasks;
-using static ReactChan.Domain.Entities.User.Enums;
+using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactChan.Controllers.Entities
+namespace ReactBoard.Controllers.Entities
 {
     [ApiController]
     public class BoardController : EntityApiController<Board, BoardKey>

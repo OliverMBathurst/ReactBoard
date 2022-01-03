@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReactChan.Controllers.Abstract;
-using ReactChan.Domain.Entities.Post;
-using ReactChan.Models.Post;
+using ReactBoard.Controllers.Abstract;
+using ReactBoard.Domain.Entities.Post;
+using ReactBoard.Models.Post;
 using System.Threading.Tasks;
 
-namespace ReactChan.Controllers.Entities
+namespace ReactBoard.Controllers.Entities
 {
     [ApiController]
     public class PostController : EntityApiController<Post, PostKey>

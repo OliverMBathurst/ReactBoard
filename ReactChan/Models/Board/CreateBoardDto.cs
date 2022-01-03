@@ -1,7 +1,7 @@
-﻿using ReactChan.Domain.Entities.Board;
-using _Board = ReactChan.Domain.Entities.Board.Board;
+﻿using ReactBoard.Domain.Entities.Board;
+using _Board = ReactBoard.Domain.Entities.Board.Board;
 
-namespace ReactChan.Models.Board
+namespace ReactBoard.Models.Board
 {
     public sealed class CreateBoardDto
     {

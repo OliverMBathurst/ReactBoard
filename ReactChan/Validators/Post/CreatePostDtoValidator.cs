@@ -1,10 +1,10 @@
-﻿using ReactChan.Models.Post;
+﻿using ReactBoard.Models.Post;
 using FluentValidation;
-using ReactChan.Domain.Entities.Thread;
+using ReactBoard.Domain.Entities.Thread;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
-namespace ReactChan.Validators.Post
+namespace ReactBoard.Validators.Post
 {
     public class CreatePostDtoValidator : AbstractValidator<CreatePostDto>
     {
@@ -41,7 +41,7 @@ namespace ReactChan.Validators.Post
                     }
                     else
                     {
-                        var thread = await _threadService.GetByIdAsync(dto.ThreadId);
+                        var thread = await _threadService.GetByIdAsync(new ThreadKey(dto.ThreadId, dto.BoardId));
                         if (thread == null)
                         {
                             context.AddFailure(nameof(CreatePostDto.ThreadId), "Invalid thread identifier");

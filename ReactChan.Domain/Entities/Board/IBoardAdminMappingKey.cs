@@ -1,4 +1,4 @@
-﻿namespace ReactChan.Domain.Entities.Board
+﻿namespace ReactBoard.Domain.Entities.Board
 {
     public interface IBoardAdminMappingKey
     {

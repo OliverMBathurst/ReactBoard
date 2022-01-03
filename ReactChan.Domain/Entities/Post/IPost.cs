@@ -1,9 +1,9 @@
-﻿using ReactChan.Domain.Entities.Image;
-using ReactChan.Domain.Interfaces;
+﻿using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace ReactChan.Domain.Entities.Post
+namespace ReactBoard.Domain.Entities.Post
 {
     public interface IPost : IEntity<PostKey>
     {

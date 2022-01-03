@@ -1,6 +1,6 @@
-﻿using ReactChan.Domain.Interfaces;
+﻿using ReactBoard.Domain.Interfaces;
 
-namespace ReactChan.Domain.Entities.Board
+namespace ReactBoard.Domain.Entities.Board
 {
     public interface IBoardAdminMapping : IEntity<BoardAdminMappingKey>
     {

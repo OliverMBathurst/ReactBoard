@@ -1,4 +1,4 @@
-export const ApplicationName = 'ReactChan';
+export const ApplicationName = 'ReactBoard';
 
 export const QueryParameterNames = {
   ReturnUrl: 'returnUrl',

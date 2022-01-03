@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ReactChan.Domain.Common;
-using ReactChan.Domain.Interfaces;
-using ReactChan.Infrastructure.DAL;
+using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Interfaces;
+using ReactBoard.Infrastructure.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReactChan.Infrastructure.Common
+namespace ReactBoard.Infrastructure.Common
 {
     public abstract class EntityRepository<TEntity, TId> : IEntityRepository<TEntity, TId> 
         where TEntity : class, IEntity<TId>

@@ -1,10 +1,10 @@
-﻿using ReactChan.Domain.Interfaces;
+﻿using ReactBoard.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReactChan.Domain.Common
+namespace ReactBoard.Domain.Common
 {
     public interface IEntityRepository<TEntity, TId> 
         where TEntity : class, IEntity<TId>

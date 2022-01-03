@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactChan", "ReactChan.csproj", "{6D104EA8-110A-49C2-84E6-DC78B6E53277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard", "ReactBoard.csproj", "{6D104EA8-110A-49C2-84E6-DC78B6E53277}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactChan.Domain", "..\ReactChan.Domain\ReactChan.Domain.csproj", "{3B973AAA-87BB-40C0-901C-3442654C5CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.Domain", "..\ReactChan.Domain\ReactBoard.Domain.csproj", "{3B973AAA-87BB-40C0-901C-3442654C5CC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactChan.Infrastructure", "..\ReactChan.Infrastructure\ReactChan.Infrastructure.csproj", "{3C93883D-98C4-4298-BC83-3DAD8119B3EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.Infrastructure", "..\ReactChan.Infrastructure\ReactBoard.Infrastructure.csproj", "{3C93883D-98C4-4298-BC83-3DAD8119B3EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

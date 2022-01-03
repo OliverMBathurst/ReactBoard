@@ -1,6 +1,6 @@
-﻿using ReactChan.Domain.Common;
+﻿using ReactBoard.Domain.Common;
 
-namespace ReactChan.Domain.Entities.Image
+namespace ReactBoard.Domain.Entities.Image
 {
     public interface IImageService : IEntityService<Image, ImageKey>
     {

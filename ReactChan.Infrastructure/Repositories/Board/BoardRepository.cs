@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ReactChan.Domain.Entities.Board;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.DAL;
+using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.DAL;
 using System.Threading.Tasks;
-using _Board = ReactChan.Domain.Entities.Board.Board;
+using _Board = ReactBoard.Domain.Entities.Board.Board;
 
-namespace ReactChan.Infrastructure.Repositories.Board
+namespace ReactBoard.Infrastructure.Repositories.Board
 {
     public class BoardRepository : EntityRepository<_Board, BoardKey>, IBoardRepository
     {

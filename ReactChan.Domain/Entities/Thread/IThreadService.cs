@@ -1,9 +1,8 @@
-﻿using ReactChan.Domain.Common;
-using System;
+﻿using ReactBoard.Domain.Common;
 
-namespace ReactChan.Domain.Entities.Thread
+namespace ReactBoard.Domain.Entities.Thread
 {
-    public interface IThreadService : IEntityService<Thread, Guid>
+    public interface IThreadService : IEntityService<Thread, ThreadKey>
     {
     }
 }

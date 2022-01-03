@@ -1,9 +1,8 @@
-﻿using ReactChan.Domain.Common;
-using System;
+﻿using ReactBoard.Domain.Common;
 
-namespace ReactChan.Domain.Entities.User
+namespace ReactBoard.Domain.Entities.User
 {
-    public interface IUserService : IEntityService<User, Guid>
+    public interface IUserService : IEntityService<User, UserKey>
     {
     }
 }

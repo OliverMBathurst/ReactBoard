@@ -1,6 +1,6 @@
-﻿using ReactChan.Domain.Interfaces;
+﻿using ReactBoard.Domain.Interfaces;
 
-namespace ReactChan.Domain.Entities.Image
+namespace ReactBoard.Domain.Entities.Image
 {
     public interface IImageMetadata : IEntity<ImageKey>
     {

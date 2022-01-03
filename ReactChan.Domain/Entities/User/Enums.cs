@@ -1,4 +1,4 @@
-﻿namespace ReactChan.Domain.Entities.User
+﻿namespace ReactBoard.Domain.Entities.User
 {
     public class Enums
     {

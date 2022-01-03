@@ -1,23 +1,23 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Board;
-using ReactChan.Domain.Entities.Image;
-using ReactChan.Domain.Entities.Post;
-using ReactChan.Domain.Entities.Thread;
-using ReactChan.Domain.Entities.User;
-using ReactChan.Domain.Services.Board;
-using ReactChan.Domain.Services.Image;
-using ReactChan.Domain.Services.Post;
-using ReactChan.Domain.Services.Thread;
-using ReactChan.Domain.Services.User;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.Repositories.Board;
-using ReactChan.Infrastructure.Repositories.Image;
-using ReactChan.Infrastructure.Repositories.Post;
-using ReactChan.Infrastructure.Repositories.Thread;
-using ReactChan.Infrastructure.Repositories.User;
+using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Domain.Entities.Image;
+using ReactBoard.Domain.Entities.Post;
+using ReactBoard.Domain.Entities.Thread;
+using ReactBoard.Domain.Entities.User;
+using ReactBoard.Domain.Services.Board;
+using ReactBoard.Domain.Services.Image;
+using ReactBoard.Domain.Services.Post;
+using ReactBoard.Domain.Services.Thread;
+using ReactBoard.Domain.Services.User;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.Repositories.Board;
+using ReactBoard.Infrastructure.Repositories.Image;
+using ReactBoard.Infrastructure.Repositories.Post;
+using ReactBoard.Infrastructure.Repositories.Thread;
+using ReactBoard.Infrastructure.Repositories.User;
 
-namespace ReactChan
+namespace ReactBoard
 {
     public static class Extensions
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace ReactChan.Domain.Entities.Board
+namespace ReactBoard.Domain.Entities.Board
 {
     public readonly struct BoardKey : IBoardKey, IEquatable<BoardKey>
     {

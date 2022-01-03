@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Post;
-using _Post = ReactChan.Domain.Entities.Post.Post;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Post;
+using _Post = ReactBoard.Domain.Entities.Post.Post;
 
-namespace ReactChan.Domain.Services.Post
+namespace ReactBoard.Domain.Services.Post
 {
     public class PostService : EntityService<_Post, PostKey>, IPostService
     {

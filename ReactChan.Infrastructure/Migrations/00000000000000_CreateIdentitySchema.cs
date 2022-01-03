@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace ReactChan.Infrastructure.Migrations
+namespace ReactBoard.Infrastructure.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReactChan.Domain.Entities.Post
+namespace ReactBoard.Domain.Entities.Post
 {
     readonly public struct PostKey : IPostKey, IEquatable<PostKey>
     {

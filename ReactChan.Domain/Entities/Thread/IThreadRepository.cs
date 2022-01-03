@@ -1,10 +1,10 @@
-﻿using ReactChan.Domain.Common;
-using System;
-using _Thread = ReactChan.Domain.Entities.Thread.Thread;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Thread;
+using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
-namespace ReactChan.Domain.Entities.Image
+namespace ReactBoard.Domain.Entities.Image
 {
-    public interface IThreadRepository : IEntityRepository<_Thread, Guid>
+    public interface IThreadRepository : IEntityRepository<_Thread, ThreadKey>
     {
     }
 }

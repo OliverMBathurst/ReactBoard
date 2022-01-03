@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
-using ReactChan.Domain.Entities.Board;
-using ReactChan.Models.Board;
+using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Models.Board;
 
-namespace ReactChan.Validators.Board
+namespace ReactBoard.Validators.Board
 {
     public class CreateBoardDtoValidator : AbstractValidator<CreateBoardDto>
     {

@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Common;
-using ReactChan.Domain.Entities.Thread;
+﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Thread;
 using System.Collections.Generic;
 
-namespace ReactChan.Domain.Entities.Board
+namespace ReactBoard.Domain.Entities.Board
 {
     public class Board : Entity<BoardKey>, IBoard
     {

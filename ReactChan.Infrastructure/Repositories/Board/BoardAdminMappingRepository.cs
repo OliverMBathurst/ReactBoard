@@ -1,8 +1,8 @@
-﻿using ReactChan.Domain.Entities.Board;
-using ReactChan.Infrastructure.Common;
-using ReactChan.Infrastructure.DAL;
+﻿using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Infrastructure.Common;
+using ReactBoard.Infrastructure.DAL;
 
-namespace ReactChan.Infrastructure.Repositories.Board
+namespace ReactBoard.Infrastructure.Repositories.Board
 {
     public class BoardAdminMappingRepository : EntityRepository<BoardAdminMapping, BoardAdminMappingKey>, IBoardAdminMappingRepository
     {
