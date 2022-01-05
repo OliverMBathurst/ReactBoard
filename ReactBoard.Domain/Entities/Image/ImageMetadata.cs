@@ -2,9 +2,11 @@
 
 namespace ReactBoard.Domain.Entities.Image
 {
-    public class ImageMetadata : Entity<ImageKey>, IImageMetadata
+    public class ImageMetadata : Entity<int>, IImageMetadata
     {
-        public ImageMetadata(ImageKey key) : base(key) { }
+        public ImageMetadata() { }
+
+        public long ImageId { get; set; }
 
         public float Size { get; set; }
 

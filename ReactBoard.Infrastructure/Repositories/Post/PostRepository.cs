@@ -1,13 +1,21 @@
-﻿using ReactBoard.Domain.Entities.Image;
-using ReactBoard.Domain.Entities.Post;
+﻿using ReactBoard.Domain.Entities.Post;
 using ReactBoard.Infrastructure.Common;
 using ReactBoard.Infrastructure.DAL;
+using System.Collections.Generic;
+using System.Linq;
 using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Infrastructure.Repositories.Post
 {
-    public sealed class PostRepository : EntityRepository<_Post, PostKey>, IPostRepository
+    public sealed class PostRepository : EntityRepository<_Post, long>, IPostRepository
     {
-        public PostRepository(ApplicationDbContext context) : base(context) { }
+        public PostRepository(DatabaseContext context) : base(context) { }
+
+        public IEnumerable<IPost> GetAllPostsForThread(int boardId, int threadId)
+        {
+            return _context.Set<_Post>()
+                .Where(x => x.BoardId.Equals(boardId) && x.ThreadId.Equals(threadId))
+                .OrderByDescending(x => x.Time);
+        }
     }
 }

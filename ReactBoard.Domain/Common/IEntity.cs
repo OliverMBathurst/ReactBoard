@@ -1,7 +1,7 @@
-﻿namespace ReactBoard.Domain.Interfaces
+﻿namespace ReactBoard.Domain.Common
 {
-    public interface IEntity<TEntity> where TEntity : struct
+    public interface IEntity<TId>
     {
-        TEntity Id { get; set; }
+        TId Id { get; set; }
     }
 }

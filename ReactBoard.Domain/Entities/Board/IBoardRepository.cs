@@ -2,7 +2,7 @@
 
 namespace ReactBoard.Domain.Entities.Board
 {
-    public interface IBoardRepository : IEntityRepository<Board, BoardKey>
+    public interface IBoardRepository : IEntityRepository<Board, int>
     {
     }
 }

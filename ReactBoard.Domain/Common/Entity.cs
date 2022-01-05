@@ -1,12 +1,12 @@
-﻿using ReactBoard.Domain.Interfaces;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ReactBoard.Domain.Common
 {
-    public abstract class Entity<TEntity> : IEntity<TEntity>
-        where TEntity : struct
+    public abstract class Entity<TId> : IEntity<TId>
     {
-        protected Entity(TEntity id) => Id = id;
-
-        public virtual TEntity Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Key, Column(Order = 0)]
+        public TId Id { get; set; }
     }
 }

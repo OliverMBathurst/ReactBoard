@@ -1,12 +1,12 @@
 ﻿using ReactBoard.Domain.Common;
-using ReactBoard.Domain.Entities.Thread;
 using System.Collections.Generic;
+using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
 namespace ReactBoard.Domain.Entities.Board
 {
-    public class Board : Entity<BoardKey>, IBoard
+    public class Board : Entity<int>, IBoard
     {
-        public Board(BoardKey key) : base(key) { }
+        public Board() { }
 
         public string Name { get; set; }
 
@@ -18,6 +18,6 @@ namespace ReactBoard.Domain.Entities.Board
 
         public int MaxThreads { get; set; }
 
-        public IEnumerable<IThread> Threads { get; set; }
+        public List<_Thread> Threads { get; set; }
     }
 }

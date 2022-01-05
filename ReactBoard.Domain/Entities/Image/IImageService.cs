@@ -2,7 +2,7 @@
 
 namespace ReactBoard.Domain.Entities.Image
 {
-    public interface IImageService : IEntityService<Image, ImageKey>
+    public interface IImageService : IEntityService<Image, long>
     {
     }
 }

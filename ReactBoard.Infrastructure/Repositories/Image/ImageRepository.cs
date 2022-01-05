@@ -7,22 +7,21 @@ using _Image = ReactBoard.Domain.Entities.Image.Image;
 
 namespace ReactBoard.Infrastructure.Repositories.Image
 {
-    public sealed class ImageRepository : EntityRepository<_Image, ImageKey>, IImageRepository
+    public sealed class ImageRepository : EntityRepository<_Image, long>, IImageRepository
     {
         private readonly IImageDeletionService _imageDeletionService;
 
         public ImageRepository(
-            ApplicationDbContext context, 
+            DatabaseContext context, 
             IImageDeletionService imageDeletionService) : base(context)
         {
             _imageDeletionService = imageDeletionService;
         }
 
-        public override async Task DeleteAsync(ImageKey key) 
+        public override async Task DeleteAsync(long id)
         {
             var removal = await _context.Set<_Image>()
-                .Include(x => x.Metadata)
-                .FirstOrDefaultAsync(x => x.Id.Equals(key));
+                .FirstOrDefaultAsync(x => x.Id.Equals(id));
 
             if (removal != null) 
             {

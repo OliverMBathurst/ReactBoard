@@ -1,12 +1,11 @@
 ﻿using ReactBoard.Domain.Entities.User;
 using ReactBoard.Infrastructure.Common;
 using ReactBoard.Infrastructure.DAL;
-using System;
 
 namespace ReactBoard.Infrastructure.Repositories.User
 {
-    public sealed class UserRoleMappingRepository : EntityRepository<UserRoleMapping, Guid>, IUserRoleMappingRepository
+    public sealed class UserRoleMappingRepository : EntityRepository<UserRoleMapping, int>, IUserRoleMappingRepository
     {
-        public UserRoleMappingRepository(ApplicationDbContext context) : base(context) { }
+        public UserRoleMappingRepository(DatabaseContext context) : base(context) { }
     }
 }

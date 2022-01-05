@@ -1,5 +1,4 @@
-﻿using ReactBoard.Domain.Entities.Board;
-using _Board = ReactBoard.Domain.Entities.Board.Board;
+﻿using _Board = ReactBoard.Domain.Entities.Board.Board;
 
 namespace ReactBoard.Models.Board
 {
@@ -9,19 +8,19 @@ namespace ReactBoard.Models.Board
 
         public string Description { get; set; }
 
-        public string Suffix { get; set; }
+        public string BoardUrlName { get; set; }
 
         public bool IsWorkSafe { get; set; }
 
-        public int MaxThreads { get; set; }
+        public int MaxThreads { get; set; } = int.MaxValue;
 
         public static implicit operator _Board(CreateBoardDto dto) 
         {
-            return new _Board(new BoardKey(null))
+            return new _Board
             {
                 Name = dto.Name,
                 Description = dto.Description,
-                BoardUrlName = dto.Suffix,
+                BoardUrlName = dto.BoardUrlName,
                 IsWorkSafe = dto.IsWorkSafe,
                 MaxThreads = dto.MaxThreads
             };

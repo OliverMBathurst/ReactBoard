@@ -1,9 +1,11 @@
-﻿using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Domain.Common;
 
 namespace ReactBoard.Domain.Entities.Image
 {
-    public interface IImageMetadata : IEntity<ImageKey>
+    public interface IImageMetadata : IEntity<int>
     {
+        long ImageId { get; set; }
+
         float Size { get; set; }
 
         int Width { get; set; }

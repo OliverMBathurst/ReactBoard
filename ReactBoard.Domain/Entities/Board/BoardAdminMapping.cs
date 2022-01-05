@@ -2,8 +2,12 @@
 
 namespace ReactBoard.Domain.Entities.Board
 {
-    public class BoardAdminMapping : Entity<BoardAdminMappingKey>, IBoardAdminMapping
+    public class BoardAdminMapping : Entity<int>, IBoardAdminMapping
     {
-        public BoardAdminMapping(BoardAdminMappingKey key) : base(key) { }
+        public BoardAdminMapping() { }
+
+        public int UserId { get; set; }
+
+        public int BoardId { get; set; }
     }
 }

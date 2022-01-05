@@ -45,10 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\global\types\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\global\enums\user\enums.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\interfaces\board\interfaces.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\interfaces\common\interfaces.ts" />

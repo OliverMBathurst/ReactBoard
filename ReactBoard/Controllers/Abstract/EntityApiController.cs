@@ -1,14 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReactBoard.Domain.Common;
-using ReactBoard.Domain.Interfaces;
-using System;
 using System.Threading.Tasks;
 
 namespace ReactBoard.Controllers.Abstract
 {
-    public abstract class EntityApiController<TEntity, TId> : Controller
+    public abstract class EntityApiController<TEntity, TId> : Controller 
         where TEntity : class, IEntity<TId>
-        where TId : struct, IEquatable<TId>
     {
         protected readonly IEntityService<TEntity, TId> _service;
 

@@ -10,8 +10,7 @@ using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Controllers.Entities
 {
-    [ApiController]
-    public class BoardController : EntityApiController<Board, BoardKey>
+    public class BoardController : EntityApiController<Board, int>
     {
         public BoardController(IBoardService boardService) : base(boardService) { }
 
@@ -28,7 +27,7 @@ namespace ReactBoard.Controllers.Entities
         [HttpDelete]
         [Route("delete")]
         [Authorise(UserRole.Admin, UserRole.BoardAdmin)]
-        public async Task<IActionResult> DeleteBoard([FromBody] BoardKey key) 
+        public async Task<IActionResult> DeleteBoard([FromBody] int key) 
         {
             await _service.DeleteAsync(key);
 
@@ -53,9 +52,9 @@ namespace ReactBoard.Controllers.Entities
         [HttpGet]
         [AllowAnonymous]
         [Route("{boardId}/catalog")]
-        public async Task<IActionResult> GetBoardCatalog([FromBody] BoardKey key)
+        public async Task<IActionResult> GetBoardCatalog([FromRoute] int boardId)
         {
-            var board = await _service.GetByIdAsync(key);
+            var board = await _service.GetByIdAsync(boardId);
             if (board == null)
                 return NotFound();
 

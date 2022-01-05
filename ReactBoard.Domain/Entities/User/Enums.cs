@@ -3,10 +3,9 @@
     public class Enums
     {
         public enum UserRole 
-        { 
+        {
             Admin,
-            BoardAdmin,
-            Normal
+            BoardAdmin
         }
     }
 }

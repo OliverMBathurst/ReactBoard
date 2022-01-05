@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ReactBoard.Domain.Common;
-using ReactBoard.Domain.Interfaces;
 using ReactBoard.Infrastructure.DAL;
 using System;
 using System.Collections.Generic;
@@ -11,11 +10,10 @@ namespace ReactBoard.Infrastructure.Common
 {
     public abstract class EntityRepository<TEntity, TId> : IEntityRepository<TEntity, TId> 
         where TEntity : class, IEntity<TId>
-        where TId : struct, IEquatable<TId>
     {
-        protected readonly ApplicationDbContext _context;
+        protected readonly DatabaseContext _context;
 
-        protected EntityRepository(ApplicationDbContext context) 
+        protected EntityRepository(DatabaseContext context) 
         {
             _context = context;
         }

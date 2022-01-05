@@ -2,7 +2,7 @@
 
 namespace ReactBoard.Domain.Entities.Board
 {
-    public interface IBoardAdminMappingRepository : IEntityRepository<BoardAdminMapping, BoardAdminMappingKey>
+    public interface IBoardAdminMappingRepository : IEntityRepository<BoardAdminMapping, int>
     {
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ReactBoard.Domain.Entities.User
 {
-    public interface IUserService : IEntityService<User, UserKey>
+    public interface IUserService : IEntityService<User, int>
     {
     }
 }

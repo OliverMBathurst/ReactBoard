@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using ReactBoard.Domain.Entities.Board;
 using ReactBoard.Models.Thread;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ReactBoard.Validators.Thread
@@ -37,12 +36,12 @@ namespace ReactBoard.Validators.Thread
                     }
                     else
                     {
-                        var board = await _boardService.GetByIdAsync(new BoardKey(dto.BoardId));
+                        var board = await _boardService.GetByIdAsync(dto.BoardId);
                         if (board == null)
                         {
                             context.AddFailure(nameof(CreateThreadDto.BoardId), "Invalid Board identifier");
                         }
-                        else if (board.Threads.Count() + 1 > board.MaxThreads)
+                        else if (board.Threads.Count + 1 > board.MaxThreads)
                         {
                             context.AddFailure(nameof(CreateThreadDto), "Max number of threads reached");
                         }

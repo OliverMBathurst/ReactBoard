@@ -1,11 +1,9 @@
-﻿using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Domain.Common;
 
 namespace ReactBoard.Domain.Entities.Image
 {
-    public interface IImage : IEntity<ImageKey>
+    public interface IImage : IEntity<long>
     {
         string Location { get; set; }
-
-        IImageMetadata Metadata { get; set; }
     }
 }

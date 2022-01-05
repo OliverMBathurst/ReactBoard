@@ -1,9 +1,9 @@
-﻿using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Domain.Common;
 using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Domain.Entities.User
 {
-    public interface IUser : IEntity<UserKey>
+    public interface IUser : IEntity<int>
     {
         string UserName { get; set; }
 

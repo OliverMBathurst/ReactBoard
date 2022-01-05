@@ -4,9 +4,9 @@ using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Domain.Entities.User
 {
-    public class User : Entity<UserKey>, IUser
+    public class User : Entity<int>, IUser
     {
-        public User(UserKey key) : base(key) { }
+        public User() { }
 
         public string UserName { get; set; }
 

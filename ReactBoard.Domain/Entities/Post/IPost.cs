@@ -1,18 +1,21 @@
-﻿using ReactBoard.Domain.Entities.Image;
-using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Domain.Common;
 using System;
 using System.Collections.Generic;
 
 namespace ReactBoard.Domain.Entities.Post
 {
-    public interface IPost : IEntity<PostKey>
+    public interface IPost : IEntity<long>
     {
-        DateTime Time { get; set; }
+        long ThreadId { get; set; }
 
-        IImage Image { get; set; }
+        int BoardId { get; set; }
+
+        long? ImageId { get; set; }
+
+        DateTime Time { get; set; }
 
         string Text { get; set; }
 
-        IEnumerable<IPost> Replies { get; set; }
+        List<Post> Replies { get; set; }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using ReactBoard.Domain.Entities.Image;
-using ReactBoard.Domain.Entities.Post;
 using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Models.Post
@@ -12,14 +11,16 @@ namespace ReactBoard.Models.Post
 
         public int BoardId { get; set; }
 
-        public IImage Image { get; set; }
+        public long? ImageId { get; set; }
 
         public static implicit operator _Post(CreatePostDto postDto)
         {
-            return new _Post(new PostKey(null, postDto.ThreadId, postDto.BoardId))
+            return new _Post
             {
+                ThreadId = postDto.ThreadId,
+                BoardId = postDto.BoardId,
                 Text = postDto.Text,
-                Image = postDto.Image
+                ImageId = postDto.ImageId
             };
         }
     }

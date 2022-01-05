@@ -7,11 +7,11 @@ using _Board = ReactBoard.Domain.Entities.Board.Board;
 
 namespace ReactBoard.Infrastructure.Repositories.Board
 {
-    public sealed class BoardRepository : EntityRepository<_Board, BoardKey>, IBoardRepository
+    public sealed class BoardRepository : EntityRepository<_Board, int>, IBoardRepository
     {
-        public BoardRepository(ApplicationDbContext context) : base(context) { }
+        public BoardRepository(DatabaseContext context) : base(context) { }
 
-        public override async Task DeleteAsync(BoardKey id)
+        public override async Task DeleteAsync(int id)
         {
             var removal = await _context.Set<_Board>()
                 .Include(x => x.Threads)

@@ -1,10 +1,10 @@
-﻿using ReactBoard.Domain.Entities.Thread;
-using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Domain.Common;
 using System.Collections.Generic;
+using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
 namespace ReactBoard.Domain.Entities.Board
 {
-    public interface IBoard : IEntity<BoardKey>
+    public interface IBoard : IEntity<int>
     {
         string Name { get; set; }
 
@@ -16,6 +16,6 @@ namespace ReactBoard.Domain.Entities.Board
 
         int MaxThreads { get; set; }
 
-        IEnumerable<IThread> Threads { get; set; }
+        List<_Thread> Threads { get; set; }
     }
 }

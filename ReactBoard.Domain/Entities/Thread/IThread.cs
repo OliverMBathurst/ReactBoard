@@ -1,12 +1,14 @@
-﻿using ReactBoard.Domain.Entities.Post;
-using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Domain.Common;
 using System.Collections.Generic;
+using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Domain.Entities.Thread
 {
-    public interface IThread : IEntity<ThreadKey>
+    public interface IThread : IEntity<long>
     {
-        IEnumerable<IPost> Posts { get; set; }
+        int BoardId { get; set; }
+
+        List<_Post> Posts { get; set; }
 
         bool Locked { get; set; }
     }

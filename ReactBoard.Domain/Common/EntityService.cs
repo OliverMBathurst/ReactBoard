@@ -1,5 +1,4 @@
-﻿using ReactBoard.Domain.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +7,6 @@ namespace ReactBoard.Domain.Common
 {
     public abstract class EntityService<TEntity, TId> : IEntityService<TEntity, TId> 
         where TEntity : class, IEntity<TId>
-        where TId : struct, IEquatable<TId>
     {
         protected readonly IEntityRepository<TEntity, TId> _repository;
 

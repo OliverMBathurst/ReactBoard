@@ -1,12 +1,11 @@
-﻿using ReactBoard.Domain.Interfaces;
-using System;
+﻿using ReactBoard.Domain.Common;
 using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Domain.Entities.User
 {
-    public interface IUserRoleMapping : IEntity<Guid>
+    public interface IUserRoleMapping : IEntity<int>
     {
-        Guid UserId { get; set; }
+        int UserId { get; set; }
 
         UserRole Role { get; set; }
     }

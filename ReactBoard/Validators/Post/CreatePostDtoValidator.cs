@@ -41,7 +41,7 @@ namespace ReactBoard.Validators.Post
                     }
                     else
                     {
-                        var thread = await _threadService.GetByIdAsync(new ThreadKey(dto.ThreadId, dto.BoardId));
+                        var thread = await _threadService.GetThread(dto.BoardId, dto.ThreadId);
                         if (thread == null)
                         {
                             context.AddFailure(nameof(CreatePostDto.ThreadId), "Invalid thread identifier");

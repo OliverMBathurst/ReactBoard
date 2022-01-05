@@ -25,19 +25,15 @@ namespace ReactBoard
         {
             services.AddDependencies();
 
-            services.AddOptions<AppSettings>()
-                .Bind(Configuration.GetSection(nameof(AppSettings)))
-                .ValidateDataAnnotations();
+            services.Configure<AppSettings>(Configuration);
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"), 
+                    b => b.MigrationsAssembly("ReactBoard.Infrastructure")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
-            services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddEntityFrameworkStores<DatabaseContext>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();

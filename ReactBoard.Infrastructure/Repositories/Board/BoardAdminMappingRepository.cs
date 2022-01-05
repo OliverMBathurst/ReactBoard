@@ -4,8 +4,8 @@ using ReactBoard.Infrastructure.DAL;
 
 namespace ReactBoard.Infrastructure.Repositories.Board
 {
-    public sealed class BoardAdminMappingRepository : EntityRepository<BoardAdminMapping, BoardAdminMappingKey>, IBoardAdminMappingRepository
+    public sealed class BoardAdminMappingRepository : EntityRepository<BoardAdminMapping, int>, IBoardAdminMappingRepository
     {
-        public BoardAdminMappingRepository(ApplicationDbContext context) : base(context) { }
+        public BoardAdminMappingRepository(DatabaseContext context) : base(context) { }
     }
 }

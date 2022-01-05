@@ -1,17 +1,16 @@
 ﻿using ReactBoard.Domain.Common;
-using ReactBoard.Domain.Entities.Post;
-using System;
 using System.Collections.Generic;
+using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Domain.Entities.Thread
 {
-    public class Thread : Entity<ThreadKey>, IThread
+    public class Thread : Entity<long>, IThread
     {
-        public Thread(ThreadKey key) : base(key) { }
+        public Thread() { }
 
-        public Guid BoardId { get; set; }
-        
-        public IEnumerable<IPost> Posts { get; set; }
+        public int BoardId { get; set; }
+
+        public List<_Post> Posts { get; set; }
 
         public bool Locked { get; set; }
     }
