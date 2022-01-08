@@ -7,11 +7,10 @@ import { IBoard } from '../../global/interfaces/board/interfaces'
 import { ICategory } from '../../global/interfaces/category/interfaces'
 import BoardService from '../../services/board/boardService'
 import CategoriesService from '../../services/category/categoryService'
-import CreateBoardPanel from './components/createBoard/createBoard'
+import CreateBoardPanel from './components/createBoardPanel/createBoardPanel'
 import './styles.scss'
 
-const boardService = new BoardService()
-const categoriesService = new CategoriesService()
+const boardService = new BoardService(), categoriesService = new CategoriesService()
 
 const Administration = () => {
     const [redirectToHome, setRedirectToHome] = useState<boolean>(false)
@@ -26,10 +25,12 @@ const Administration = () => {
             }
         })
 
-        return () => mounted = false
+        return () => {
+            mounted = false
+        }
     }, [])
 
-    const onBoardCreate = async (board: IBoard): Promise<void> => boardService.createBoard(board)
+    const onBoardCreate = async (board: IBoard) => boardService.createBoard(board)
 
     if (redirectToHome) {
         return <Redirect to={HomeRoute} />
@@ -41,11 +42,12 @@ const Administration = () => {
             <Panel dismissable={false} title='Create Categories'>
 
             </Panel>
-            <CreateBoardPanel
-                categories={categories}
-                onBoardCreate={onBoardCreate}
-            />
-
+            <Panel dismissable={false} title='Create Boards'>
+                <CreateBoardPanel
+                    categories={categories}
+                    onBoardCreate={onBoardCreate}
+                />
+            </Panel>
             <Panel dismissable={false} title='Boards Overview'>
 
             </Panel>

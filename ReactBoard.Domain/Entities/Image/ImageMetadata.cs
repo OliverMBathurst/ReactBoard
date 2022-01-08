@@ -6,6 +6,8 @@ namespace ReactBoard.Domain.Entities.Image
     {
         public ImageMetadata() { }
 
+        public long ImageId { get; set; }
+
         public float Size { get; set; }
 
         public int Width { get; set; }

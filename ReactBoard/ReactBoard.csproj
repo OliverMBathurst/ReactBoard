@@ -33,7 +33,7 @@
     <None Remove="ClientApp\src\components\administration\administration.tsx" />
     <None Remove="ClientApp\src\components\administration\components\boardRow\boardRow.tsx" />
     <None Remove="ClientApp\src\components\administration\components\categorySelect\categorySelect.tsx" />
-    <None Remove="ClientApp\src\components\administration\components\createBoard\createBoard.tsx" />
+    <None Remove="ClientApp\src\components\administration\components\createBoardPanel\createBoardPanel.tsx" />
     <None Remove="ClientApp\src\components\administration\components\input\input.tsx" />
     <None Remove="ClientApp\src\global\constants\routes.ts" />
     <None Remove="ClientApp\src\global\enums\user\enums.ts" />
@@ -54,7 +54,7 @@
     <TypeScriptCompile Include="ClientApp\src\components\administration\administration.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\components\boardRow\boardRow.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\components\categorySelect\categorySelect.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\components\administration\components\createBoard\createBoard.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\administration\components\createBoardPanel\createBoardPanel.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\components\input\input.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\constants\routes.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\enums\user\enums.ts" />

@@ -10,8 +10,8 @@ namespace ReactBoard.Domain.Entities.Thread
 
         public int BoardId { get; set; }
 
-        public List<_Post> Posts { get; set; }
-
         public bool Locked { get; set; }
+
+        public virtual List<_Post> Posts { get; set; }
     }
 }

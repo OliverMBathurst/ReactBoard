@@ -21,11 +21,11 @@ const CategorySelect = (props: ICategorySelect) => {
     }
 
     return (
-        <select className="category-select" onChange={(e: React.FormEvent<HTMLSelectElement>) => onCategoryChangedInternal(e)}>
-            <option key={-1} defaultValue>Please select category</option>
+        <select defaultValue={-1} className="category-select" onChange={(e: React.FormEvent<HTMLSelectElement>) => onCategoryChangedInternal(e)}>
+            <option key={-1}>Please select category</option>
             {categories.map(c => {
                 return (
-                    <option key={`${c.id}-${c.name}`} value={c.id}>
+                    <option key={`${c.id}-${c.name}`} value={c.id || undefined}>
                         {c.name}
                     </option>)
             })}

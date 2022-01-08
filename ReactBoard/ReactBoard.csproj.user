@@ -15,7 +15,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\administration\components\createBoard\createBoard.tsx">
+    <TypeScriptCompile Update="ClientApp\src\components\administration\components\createBoardPanel\createBoardPanel.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

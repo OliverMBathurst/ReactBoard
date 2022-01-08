@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
         <div className="home-panel">
-            <SiteIcon onClick={() => location.reload()} />
+            <SiteIcon onClick={() => window.location.reload()} />
             {!descriptionDismissed &&
                 <Panel dismissable title={SITE_TITLE} onClose={() => setDescriptionDismissed(true)}>
                     <span>{SITE_DESCRIPTION}</span>

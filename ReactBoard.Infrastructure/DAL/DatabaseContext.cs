@@ -45,21 +45,24 @@ namespace ReactBoard.Infrastructure.DAL
             modelBuilder.Entity<User>().HasKey(x => x.Id);
             modelBuilder.Entity<UserRoleMapping>().HasKey(x => x.Id);
             modelBuilder.Entity<Board>().HasKey(x => x.Id);
-            modelBuilder.Entity<BoardAdminMapping>().HasKey(x => new { x.Id, x.UserId });
-            modelBuilder.Entity<Thread>().HasKey(x => new { x.Id, x.BoardId });
-            modelBuilder.Entity<Post>().HasKey(x => new { x.Id, x.ThreadId, x.BoardId });
+            modelBuilder.Entity<BoardAdminMapping>().HasKey(x => x.Id);
+            modelBuilder.Entity<Thread>().HasKey(x => x.Id);
+            modelBuilder.Entity<Post>().HasKey(x => x.Id);
             modelBuilder.Entity<Image>().HasKey(x => x.Id);
+            modelBuilder.Entity<ImageMetadata>().HasKey(x => x.Id);
             modelBuilder.Entity<Category>().HasKey(x => x.Id);
 
             //Delete behaviour
             modelBuilder.Entity<Image>()
                 .HasOne<ImageMetadata>()
                 .WithOne()
-                .HasForeignKey<ImageMetadata>(x => x.Id);
+                .HasForeignKey<ImageMetadata>(x => x.ImageId)
+                .OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<User>()
                 .HasOne<UserRoleMapping>()
                 .WithOne()
-                .HasForeignKey<UserRoleMapping>(x => x.Id);
+                .HasForeignKey<UserRoleMapping>(x => x.UserId)
+                .OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<BoardAdminMapping>()
                 .HasOne<User>()
                 .WithOne()
@@ -67,16 +70,21 @@ namespace ReactBoard.Infrastructure.DAL
             modelBuilder.Entity<BoardAdminMapping>()
                 .HasOne<Board>()
                 .WithOne()
-                .HasForeignKey<BoardAdminMapping>(x => x.Id);
+                .HasForeignKey<BoardAdminMapping>(x => x.BoardId);
             modelBuilder.Entity<User>()
                 .HasMany<BoardAdminMapping>()
                 .WithOne()
-                .HasForeignKey(x => x.UserId);
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Post>()
                 .HasOne<Image>()
                 .WithOne()
-                .HasForeignKey<Post>(x => x.ImageId);
-
+                .HasForeignKey<Post>(x => x.ImageId)
+                .OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Post>()
+                .HasOne<Board>()
+                .WithOne()
+                .HasForeignKey<Post>(x => x.BoardId);
 
             //Auto-generation of PKs
             modelBuilder.Entity<User>().Property(x => x.Id).UseIdentityColumn().ValueGeneratedOnAdd()

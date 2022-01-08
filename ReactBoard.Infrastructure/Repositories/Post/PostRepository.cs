@@ -16,14 +16,14 @@ namespace ReactBoard.Infrastructure.Repositories.Post
         public IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId)
         {
             return _context.Set<_Post>()
-                .Where(x => x.Board.Id.Equals(boardId) && x.Thread.Id.Equals(threadId))
+                .Where(x => x.BoardId.Equals(boardId) && x.ThreadId.Equals(threadId))
                 .OrderByDescending(x => x.Time);
         }
 
         public async Task<IPost> GetPostAsync(long postId, long threadId, int boardId)
         {
             return await _context.Set<_Post>()
-                .FirstOrDefaultAsync(x => x.Id.Equals(postId) && x.Thread.Id.Equals(threadId) && x.Board.Id.Equals(boardId));
+                .FirstOrDefaultAsync(x => x.Id.Equals(postId) && x.ThreadId.Equals(threadId) && x.BoardId.Equals(boardId));
         }
 
         public async Task<long> GetStatisticAsync() 

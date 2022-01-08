@@ -3,7 +3,7 @@ import { HttpStatusCodes } from "../../global/enums/api/enums"
 import { ICategory, ICategoryService } from "../../global/interfaces/category/interfaces"
 
 class CategoriesService implements ICategoryService {
-    private endpoint: string = 'categories'
+    private endpoint: string = 'category'
 
     getAll = (): Promise<ICategory[]> => {
         return new Promise<ICategory[]>((resolve, reject) => {
