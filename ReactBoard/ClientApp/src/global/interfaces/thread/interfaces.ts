@@ -1,11 +1,9 @@
 ﻿import { IPost } from "../post/interfaces";
+import { IEntity } from "../common/interfaces";
 
-export interface IThreadKey {
-    threadId: number | null
+export interface IThread extends IEntity<number | null> {
+    locked: boolean
     boardId: number
-}
-
-export interface IThread extends IThreadKey {
     posts: IPost[]
 }
 
@@ -15,6 +13,6 @@ export interface INewThread {
 }
 
 export interface IThreadService {
-    getThread: (threadKey: IThreadKey) => Promise<IThread>
-    deleteThread: (threadKey: IThreadKey) => Promise<void>
+    getThread: (threadId: number, boardId: number) => Promise<IThread>
+    deleteThread: (threadId: number, boardId: number) => Promise<void>
 }

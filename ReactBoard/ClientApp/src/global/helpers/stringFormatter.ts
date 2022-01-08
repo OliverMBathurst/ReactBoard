@@ -1,4 +1,4 @@
-﻿export const formatString = (str: string, ...args: string[]): string => {
+﻿export const formatString = (str: string, ...args: any[]): string => {
     var openBCount = 0;
     for (var i of str) {
         if (i === '{') {

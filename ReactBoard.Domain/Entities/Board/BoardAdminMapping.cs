@@ -7,7 +7,5 @@ namespace ReactBoard.Domain.Entities.Board
         public BoardAdminMapping() { }
 
         public int UserId { get; set; }
-
-        public int BoardId { get; set; }
     }
 }

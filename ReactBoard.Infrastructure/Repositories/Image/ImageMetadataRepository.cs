@@ -4,7 +4,7 @@ using ReactBoard.Infrastructure.DAL;
 
 namespace ReactBoard.Infrastructure.Repositories.Image
 {
-    public sealed class ImageMetadataRepository : EntityRepository<ImageMetadata, int>, IImageMetadataRepository
+    public sealed class ImageMetadataRepository : EntityRepository<ImageMetadata, long>, IImageMetadataRepository
     {
         public ImageMetadataRepository(DatabaseContext context) : base(context) { }
     }

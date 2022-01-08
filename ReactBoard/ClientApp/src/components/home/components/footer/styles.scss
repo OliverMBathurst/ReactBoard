@@ -1,0 +1,23 @@
+﻿.footer {
+    font-size: 11px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    a {
+        text-decoration: none;
+    }
+
+    width: 100%;
+    margin: auto;
+    text-align: center;
+
+    &-link {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    &-copyright-notice {
+        display: block;
+        padding-top: 20px;
+    }
+}

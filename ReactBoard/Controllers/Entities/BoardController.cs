@@ -10,12 +10,12 @@ using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Controllers.Entities
 {
+    [Route("[controller]")]
     public class BoardController : EntityApiController<Board, int>
     {
         public BoardController(IBoardService boardService) : base(boardService) { }
 
         [HttpPost]
-        [Route("create")]
         [Authorise(UserRole.Admin)]
         public async Task<IActionResult> CreateNewBoard([FromBody] CreateBoardDto dto)
         {
@@ -25,9 +25,9 @@ namespace ReactBoard.Controllers.Entities
         }
 
         [HttpDelete]
-        [Route("delete")]
+        [Route("{id}/delete")]
         [Authorise(UserRole.Admin, UserRole.BoardAdmin)]
-        public async Task<IActionResult> DeleteBoard([FromBody] int key) 
+        public async Task<IActionResult> DeleteBoard([FromRoute] int key) 
         {
             await _service.DeleteAsync(key);
 

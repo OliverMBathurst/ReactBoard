@@ -1,6 +1,7 @@
 ﻿using ReactBoard.Domain.Common;
 using ReactBoard.Domain.Entities.Post;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Domain.Services.Post
@@ -14,9 +15,19 @@ namespace ReactBoard.Domain.Services.Post
             _postRepository = postRepository;
         }
 
-        public IEnumerable<IPost> GetAllPostsForThread(int boardId, int threadId)
+        public async Task<IPost> GetPostAsync(long postId, long threadId, int boardId) 
         {
-            return _postRepository.GetAllPostsForThread(boardId, threadId);
+            return await _postRepository.GetPostAsync(postId, threadId, boardId);
+        }
+
+        public IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId)
+        {
+            return _postRepository.GetAllPostsForThread(threadId, boardId);
+        }
+
+        public async Task<long> GetStatisticAsync()
+        {
+            return await _postRepository.GetStatisticAsync();
         }
     }
 }

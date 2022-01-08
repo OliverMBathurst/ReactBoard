@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReactBoard.Domain.Common;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ReactBoard.Controllers.Abstract
@@ -18,7 +19,7 @@ namespace ReactBoard.Controllers.Abstract
         [Route("all")]
         public virtual IActionResult GetAllEntities()
         {
-            return Ok(_service.GetAll());
+            return Ok(_service.GetAll().ToList());
         }
 
         [HttpGet]

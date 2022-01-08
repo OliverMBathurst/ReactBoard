@@ -1,10 +1,13 @@
 ﻿using ReactBoard.Domain.Common;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReactBoard.Domain.Entities.Post
 {
-    public interface IPostService : IEntityService<Post, long>
+    public interface IPostService : IEntityService<Post, long>, IHasStatistic<long>
     {
-        IEnumerable<IPost> GetAllPostsForThread(int boardId, int threadId);
+        Task<IPost> GetPostAsync(long postId, long threadId, int boardId);
+
+        IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ReactBoard.Domain.Entities.User
 {
-    public interface IUserService : IEntityService<User, int>
+    public interface IUserService : IEntityService<User, int>, IHasStatistic<int>
     {
     }
 }

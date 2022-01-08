@@ -11,13 +11,13 @@ namespace ReactBoard.Infrastructure.Repositories.Thread
     {
         public ThreadRepository(DatabaseContext context) : base(context) { }
 
-        public async Task<IThread> GetThread(int boardId, long threadId)
+        public async Task<IThread> GetThreadAsync(long threadId, int boardId)
         {
             return await _context.Set<_Thread>()
                 .FirstOrDefaultAsync(x => x.BoardId.Equals(boardId) && x.Id.Equals(threadId));
         }
 
-        public async Task DeleteThread(int boardId, long threadId) 
+        public async Task DeleteThreadAsync(long threadId, int boardId) 
         {
             var thread = await _context.Set<_Thread>()
                 .FirstOrDefaultAsync(x => x.BoardId.Equals(boardId) && x.Id.Equals(threadId));

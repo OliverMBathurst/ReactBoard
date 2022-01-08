@@ -1,22 +1,20 @@
 import React from 'react';
 import { Route } from 'react-router';
+import { Switch } from 'react-router-dom';
+import Administration from './components/administration/administration';
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
 import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
-import AuthorizeRoute from './components/api-authorization/AuthorizeRoute';
-import { Counter } from './components/Counter';
-import { FetchData } from './components/FetchData';
-import { Home } from './components/Home';
-import { Layout } from './components/Layout';
-import './custom.css';
+import Home from './components/home/home';
+import { AdminRoute, HomeRoute } from './global/constants/routes';
+import './styles.scss';
 
 const App = () => {
     return (
-        <Layout>
-            <Route exact path='/' component={Home} />
-            <Route path='/counter' component={Counter} />
-            <AuthorizeRoute path='/fetch-data' component={FetchData} />
+        <Switch>
+            <Route exact path={HomeRoute} component={Home} />
+            <Route path={AdminRoute} component={Administration} />
             <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
-        </Layout>
+        </Switch>
     )
 }
 

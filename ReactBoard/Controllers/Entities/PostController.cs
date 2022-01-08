@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.Controllers.Entities
 {
+    [Route("[controller]")]
     public class PostController : EntityApiController<Post, long>
     {
         private readonly IPostService _postService;
@@ -14,6 +15,13 @@ namespace ReactBoard.Controllers.Entities
         public PostController(IPostService postService) : base(postService) 
         {
             _postService = postService;
+        }
+
+        [HttpGet]
+        [Route("thread")]
+        public IActionResult GetAllPostsForThread([FromQuery] long threadId, [FromQuery] int boardId) 
+        {
+            return Ok(_postService.GetAllPostsForThread(threadId, boardId).ToList());
         }
 
         [HttpPost]
@@ -26,9 +34,13 @@ namespace ReactBoard.Controllers.Entities
         }
 
         [HttpGet]
-        public IActionResult GetAllPostsForThread([FromQuery] int boardId, [FromQuery] int threadId)
+        public virtual async Task<IActionResult> GetPost([FromQuery] long postId, [FromQuery] long threadId, [FromQuery] int boardId)
         {
-            return Ok(_postService.GetAllPostsForThread(boardId, threadId).ToList());
+            var entity = await _postService.GetPostAsync(postId, threadId, boardId);
+            if (entity == null)
+                return NotFound();
+
+            return Ok(entity);
         }
     }
 }

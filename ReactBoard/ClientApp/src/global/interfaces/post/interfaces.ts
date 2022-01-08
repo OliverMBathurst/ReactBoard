@@ -1,13 +1,9 @@
-﻿import { IImage } from "../image/interfaces";
-import { IThreadKey } from "../thread/interfaces";
+﻿import { IEntity } from "../common/interfaces";
+import { IImage } from "../image/interfaces";
 
-export interface IPostKey {
-    postId: number | null
+export interface IPost extends IEntity<number | null> {
     threadId: string
     boardId: string
-}
-
-export interface IPost extends IPostKey {
     time: Date
     text: string
     image?: IImage
@@ -22,7 +18,7 @@ export interface INewPost {
 }
 
 export interface IPostService {
-    getPost: (postKey: IPostKey) => Promise<IPost>
+    getPost: (postId: number, threadId: number, boardId: number ) => Promise<IPost>
     submitPost: (post: IPost) => Promise<void>
-    getAllThreadPosts: (threadKey: IThreadKey) => Promise<IPost[]>
+    getAllThreadPosts: (threadId: number, boardId: number) => Promise<IPost[]>
 }

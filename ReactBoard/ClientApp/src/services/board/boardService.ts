@@ -4,8 +4,9 @@ import { formatString } from "../../global/helpers/stringFormatter";
 import { IBoard, IBoardService } from "../../global/interfaces/board/interfaces";
 
 class BoardService implements IBoardService {
-    private allBoardsRoute: string = 'board/all'
-    private boardByUrlNameRoute: string = 'board/{0}'
+    private endpoint: string = 'board'
+    private allBoardsRoute: string = `${this.endpoint}/all`
+    private boardByUrlNameRoute: string = `${this.endpoint}/{0}`
 
     getAllBoards = (): Promise<IBoard[]> => {
         return new Promise<IBoard[]>((resolve, reject) => {
@@ -28,6 +29,19 @@ class BoardService implements IBoardService {
 
                 reject()
             })
+        })
+    }
+
+    createBoard = (board: IBoard): Promise<void> => {
+        return new Promise<void>((resolve, reject) => {
+            axios.post<IBoard>(this.endpoint, { data: board }).then(res => {
+                if (res.status === HttpStatusCodes.Status200OK) {
+                    resolve()
+                }
+
+                reject()
+            })
+
         })
     }
 }

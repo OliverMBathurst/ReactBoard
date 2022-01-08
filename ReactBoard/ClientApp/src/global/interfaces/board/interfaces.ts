@@ -1,15 +1,13 @@
-﻿import { IEntity } from "../common/interfaces"
+﻿import { ICategory } from "../category/interfaces"
+import { IEntity } from "../common/interfaces"
 import { IThread } from "../thread/interfaces"
 
-export interface IBoardKey {
-    boardId: number | null
-}
-
-export interface IBoard extends IBoardKey {
+export interface IBoard extends IEntity<number | null> {
     name: string
     description: string
-    suffix: string
-    threads: IThread[]
+    category: ICategory
+    boardUrlName: string
+    threads?: IThread[]
 }
 
 export interface IBoardAdminMapping extends IEntity<string> {
@@ -28,4 +26,5 @@ export interface INewBoard {
 export interface IBoardService {
     getAllBoards: () => Promise<IBoard[]>
     getBoardByUrlName: (boardUrlName: string) => Promise<IBoard>
+    createBoard: (board: IBoard) => Promise<void>
 }

@@ -14,14 +14,14 @@ namespace ReactBoard.Domain.Services.Thread
             _threadRepository = threadRepository;
         }
 
-        public async Task DeleteThread(int boardId, long threadId)
+        public async Task DeleteThreadAsync(long threadId, int boardId)
         {
-            await _threadRepository.DeleteThread(boardId, threadId);
+            await _threadRepository.DeleteThreadAsync(threadId, boardId);
         }
 
-        public async Task<IThread> GetThread(int boardId, long threadId)
+        public async Task<IThread> GetThreadAsync(long threadId, int boardId)
         {
-            return await _threadRepository.GetThread(boardId, threadId);
+            return await _threadRepository.GetThreadAsync(threadId, boardId);
         }
     }
 }

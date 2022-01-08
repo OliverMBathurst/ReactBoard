@@ -7,6 +7,7 @@ using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Controllers.Entities
 {
+    [Route("[controller]")]
     public class UserController : EntityApiController<User, int>
     {
         public UserController(IUserService userService) : base(userService) { }

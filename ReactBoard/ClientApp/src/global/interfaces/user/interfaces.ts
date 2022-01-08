@@ -1,14 +1,11 @@
 ﻿import { UserRole } from "../../enums/user/enums";
+import { IEntity } from "../common/interfaces";
 
-export interface IUserKey {
-    userId: number | null
-}
-
-export interface IUser extends IUserKey {
+export interface IUser extends IEntity<number | null> {
     name: string
     emailAddress: string
 }
 
-export interface IUserRoleMapping extends IUserKey {
+export interface IUserRoleMapping extends IEntity<number | null> {
     role: UserRole
 }

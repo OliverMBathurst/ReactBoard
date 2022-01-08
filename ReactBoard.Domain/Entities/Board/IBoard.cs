@@ -12,6 +12,8 @@ namespace ReactBoard.Domain.Entities.Board
 
         string Description { get; set; }
 
+        int CategoryId { get; set; }
+
         bool IsWorkSafe { get; set; }
 
         int MaxThreads { get; set; }

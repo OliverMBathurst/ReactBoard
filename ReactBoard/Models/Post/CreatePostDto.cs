@@ -1,5 +1,4 @@
-﻿using ReactBoard.Domain.Entities.Image;
-using _Post = ReactBoard.Domain.Entities.Post.Post;
+﻿using _Post = ReactBoard.Domain.Entities.Post.Post;
 
 namespace ReactBoard.Models.Post
 {

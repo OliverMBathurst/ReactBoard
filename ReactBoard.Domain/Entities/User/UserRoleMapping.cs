@@ -7,8 +7,6 @@ namespace ReactBoard.Domain.Entities.User
     {
         public UserRoleMapping() { }
 
-        public int UserId { get; set; }
-
         public UserRole Role { get; set; }
     }
 }

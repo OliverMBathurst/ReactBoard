@@ -5,8 +5,8 @@ namespace ReactBoard.Domain.Entities.Thread
 {
     public interface IThreadService : IEntityService<Thread, long>
     {
-        Task<IThread> GetThread(int boardId, long threadId);
+        Task<IThread> GetThreadAsync(long threadId, int boardId);
 
-        Task DeleteThread(int boardId, long threadId);
+        Task DeleteThreadAsync(long threadId, int boardId);
     }
 }

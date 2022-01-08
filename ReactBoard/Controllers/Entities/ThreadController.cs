@@ -7,6 +7,7 @@ using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.Controllers.Entities
 {
+    [Route("[controller]")]
     public class ThreadController : EntityApiController<Thread, long>
     {
         private readonly IThreadService _threadService;
@@ -16,14 +17,19 @@ namespace ReactBoard.Controllers.Entities
             _threadService = threadService;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetThread([FromQuery] long threadId, [FromQuery] int boardId)
+        {
+            return Ok(await _threadService.GetThreadAsync(threadId, boardId));
+        }
+
         [HttpDelete]
         [Authorise(UserRole.Admin, UserRole.BoardAdmin)]
-        [Route("{threadId}/board/{boardId}")]
-        public async Task<IActionResult> DeleteThread([FromRoute] int boardId, [FromRoute] long threadId)
+        public async Task<IActionResult> DeleteThread([FromQuery] long threadId, [FromQuery] int boardId)
         {
             //todo: check board admin has admin access to board thread is in
 
-            await _threadService.DeleteThread(boardId, threadId);
+            await _threadService.DeleteThreadAsync(threadId, boardId);
 
             return Ok();
         }
