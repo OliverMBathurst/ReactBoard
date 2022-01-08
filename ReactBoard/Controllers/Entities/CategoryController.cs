@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReactBoard.Domain.Entities.Category;
+using ReactBoard.Models.Category;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ReactBoard.Controllers.Entities
 {
@@ -12,6 +14,13 @@ namespace ReactBoard.Controllers.Entities
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNewCategory([FromBody] CreateCategoryDto dto)
+        {
+            await _categoryService.SaveOrUpdateAsync(new Category { Name = dto.Name });
+            return Ok();
         }
 
         [HttpGet]

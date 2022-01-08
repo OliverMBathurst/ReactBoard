@@ -7,5 +7,10 @@ export interface ICategory extends IEntity<number | null> {
 }
 
 export interface ICategoryService {
+    createCategory: (newCategory: INewCategory) => Promise<void>
     getAll: () => Promise<ICategory[]>
+}
+
+export interface INewCategory {
+    name: string
 }

@@ -19,6 +19,7 @@ export interface INewBoard {
     name: string
     description: string
     boardUrlName: string
+    category?: ICategory
     isWorkSafe: boolean
     maxThreads: number
 }
@@ -26,5 +27,5 @@ export interface INewBoard {
 export interface IBoardService {
     getAllBoards: () => Promise<IBoard[]>
     getBoardByUrlName: (boardUrlName: string) => Promise<IBoard>
-    createBoard: (board: IBoard) => Promise<void>
+    createBoard: (board: INewBoard) => Promise<void>
 }

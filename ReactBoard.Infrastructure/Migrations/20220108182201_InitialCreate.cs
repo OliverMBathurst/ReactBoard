@@ -192,7 +192,7 @@ namespace ReactBoard.Infrastructure.Migrations
                         column: x => x.ThreadId,
                         principalTable: "Thread",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

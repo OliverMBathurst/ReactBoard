@@ -41,6 +41,7 @@ namespace ReactBoard.Infrastructure.DAL
             modelBuilder.Entity<Image>().ToTable("Image");
             modelBuilder.Entity<ImageMetadata>().ToTable("ImageMetadata");
             modelBuilder.Entity<Category>().ToTable("Category");
+
             //Key setups
             modelBuilder.Entity<User>().HasKey(x => x.Id);
             modelBuilder.Entity<UserRoleMapping>().HasKey(x => x.Id);
@@ -75,6 +76,11 @@ namespace ReactBoard.Infrastructure.DAL
                 .HasMany<BoardAdminMapping>()
                 .WithOne()
                 .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Thread>()
+                .HasMany(x => x.Posts)
+                .WithOne()
+                .HasForeignKey(x => x.ThreadId)
                 .OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Post>()
                 .HasOne<Image>()

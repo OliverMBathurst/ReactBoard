@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 import { HttpStatusCodes } from "../../global/enums/api/enums";
 import { formatString } from "../../global/helpers/stringFormatter";
-import { IBoard, IBoardService } from "../../global/interfaces/board/interfaces";
+import { IBoard, IBoardService, INewBoard } from "../../global/interfaces/board/interfaces";
 
 class BoardService implements IBoardService {
     private endpoint: string = 'board'
@@ -32,9 +32,9 @@ class BoardService implements IBoardService {
         })
     }
 
-    createBoard = (board: IBoard): Promise<void> => {
+    createBoard = (board: INewBoard): Promise<void> => {
         return new Promise<void>((resolve, reject) => {
-            axios.post<IBoard>(this.endpoint, { data: board }).then(res => {
+            axios.post<INewBoard>(this.endpoint, { data: board }).then(res => {
                 if (res.status === HttpStatusCodes.Status200OK) {
                     resolve()
                 }

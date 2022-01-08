@@ -1,15 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ReactBoard.Domain.Entities.Board;
+using ReactBoard.Domain.Entities.Category;
 using ReactBoard.Domain.Entities.Image;
 using ReactBoard.Domain.Entities.Post;
 using ReactBoard.Domain.Entities.Thread;
 using ReactBoard.Domain.Entities.User;
 using ReactBoard.Domain.Services.Board;
+using ReactBoard.Domain.Services.Category;
 using ReactBoard.Domain.Services.Image;
 using ReactBoard.Domain.Services.Post;
 using ReactBoard.Domain.Services.Thread;
 using ReactBoard.Domain.Services.User;
 using ReactBoard.Infrastructure.Repositories.Board;
+using ReactBoard.Infrastructure.Repositories.Category;
 using ReactBoard.Infrastructure.Repositories.Image;
 using ReactBoard.Infrastructure.Repositories.Post;
 using ReactBoard.Infrastructure.Repositories.Thread;
@@ -35,6 +38,7 @@ namespace ReactBoard
             collection.AddTransient<IUserRoleMappingService, UserRoleMappingService>();
             collection.AddTransient<IUserService, UserService>();
             collection.AddTransient<IImageDeletionService, ImageDeletionService>();
+            collection.AddTransient<ICategoryService, CategoryService>();
         }
 
         private static void AddRepositories(IServiceCollection collection) 
@@ -47,6 +51,7 @@ namespace ReactBoard
             collection.AddTransient<IThreadRepository, ThreadRepository>();
             collection.AddTransient<IUserRoleMappingRepository, UserRoleMappingRepository>();
             collection.AddTransient<IUserRepository, UserRepository>();
+            collection.AddTransient<ICategoryRepository, CategoryRepository>();
         }
     }
 }

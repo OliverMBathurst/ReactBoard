@@ -292,7 +292,7 @@ namespace ReactBoard.Infrastructure.Migrations
                     b.HasOne("ReactBoard.Domain.Entities.Thread.Thread", null)
                         .WithMany("Posts")
                         .HasForeignKey("ThreadId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });
 

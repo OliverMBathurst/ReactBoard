@@ -1,19 +1,12 @@
 ﻿import React, { useState } from 'react'
-import { IBoard } from '../../../../global/interfaces/board/interfaces'
+import { INewBoard } from '../../../../global/interfaces/board/interfaces'
 import { ICategory } from '../../../../global/interfaces/category/interfaces'
 import CategorySelect from '../categorySelect/categorySelect'
-import Input from '../input/input'
+import Input from '../textInput/textInput'
 import './styles.scss'
 
-interface INewBoard {
-    name: string
-    description: string
-    category?: ICategory
-    boardUrlName: string
-}
-
 interface ICreateBoardPanel {
-    onBoardCreate: (board: IBoard) => void
+    onBoardCreate: (board: INewBoard) => void
     categories: ICategory[]
 }
 
@@ -23,7 +16,9 @@ const CreateBoardPanel = (props: ICreateBoardPanel) => {
     const [board, setBoard] = useState<INewBoard>({
         name: '',
         description: '',
-        boardUrlName: ''
+        boardUrlName: '',
+        isWorkSafe: false,
+        maxThreads: 500
     })
 
     const updateBoard = (func: (b: INewBoard) => void) => {
@@ -43,7 +38,12 @@ const CreateBoardPanel = (props: ICreateBoardPanel) => {
                 categories={categories}
                 onCategorySelected={category => updateBoard(b => b.category = category)}
             />
-            <input />
+            <input
+                className="submit-board"
+                type="button"
+                value="Create New Board"
+                onClick={() => onBoardCreate(board)}
+            />
         </div>)
 }
 

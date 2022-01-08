@@ -10,7 +10,7 @@ using ReactBoard.Infrastructure.DAL;
 namespace ReactBoard.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220108180740_InitialCreate")]
+    [Migration("20220108182201_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -294,7 +294,7 @@ namespace ReactBoard.Infrastructure.Migrations
                     b.HasOne("ReactBoard.Domain.Entities.Thread.Thread", null)
                         .WithMany("Posts")
                         .HasForeignKey("ThreadId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });
 

@@ -10,7 +10,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\administration\components\input\input.tsx">
+    <TypeScriptCompile Update="ClientApp\src\components\administration\components\textInput\textInput.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
