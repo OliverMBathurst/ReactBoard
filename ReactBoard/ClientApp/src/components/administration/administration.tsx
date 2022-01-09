@@ -5,6 +5,7 @@ import Panel from '../../global/components/panel/panel'
 import { HomeRoute } from '../../global/constants/routes'
 import { INewBoard } from '../../global/interfaces/board/interfaces'
 import { ICategory, INewCategory } from '../../global/interfaces/category/interfaces'
+import CategoryValidator from '../../global/types/validators/categoryValidator'
 import BoardService from '../../services/board/boardService'
 import CategoriesService from '../../services/category/categoryService'
 import CreateBoardPanel from './components/createBoardPanel/createBoardPanel'
@@ -12,6 +13,7 @@ import CreateCategoryPanel from './components/createCategoryPanel/createCategory
 import './styles.scss'
 
 const boardService = new BoardService(), categoriesService = new CategoriesService()
+
 
 const Administration = () => {
     const [redirectToHome, setRedirectToHome] = useState<boolean>(false)
@@ -33,7 +35,16 @@ const Administration = () => {
 
     const onBoardCreate = async (board: INewBoard) => boardService.createBoard(board)
 
-    const onCategoryCreate = async (category: INewCategory) => categoriesService.createCategory(category)
+    const onCategoryCreate = async (category: INewCategory) => {
+        const categoryValidationResult = new CategoryValidator(category).execute()
+        const validationErrors = categoryValidationResult.filter(x => !x.success)
+
+        if (validationErrors.length > 0) {
+
+        } else {
+            await categoriesService.createCategory(category)
+        }
+    }
 
     if (redirectToHome) {
         return <Redirect to={HomeRoute} />

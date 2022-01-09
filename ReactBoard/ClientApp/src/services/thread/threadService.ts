@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
-import { HttpStatusCodes } from "../../global/enums/api/enums";
-import { IThread, IThreadService } from "../../global/interfaces/thread/interfaces";
+import { HttpStatusCode } from "../../global/enums/api/enums";
 import { formatString } from "../../global/helpers/stringFormatter";
+import { IThread, IThreadService } from "../../global/interfaces/thread/interfaces";
 
 class ThreadService implements IThreadService {
     private endpoint: string = 'thread'
@@ -11,7 +11,7 @@ class ThreadService implements IThreadService {
     getThread = (threadId: number, boardId: number): Promise<IThread> => {
         return new Promise<IThread>((resolve, reject) => {
             axios.get<IThread>(formatString(this.getEndpoint, threadId, boardId)).then(res => {
-                if (res.status === HttpStatusCodes.Status200OK) {
+                if (res.status === HttpStatusCode.Status200OK) {
                     resolve(res.data)
                 }
 
@@ -23,7 +23,7 @@ class ThreadService implements IThreadService {
     deleteThread = (threadId: number, boardId: number): Promise<void> => {
         return new Promise<void>((resolve, reject) => {
             axios.delete<void>(formatString(this.deleteEndpoint, threadId, boardId)).then(res => {
-                if (res.status === HttpStatusCodes.Status200OK) {
+                if (res.status === HttpStatusCode.Status200OK) {
                     resolve()
                 }
 

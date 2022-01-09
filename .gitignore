@@ -7,3 +7,5 @@
 /ReactBoard/ClientApp/node_modules
 /ReactBoard/.vs
 /.vs
+*.map
+*.js

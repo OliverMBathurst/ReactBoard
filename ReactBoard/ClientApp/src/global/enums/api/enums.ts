@@ -1,4 +1,4 @@
-﻿export enum HttpStatusCodes {
+﻿export enum HttpStatusCode {
      Status100Continue = 100,
      Status101SwitchingProtocols = 101,
      Status102Processing = 102,

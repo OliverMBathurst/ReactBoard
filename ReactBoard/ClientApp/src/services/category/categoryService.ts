@@ -1,5 +1,5 @@
 ﻿import axios from "axios"
-import { HttpStatusCodes } from "../../global/enums/api/enums"
+import { HttpStatusCode } from "../../global/enums/api/enums"
 import { ICategory, ICategoryService, INewCategory } from "../../global/interfaces/category/interfaces"
 
 class CategoriesService implements ICategoryService {
@@ -8,7 +8,7 @@ class CategoriesService implements ICategoryService {
     getAll = (): Promise<ICategory[]> => {
         return new Promise<ICategory[]>((resolve, reject) => {
             axios.get<ICategory[]>(this.endpoint).then(res => {
-                if (res.status === HttpStatusCodes.Status200OK) {
+                if (res.status === HttpStatusCode.Status200OK) {
                     resolve(res.data)
                 }
 
@@ -20,7 +20,7 @@ class CategoriesService implements ICategoryService {
     createCategory = (category: INewCategory): Promise<void> => {
         return new Promise<void>((resolve, reject) => {
             axios.post<INewCategory>(this.endpoint, category).then(res => {
-                if (res.status === HttpStatusCodes.Status200OK) {
+                if (res.status === HttpStatusCode.Status200OK) {
                     resolve()
                 }
 
