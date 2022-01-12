@@ -1,4 +1,5 @@
-﻿import React, { useRef } from 'react'
+import React, { useRef } from 'react'
+import SubmitButton from '../../../../global/components/submitButton/submitButton'
 import { INewCategory } from '../../../../global/interfaces/category/interfaces'
 import Input from '../textInput/textInput'
 import './styles.scss'
@@ -12,21 +13,26 @@ const CreateCategoryPanel = (props: ICreateCategoryPanel) => {
 
     const inputRef = useRef<HTMLInputElement>(null)
 
+    const onCategoryCreateInternal = () => {
+        if (inputRef.current) {
+            onCategoryCreate({
+                name: inputRef.current.value
+            })
+
+            inputRef.current.value = ""
+        }
+    }
+
     return (
         <div className="create-category-panel">
-            <Input title="Category Name" inputRef={inputRef} />
-            <input
-                className="submit-category"
-                value="Create New Category"
-                type="button"
-                onClick={() => {
-                    const ref = inputRef.current
-                    if (ref) {
-                        onCategoryCreate({
-                            name: ref.value
-                        })
-                    }
-                }} />
+            <form>
+                <Input
+                    title="Category Name"
+                    inputRef={inputRef} />
+                <SubmitButton
+                    value="Create New Category"
+                    onClick={() => onCategoryCreateInternal()} />
+            </form>            
         </div>)
 }
 

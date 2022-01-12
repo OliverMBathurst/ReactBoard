@@ -11,9 +11,16 @@ namespace ReactBoard.Infrastructure.Repositories.User
     {
         public UserRepository(DatabaseContext context) : base(context) { }
 
-        public async Task<int> GetStatisticAsync()
+        public async Task DeleteUserAsync(int userId)
         {
-            return await _context.Set<_User>().CountAsync();
+            var user = await _context.Set<_User>()
+                .FirstOrDefaultAsync(x => x.Id.Equals(userId));
+
+            if (user != null)
+            {
+                _context.Remove(user);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

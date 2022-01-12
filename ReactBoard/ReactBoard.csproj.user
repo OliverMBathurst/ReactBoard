@@ -5,7 +5,32 @@
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\types\validation\interfaces.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\components\submitButton\submitButton.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\components\home\components\boardsOverviewPanel\components\boardCategory\components\boardLink\boardLink.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\enums\validation\enums.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\validators\threadValidator.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\validators\postValidator.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\validation\interfaces.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

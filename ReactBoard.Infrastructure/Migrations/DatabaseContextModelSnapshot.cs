@@ -28,9 +28,6 @@ namespace ReactBoard.Infrastructure.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BoardUrlName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -46,7 +43,12 @@ namespace ReactBoard.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UrlName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Board");
                 });
@@ -246,6 +248,15 @@ namespace ReactBoard.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("UserRoleMapping");
+                });
+
+            modelBuilder.Entity("ReactBoard.Domain.Entities.Board.Board", b =>
+                {
+                    b.HasOne("ReactBoard.Domain.Entities.Category.Category", null)
+                        .WithMany("Boards")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ReactBoard.Domain.Entities.Board.BoardAdminMapping", b =>

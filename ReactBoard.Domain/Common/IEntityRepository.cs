@@ -17,5 +17,7 @@ namespace ReactBoard.Domain.Common
         Task SaveOrUpdateAsync(TEntity entity);
 
         Task DeleteAsync(TId id);
+
+        Task<long> GetEntityCountAsync();
     }
 }

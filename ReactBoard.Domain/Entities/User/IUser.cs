@@ -5,7 +5,15 @@ namespace ReactBoard.Domain.Entities.User
 {
     public interface IUser : IEntity<int>
     {
-        string UserName { get; set; }
+        string Username { get; set; }
+
+        string Password { get; set; }
+
+        string Salt { get; set; }
+
+        string PasswordHash { get; set; }
+
+        string Token { get; set; }
 
         UserRole Role { get; set; }
 

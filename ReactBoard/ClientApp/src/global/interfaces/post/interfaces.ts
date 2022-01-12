@@ -1,4 +1,4 @@
-﻿import { IEntity } from "../common/interfaces";
+import { IEntity } from "../common/interfaces";
 import { IImage } from "../image/interfaces";
 
 export interface IPost extends IEntity<number | null> {
@@ -14,7 +14,7 @@ export interface INewPost {
     text: string
     threadId: number
     boardId: number
-    image: IImage
+    image?: IImage
 }
 
 export interface IPostService {

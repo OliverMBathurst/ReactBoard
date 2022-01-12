@@ -39,5 +39,10 @@ namespace ReactBoard.Domain.Common
         {
             await _repository.DeleteAsync(id);
         }
+
+        public virtual async Task<long> GetEntityCountAsync() 
+        {
+            return await _repository.GetEntityCountAsync();
+        }
     }
 }

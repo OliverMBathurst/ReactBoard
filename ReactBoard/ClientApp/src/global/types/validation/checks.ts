@@ -1,1 +1,0 @@
-﻿export const isTruthy = (str: string): boolean => str ? true : false

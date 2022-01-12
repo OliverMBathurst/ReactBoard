@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { ICategory } from '../../../../global/interfaces/category/interfaces'
 import './styles.scss'
 

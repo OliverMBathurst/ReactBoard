@@ -39,6 +39,11 @@ namespace ReactBoard.Infrastructure.Common
             await _context.SaveChangesAsync();
         }
 
+        public virtual async Task<long> GetEntityCountAsync() 
+        {
+            return await _context.Set<TEntity>().LongCountAsync();
+        }
+
         public virtual async Task DeleteAsync(TId id)
         {
             var removal = _context.Set<TEntity>().FirstOrDefaultAsync(x => x.Id.Equals(id));

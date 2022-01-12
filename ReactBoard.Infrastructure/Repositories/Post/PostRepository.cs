@@ -20,15 +20,10 @@ namespace ReactBoard.Infrastructure.Repositories.Post
                 .OrderByDescending(x => x.Time);
         }
 
-        public async Task<IPost> GetPostAsync(long postId, long threadId, int boardId)
+        public async Task<IPost> GetPostAsync(long postId)
         {
             return await _context.Set<_Post>()
-                .FirstOrDefaultAsync(x => x.Id.Equals(postId) && x.ThreadId.Equals(threadId) && x.BoardId.Equals(boardId));
-        }
-
-        public async Task<long> GetStatisticAsync() 
-        {
-            return await _context.Set<_Post>().LongCountAsync();
+                .FirstOrDefaultAsync(x => x.Id.Equals(postId));
         }
     }
 }

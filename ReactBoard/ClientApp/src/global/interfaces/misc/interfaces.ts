@@ -1,4 +1,4 @@
-﻿export interface ISiteStatistics {
+export interface ISiteStatistics {
     totalPosts: number
     totalUsers: number
 }

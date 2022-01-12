@@ -39,6 +39,7 @@ namespace ReactBoard
             collection.AddTransient<IUserService, UserService>();
             collection.AddTransient<IImageDeletionService, ImageDeletionService>();
             collection.AddTransient<ICategoryService, CategoryService>();
+            collection.AddSingleton<IUserPasswordSaltingService, UserPasswordSaltingService>();
         }
 
         private static void AddRepositories(IServiceCollection collection) 

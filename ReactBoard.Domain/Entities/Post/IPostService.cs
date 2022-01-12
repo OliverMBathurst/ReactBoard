@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.Domain.Entities.Post
 {
-    public interface IPostService : IEntityService<Post, long>, IHasStatistic<long>
+    public interface IPostService : IEntityService<Post, long>
     {
-        Task<IPost> GetPostAsync(long postId, long threadId, int boardId);
+        Task<IPost> GetPostAsync(long postId);
 
         IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId);
     }

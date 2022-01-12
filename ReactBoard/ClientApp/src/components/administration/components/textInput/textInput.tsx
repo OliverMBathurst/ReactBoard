@@ -1,8 +1,9 @@
-﻿import React from 'react'
+import React from 'react'
 import './styles.scss'
 
 interface IInputProps {
     title: string
+    required?: boolean
     text?: string
     inputRef?: React.Ref<HTMLInputElement>
     onChange?: (value: string) => void
@@ -11,23 +12,21 @@ interface IInputProps {
 const Input = (props: IInputProps) => {
     const {
         text,
-        title = "",
         inputRef,
-        onChange
+        onChange,
+        required = true,
+        title = "",
     } = props
 
     return (
         <div className="input-box">
-            <span className="input-text">{title}</span>
+            <label className="input-text">{title}</label>
             <input
+                required={required}
                 className="input"
                 ref={inputRef}
                 defaultValue={text}
-                onChange={e => {
-                    if (onChange) {
-                        onChange(e.target.value)
-                    }
-                }}
+                onChange={e => onChange && onChange(e.target.value)}
             />
         </div>)
 }

@@ -4,6 +4,6 @@
     {
         public long TotalPosts { get; set; }
 
-        public int TotalUsers { get; set; }
+        public long TotalUsers { get; set; }
     }
 }

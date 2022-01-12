@@ -8,7 +8,7 @@ namespace ReactBoard.Domain.Entities.Board
     {
         string Name { get; set; }
 
-        string BoardUrlName { get; set; }
+        string UrlName { get; set; }
 
         string Description { get; set; }
 

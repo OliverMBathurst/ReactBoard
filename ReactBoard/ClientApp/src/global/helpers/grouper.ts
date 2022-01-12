@@ -1,4 +1,4 @@
-﻿import { IKeyValuePair } from "../interfaces/types/interfaces";
+import { IKeyValuePair } from "../interfaces/common/interfaces"
 
 export function groupBy<T, K>(arr: T[], keySelector: (obj: T) => K): IKeyValuePair<K, T[]>[] {
     var groupings: IKeyValuePair<K, T[]>[] = []

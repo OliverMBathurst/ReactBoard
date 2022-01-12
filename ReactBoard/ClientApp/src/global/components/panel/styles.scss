@@ -1,11 +1,16 @@
-﻿.panel {
+.panel {
     width: 100%;
     border: 1px solid black;
+
+    svg {
+        float: right;
+    }
 
     &-top-box {
         background-color: maroon;
         font-size: 131%;
         font-weight: 700;
+        position: relative;
 
         &-text {
             padding-left: .5em;

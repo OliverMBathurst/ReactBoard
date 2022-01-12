@@ -1,23 +1,23 @@
-﻿import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import SiteIcon from '../../assets/site-icon'
+import SiteIcon from '../../assets/siteIcon/siteIcon'
 import Panel from '../../global/components/panel/panel'
 import { HomeRoute } from '../../global/constants/routes'
-import { INewBoard } from '../../global/interfaces/board/interfaces'
+import { IBoard, INewBoard } from '../../global/interfaces/board/interfaces'
 import { ICategory, INewCategory } from '../../global/interfaces/category/interfaces'
-import CategoryValidator from '../../global/types/validators/categoryValidator'
-import BoardService from '../../services/board/boardService'
-import CategoriesService from '../../services/category/categoryService'
+import BoardService from '../../services/boardService'
+import CategoryService from '../../services/categoryService'
+import CategoryValidator from '../../validators/categoryValidator'
 import CreateBoardPanel from './components/createBoardPanel/createBoardPanel'
 import CreateCategoryPanel from './components/createCategoryPanel/createCategoryPanel'
 import './styles.scss'
 
-const boardService = new BoardService(), categoriesService = new CategoriesService()
-
+const boardService = new BoardService(), categoriesService = new CategoryService()
 
 const Administration = () => {
     const [redirectToHome, setRedirectToHome] = useState<boolean>(false)
     const [categories, setCategories] = useState<ICategory[]>([])
+    const [boards, setBoards] = useState<IBoard[]>([])
 
     useEffect(() => {
         let mounted = true
@@ -33,13 +33,26 @@ const Administration = () => {
         }
     }, [])
 
+    useEffect(() => {
+        let mounted = true
+
+        boardService.getAll().then(b => {
+            if (mounted) {
+                setBoards(b)
+            }
+        })
+
+        return () => {
+            mounted = false
+        }
+    }, [])
+
     const onBoardCreate = async (board: INewBoard) => boardService.createBoard(board)
 
     const onCategoryCreate = async (category: INewCategory) => {
         const categoryValidationResult = new CategoryValidator(category).execute()
-        const validationErrors = categoryValidationResult.filter(x => !x.success)
 
-        if (validationErrors.length > 0) {
+        if (categoryValidationResult.length > 0) {
 
         } else {
             await categoriesService.createCategory(category)
@@ -53,17 +66,17 @@ const Administration = () => {
     return (
         <div className="admin-page">
             <SiteIcon onClick={() => setRedirectToHome(true)} />
-            <Panel dismissable={false} title='Create Categories'>
+            <Panel title='Create Categories'>
                 <CreateCategoryPanel
                     onCategoryCreate={onCategoryCreate} />
             </Panel>
-            <Panel dismissable={false} title='Create Boards'>
+            <Panel title='Create Boards'>
                 <CreateBoardPanel
                     categories={categories}
                     onBoardCreate={onBoardCreate}
                 />
             </Panel>
-            <Panel dismissable={false} title='Boards Overview'>
+            <Panel title='Boards Overview'>
 
             </Panel>
         </div>)

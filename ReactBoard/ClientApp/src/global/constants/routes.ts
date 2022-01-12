@@ -1,2 +1,2 @@
-﻿export const HomeRoute = '/'
+export const HomeRoute = '/'
 export const AdminRoute = '/admin'

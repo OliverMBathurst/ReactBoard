@@ -14,7 +14,7 @@ namespace ReactBoard.Domain.Entities.Board
 
         public int CategoryId { get; set; }
 
-        public string BoardUrlName { get; set; }
+        public string UrlName { get; set; }
 
         public bool IsWorkSafe { get; set; }
 

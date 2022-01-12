@@ -24,7 +24,7 @@ namespace ReactBoard.Validators.Board
             }
             else
             {
-                var existingBoards = _boardService.Fetch(x => x.BoardUrlName.Equals(dto.BoardUrlName) || x.Name.Equals(dto.Name)).ToList();
+                var existingBoards = _boardService.Fetch(x => x.UrlName.Equals(dto.UrlName) || x.Name.Equals(dto.Name)).ToList();
                 if (existingBoards.Any())
                 {
                     context.AddFailure(nameof(CreateBoardDto), "A board already exists with a name supplied");

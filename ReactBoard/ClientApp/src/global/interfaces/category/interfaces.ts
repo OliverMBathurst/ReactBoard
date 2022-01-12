@@ -1,4 +1,4 @@
-﻿import { IBoard } from "../board/interfaces";
+import { IBoard } from "../board/interfaces";
 import { IEntity } from "../common/interfaces";
 
 export interface ICategory extends IEntity<number | null> {

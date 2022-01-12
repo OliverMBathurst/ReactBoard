@@ -1,5 +1,5 @@
-﻿import { IPost } from "../post/interfaces";
 import { IEntity } from "../common/interfaces";
+import { INewPost, IPost } from "../post/interfaces";
 
 export interface IThread extends IEntity<number | null> {
     locked: boolean
@@ -9,7 +9,7 @@ export interface IThread extends IEntity<number | null> {
 
 export interface INewThread {
     boardId: string
-    post: IPost
+    post: INewPost
 }
 
 export interface IThreadService {

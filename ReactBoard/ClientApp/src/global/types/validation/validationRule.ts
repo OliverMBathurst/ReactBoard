@@ -1,35 +1,46 @@
-﻿import { IValidationResult, IValidationRule } from "./interfaces";
+import { ValidationCode } from "../../enums/validation/enums"
+import { IAbstractValidator, IValidationFailure, IValidationRule } from "../../interfaces/validation/interfaces"
 
 class ValidationRule<T, TProp> implements IValidationRule<T, TProp> {
-    source: T
-    propertySelectionRule: (src: T) => TProp
-    propertyValidationRule: (prop: TProp) => boolean
-    message: string
+    private source: T
+    private code: ValidationCode | undefined
+    private propertySelectionRule: (src: T) => TProp
+    private propertyValidationRule: ((prop: TProp) => boolean) | undefined
+    private message: string | undefined
+    private innerValidatorCreationRule: ((prop: TProp) => IAbstractValidator) | undefined
 
     constructor(
         source: T,
+        code: ValidationCode | undefined,
         propertySelectionRule: (src: T) => TProp,
-        propertyValidationRule: (prop: TProp) => boolean,
-        message: string)
-    {
+        propertyValidationRule: ((prop: TProp) => boolean) | undefined,
+        message: string | undefined,
+        innerValidatorCreationRule: ((prop: TProp) => IAbstractValidator) | undefined) {
         this.source = source
+        this.code = code
         this.propertySelectionRule = propertySelectionRule
         this.propertyValidationRule = propertyValidationRule
         this.message = message
+        this.innerValidatorCreationRule = innerValidatorCreationRule
     }
 
-    execute = (): IValidationResult => {
-        const success = this.propertyValidationRule(this.propertySelectionRule(this.source))
+    execute = (): IValidationFailure[] => {
+        const prop = this.propertySelectionRule(this.source)
 
-        const result: IValidationResult = {
-            success: success
+        if (this.innerValidatorCreationRule) {
+            return this.innerValidatorCreationRule(prop).execute()
         }
 
-        if (!success) {
-            result.message = this.message
+        if (this.propertyValidationRule && this.code && this.message) {
+            return this.propertyValidationRule(prop)
+                ? []
+                : [{
+                    code: this.code,
+                    message: this.message
+                }]
+        } else {
+            throw new Error("Code and/or message is undefined for validation rule")
         }
-
-        return result
     }
 }
 

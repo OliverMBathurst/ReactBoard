@@ -8,7 +8,7 @@ namespace ReactBoard.Models.Board
 
         public string Description { get; set; }
 
-        public string BoardUrlName { get; set; }
+        public string UrlName { get; set; }
 
         public bool IsWorkSafe { get; set; }
 
@@ -20,7 +20,7 @@ namespace ReactBoard.Models.Board
             {
                 Name = dto.Name,
                 Description = dto.Description,
-                BoardUrlName = dto.BoardUrlName,
+                UrlName = dto.UrlName,
                 IsWorkSafe = dto.IsWorkSafe,
                 MaxThreads = dto.MaxThreads
             };

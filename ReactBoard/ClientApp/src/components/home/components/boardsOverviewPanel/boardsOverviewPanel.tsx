@@ -1,16 +1,15 @@
-﻿import React from 'react'
-import { IBoard } from '../../../../global/interfaces/board/interfaces'
-import { IKeyValuePair } from '../../../../global/interfaces/types/interfaces'
+import React from 'react'
+import { ICategory } from '../../../../global/interfaces/category/interfaces'
 import BoardCategory from './components/boardCategory/boardCategory'
 import './styles.scss'
 
 interface IBoardsOverviewPanelProps {
-    boardsGroupedByCategory: IKeyValuePair<string, IBoard[]>[]
+    categories: ICategory[]
 }
 
 const BoardsOverviewPanel = (props: IBoardsOverviewPanelProps) => {
     const {
-        boardsGroupedByCategory
+        categories
     } = props
 
     return (
@@ -20,13 +19,13 @@ const BoardsOverviewPanel = (props: IBoardsOverviewPanelProps) => {
                     Boards
                 </span>
             </div>
-            <div className="boards-overview-panel-top-box-description-box">
-                {boardsGroupedByCategory.map(b => {
+            <div className="boards-overview-panel-description-box">
+                {categories.map(b => {
                     return (
                         <BoardCategory
-                            key={`${b.key}-${b.value}`}
-                            category={b.key}
-                            boards={b.value}
+                            key={b.id}
+                            category={b.name}
+                            boards={b.boards}
                         />)
                 })}
             </div>

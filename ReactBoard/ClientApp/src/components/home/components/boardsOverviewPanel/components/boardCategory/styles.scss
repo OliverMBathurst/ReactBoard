@@ -1,0 +1,9 @@
+.board-category {
+    display: inline-block;
+
+    &-text {
+        text-decoration: underline;
+        display: inline;
+        font-weight: bold;
+    }
+}

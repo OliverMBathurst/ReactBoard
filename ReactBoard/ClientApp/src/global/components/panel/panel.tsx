@@ -1,18 +1,19 @@
-﻿import React from 'react'
+import React from 'react'
+import CloseIcon from '../../../assets/closeIcon/closeIcon'
 import './styles.scss'
 
 interface IPanelProps {
     title: string
-    dismissable: boolean
-    children?: React.ReactNode
+    children: React.ReactNode
+    dismissable?: boolean
     onClose?: () => void
 }
 
 const Panel = (props: IPanelProps) => {
     const {
         title,
-        dismissable,
         children,
+        dismissable = false,
         onClose
     } = props
 
@@ -22,7 +23,10 @@ const Panel = (props: IPanelProps) => {
                 <span className="panel-top-box-text">
                     {title}
                 </span>
-                {dismissable && <></>}
+                {dismissable &&
+                    <CloseIcon
+                        onClick={() => onClose && onClose()} />
+                }
             </div>
             <div className="panel-description-box">
                 {children}
