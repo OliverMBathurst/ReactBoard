@@ -1,12 +1,13 @@
-﻿using ReactBoard.Models.Post;
-using FluentValidation;
-using ReactBoard.Domain.Entities.Thread;
+﻿using FluentValidation;
 using Microsoft.Extensions.Options;
+using ReactBoard.Domain.Entities.Thread;
+using ReactBoard.Models.Post;
 using System.Threading.Tasks;
 
 namespace ReactBoard.Validators.Post
 {
-    public class CreatePostDtoValidator : AbstractValidator<CreatePostDto>
+    public class CreatePostDtoValidator : AbstractValidator<CreatePostDto>,
+        IAsynchronousValidator<CreatePostDto>
     {
         private readonly IThreadService _threadService;
         private readonly AppSettings _appSettings;
@@ -21,7 +22,7 @@ namespace ReactBoard.Validators.Post
             RuleFor(x => x).CustomAsync(async (dto, ctx, _) => await ValidateDto(dto, ctx));
         }
 
-        private async Task ValidateDto(CreatePostDto dto, ValidationContext<CreatePostDto> context)
+        public async Task ValidateDto(CreatePostDto dto, ValidationContext<CreatePostDto> context)
         {
             if (dto == null)
             {
@@ -41,7 +42,7 @@ namespace ReactBoard.Validators.Post
                     }
                     else
                     {
-                        var thread = await _threadService.GetThreadAsync(dto.ThreadId, dto.BoardId);
+                        var thread = await _threadService.GetThreadAsync(dto.ThreadId);
                         if (thread == null)
                         {
                             context.AddFailure(nameof(CreatePostDto.ThreadId), "Invalid thread identifier");

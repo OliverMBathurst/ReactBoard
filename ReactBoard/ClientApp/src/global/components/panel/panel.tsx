@@ -1,5 +1,5 @@
 import React from 'react'
-import CloseIcon from '../../../assets/closeIcon/closeIcon'
+import CloseIcon from '../../../assets'
 import './styles.scss'
 
 interface IPanelProps {

@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.Validators.Category
 {
-    public class CreateCategoryDtoValidator : AbstractValidator<CreateCategoryDto>
+    public class CreateCategoryDtoValidator : AbstractValidator<CreateCategoryDto>, 
+        IAsynchronousValidator<CreateCategoryDto>
     {
         private readonly ICategoryService _categoryService;
 
@@ -16,7 +17,7 @@ namespace ReactBoard.Validators.Category
             RuleFor(x => x).CustomAsync(async (dto, ctx, _) => await ValidateDto(dto, ctx));
         }
 
-        private async Task ValidateDto(CreateCategoryDto dto, ValidationContext<CreateCategoryDto> context)
+        public async Task ValidateDto(CreateCategoryDto dto, ValidationContext<CreateCategoryDto> context)
         {
             if (dto == null)
             {

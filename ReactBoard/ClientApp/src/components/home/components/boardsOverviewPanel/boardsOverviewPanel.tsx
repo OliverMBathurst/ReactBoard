@@ -1,5 +1,5 @@
 import React from 'react'
-import { ICategory } from '../../../../global/interfaces/category/interfaces'
+import { ICategory } from '../../../../global/interfaces/category'
 import BoardCategory from './components/boardCategory/boardCategory'
 import './styles.scss'
 
@@ -8,9 +8,7 @@ interface IBoardsOverviewPanelProps {
 }
 
 const BoardsOverviewPanel = (props: IBoardsOverviewPanelProps) => {
-    const {
-        categories
-    } = props
+    const { categories } = props
 
     return (
         <div className="boards-overview-panel">
@@ -20,12 +18,12 @@ const BoardsOverviewPanel = (props: IBoardsOverviewPanelProps) => {
                 </span>
             </div>
             <div className="boards-overview-panel-description-box">
-                {categories.map(b => {
+                {categories.map(category => {
                     return (
                         <BoardCategory
-                            key={b.id}
-                            category={b.name}
-                            boards={b.boards}
+                            key={category.id}
+                            category={category.name}
+                            boards={category.boards}
                         />)
                 })}
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IBoard } from '../../../../global/interfaces/board/interfaces'
+import { IBoard } from '../../../../global/interfaces/board'
 
 interface IBoardRowProps {
     boards: IBoard[]

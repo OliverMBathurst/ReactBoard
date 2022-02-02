@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import SiteIcon from '../../assets/siteIcon/siteIcon';
-import Panel from '../../global/components/panel/panel';
+import { SiteIcon } from '../../assets';
+import { Panel } from '../../global/components';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../global/constants/strings';
-import { ICategory } from '../../global/interfaces/category/interfaces';
-import CategoryService from '../../services/categoryService';
-import BoardsOverviewPanel from './components/boardsOverviewPanel/boardsOverviewPanel';
-import Footer from './components/footer/footer';
+import { ICategory } from '../../global/interfaces/category';
+import { CategoryService } from '../../services';
+import { BoardsOverviewPanel, Footer } from './components';
 import './styles.scss';
 
 const categoryService = new CategoryService()

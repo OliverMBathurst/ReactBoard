@@ -1,22 +1,17 @@
 import React, { useState } from 'react'
-import { Redirect, RouteComponentProps, withRouter } from 'react-router-dom'
-import { IBoard } from '../../../../../../../../global/interfaces/board/interfaces'
+import { Redirect } from 'react-router-dom'
+import { IBoard } from '../../../../../../../../global/interfaces/board'
 import './styles.scss'
 
 interface IBoardLinkProps {
     board: IBoard
-    location: Location
 }
 
-const BoardLink: React.FC<IBoardLinkProps & RouteComponentProps> = (props: IBoardLinkProps) => {
+const BoardLink = (props: IBoardLinkProps) => {
     const {
         board: {
             name,
             urlName
-        },
-        location: {
-            protocol,
-            host
         }
     } = props
 
@@ -27,9 +22,9 @@ const BoardLink: React.FC<IBoardLinkProps & RouteComponentProps> = (props: IBoar
     }
 
     return (
-        <span className="board-link" onClick={() => setRedirect(`${protocol}${host}/${urlName}`)}>
+        <span className="board-link" onClick={() => setRedirect(urlName)}>
             {name}
         </span>)
 }
 
-export default withRouter(BoardLink)
+export default BoardLink

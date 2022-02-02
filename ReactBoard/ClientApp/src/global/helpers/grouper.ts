@@ -1,6 +1,6 @@
-import { IKeyValuePair } from "../interfaces/common/interfaces"
+import { IKeyValuePair } from "../interfaces/common"
 
-export function groupBy<T, K>(arr: T[], keySelector: (obj: T) => K): IKeyValuePair<K, T[]>[] {
+export const groupBy = <T, K>(arr: T[], keySelector: (obj: T) => K): IKeyValuePair<K, T[]>[] => {
     var groupings: IKeyValuePair<K, T[]>[] = []
     for (var entry of arr) {
         const key = keySelector(entry), idx = groupings.findIndex(x => x.key === key)

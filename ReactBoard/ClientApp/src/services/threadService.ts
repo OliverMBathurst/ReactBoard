@@ -1,12 +1,38 @@
 import axios from "axios";
-import { HttpStatusCode } from "../global/enums/api/enums";
+import { HttpStatusCode } from "../global/enums";
 import { formatString } from "../global/helpers/stringFormatter";
-import { IThread, IThreadService } from "../global/interfaces/thread/interfaces";
+import { IPaginationResult } from "../global/interfaces/pagination";
+import { INewThread, IThread, IThreadService } from "../global/interfaces/thread";
 
 class ThreadService implements IThreadService {
     private endpoint: string = 'thread'
-    private deleteEndpoint: string = `${this.endpoint}?threadId={0}&boardId={1}`
-    private getEndpoint: string = `${this.endpoint}?threadId={0}&boardId={1}`
+    private getPaginatedResult: string = `${this.endpoint}/pagination?boardId={0}&pageNumber={1}`
+    private deleteEndpoint: string = `${this.endpoint}?threadId={0}`
+    private getEndpoint: string = `${this.endpoint}?threadId={0}`
+
+    getPaginatedThreadsForBoard = (boardId: number, pageNumber: number): Promise<IPaginationResult<IThread>> => {
+        return new Promise<IPaginationResult<IThread>>((resolve, reject) => {
+            axios.get<IPaginationResult<IThread>>(formatString(this.getPaginatedResult, boardId, pageNumber)).then(res => {
+                if (res.status === HttpStatusCode.Status200OK) {
+                    resolve(res.data)
+                }
+
+                reject()
+            })
+        })
+    }
+
+    postThread = (newThread: INewThread): Promise<void> => {
+        return new Promise<void>((resolve, reject) => {
+            axios.post<INewThread>(this.endpoint, newThread).then(res => {
+                if (res.status === HttpStatusCode.Status200OK) {
+                    resolve()
+                }
+
+                reject()
+            })
+        })
+    }
 
     getThread = (threadId: number, boardId: number): Promise<IThread> => {
         return new Promise<IThread>((resolve, reject) => {

@@ -1,4 +1,4 @@
-import { IEntity } from "../common/interfaces";
+import { IEntity } from "../common";
 
 export interface IImage extends IEntity<number | null> {
     location: string

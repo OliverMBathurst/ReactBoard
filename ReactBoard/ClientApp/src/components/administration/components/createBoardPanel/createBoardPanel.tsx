@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { INewBoard } from '../../../../global/interfaces/board/interfaces'
-import { ICategory } from '../../../../global/interfaces/category/interfaces'
+import { SubmitButton } from '../../../../global/components'
+import { INewBoard } from '../../../../global/interfaces/board'
+import { ICategory } from '../../../../global/interfaces/category'
 import CategorySelect from '../categorySelect/categorySelect'
 import Input from '../textInput/textInput'
 import './styles.scss'
-import SubmitButton from '../../../../global/components/submitButton/submitButton'
 
 interface ICreateBoardPanel {
     onBoardCreate: (board: INewBoard) => void
@@ -18,6 +18,7 @@ const CreateBoardPanel = (props: ICreateBoardPanel) => {
         name: '',
         description: '',
         urlName: '',
+        category: categories[0],
         isWorkSafe: false,
         maxThreads: 500
     })

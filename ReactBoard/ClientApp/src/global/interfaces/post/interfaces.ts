@@ -1,5 +1,5 @@
-import { IEntity } from "../common/interfaces";
-import { IImage } from "../image/interfaces";
+import { IEntity } from "../common";
+import { IImage } from "../image";
 
 export interface IPost extends IEntity<number | null> {
     threadId: string

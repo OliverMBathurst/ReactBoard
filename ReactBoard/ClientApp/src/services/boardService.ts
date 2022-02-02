@@ -1,7 +1,7 @@
 import axios from "axios";
-import { HttpStatusCode } from "../global/enums/api/enums";
-import { formatString } from "../global/helpers/stringFormatter";
-import { IBoard, IBoardService, INewBoard } from "../global/interfaces/board/interfaces";
+import { HttpStatusCode } from "../global/enums";
+import { formatString } from "../global/helpers";
+import { IBoard, IBoardService, INewBoard } from "../global/interfaces/board";
 
 class BoardService implements IBoardService {
     private endpoint: string = 'board'

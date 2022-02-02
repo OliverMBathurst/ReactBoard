@@ -1,5 +1,5 @@
-import { UserRole } from "../../enums/user/enums";
-import { IEntity } from "../common/interfaces";
+import { UserRole } from "../../enums";
+import { IEntity } from "../common";
 
 export interface IUser extends IEntity<number | null> {
     name: string

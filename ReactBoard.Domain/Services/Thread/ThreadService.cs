@@ -1,5 +1,8 @@
 ﻿using ReactBoard.Domain.Common;
+using ReactBoard.Domain.Entities.Post;
 using ReactBoard.Domain.Entities.Thread;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
@@ -14,14 +17,24 @@ namespace ReactBoard.Domain.Services.Thread
             _threadRepository = threadRepository;
         }
 
-        public async Task DeleteThreadAsync(long threadId, int boardId)
+        public async Task<IPaginationResult<IThread>> GetPaginatedThreadsForBoard(int boardId, int pageNumber)
         {
-            await _threadRepository.DeleteThreadAsync(threadId, boardId);
+            return await _threadRepository.GetPaginatedThreadsForBoard(boardId, pageNumber);
         }
 
-        public async Task<IThread> GetThreadAsync(long threadId, int boardId)
+        public async Task DeleteThreadAsync(long threadId)
         {
-            return await _threadRepository.GetThreadAsync(threadId, boardId);
+            await _threadRepository.DeleteThreadAsync(threadId);
+        }
+
+        public async Task<IThread> GetThreadAsync(long threadId)
+        {
+            return await _threadRepository.GetThreadAsync(threadId);
+        }
+
+        public async Task<IEnumerable<IPost>> GetNewPosts(long threadId, DateTime latest)
+        {
+            return await _threadRepository.GetNewPosts(threadId, latest);
         }
     }
 }

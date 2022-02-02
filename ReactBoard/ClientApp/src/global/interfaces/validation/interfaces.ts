@@ -1,9 +1,9 @@
-import { ValidationCode } from "../../enums/validation/enums";
+import { ValidationCode } from "../../enums";
 
-export interface IValidationRule<T, TProp> extends IValidationExecutable {}
+export interface IValidationRule<T> extends IValidationExecutable<T> {}
 
-export interface IValidationExecutable {
-    execute: () => IValidationFailure[]
+export interface IValidationExecutable<T> {
+    execute: (source: T) => IValidationFailure[]
 }
 
 export interface IValidationFailure {
@@ -14,12 +14,12 @@ export interface IValidationFailure {
 export interface IValidationRuleBuilder<T, TProp> {
     withPropertySelectionRule: (propertySelectionRule: (src: T) => TProp) => IValidationRuleBuilder<T, TProp>
     withPropertyValidationRule: (propertyValidationRule: (prop: TProp) => boolean) => IValidationRuleBuilder<T, TProp>
-    withInnerValidator: (innerValidatorCreationRule: (prop: TProp) => IAbstractValidator) => IValidationRule<T, TProp>
+    withInnerValidator: (innerValidatorCreationRule: () => IAbstractValidator<TProp>) => IValidationRule<T>
     withCode: (code: ValidationCode) => IValidationRuleBuilder<T, TProp>
     withMessage: (message: string) => IValidationRuleBuilder<T, TProp>
-    build: () => IValidationRule<T, TProp>
+    build: () => IValidationRule<T>
 }
 
-export interface IAbstractValidator {
-    execute: () => IValidationFailure[]
+export interface IAbstractValidator<T> {
+    execute: (source: T) => IValidationFailure[]
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ICategory } from '../../../../global/interfaces/category/interfaces'
+import { ICategory } from '../../../../global/interfaces/category'
 import './styles.scss'
 
 interface ICategorySelect {

@@ -1,18 +1,13 @@
-import { IAbstractValidator, IValidationRule, IValidationRuleBuilder } from "../../interfaces/validation/interfaces"
-import ValidationRule from "./validationRule"
-import { ValidationCode } from "../../enums/validation/enums"
+import { ValidationRule } from "."
+import { ValidationCode } from "../../enums"
+import { IAbstractValidator, IValidationRule, IValidationRuleBuilder } from "../../interfaces/validation"
 
 class ValidationRuleBuilder<T, TProp> implements IValidationRuleBuilder<T, TProp> {
-    private source: T
     private code: ValidationCode | undefined
     private propertySelectionRule: ((src: T) => TProp) | undefined
     private propertyValidationRule: ((prop: TProp) => boolean) | undefined
     private message: string | undefined
-    private innerValidatorCreationRule: ((prop: TProp) => IAbstractValidator) | undefined
-
-    constructor(source: T) {
-        this.source = source
-    }
+    private innerValidatorCreationRule: (() => IAbstractValidator<TProp>) | undefined
 
     withPropertySelectionRule = (propertySelectionRule: (src: T) => TProp): IValidationRuleBuilder<T, TProp> => {
         this.propertySelectionRule = propertySelectionRule
@@ -24,7 +19,7 @@ class ValidationRuleBuilder<T, TProp> implements IValidationRuleBuilder<T, TProp
         return this
     }
 
-    withInnerValidator = (innerValidatorCreationRule: (prop: TProp) => IAbstractValidator): IValidationRule<T, TProp> => {
+    withInnerValidator = (innerValidatorCreationRule: () => IAbstractValidator<TProp>): IValidationRule<T> => {
         this.innerValidatorCreationRule = innerValidatorCreationRule
         return this.build()
     }
@@ -39,13 +34,12 @@ class ValidationRuleBuilder<T, TProp> implements IValidationRuleBuilder<T, TProp
         return this
     }
 
-    build = (): IValidationRule<T, TProp> => {
-        if (!this.propertySelectionRule || (!this.innerValidatorCreationRule && (!this.code || !this.propertyValidationRule || !this.message))) {
-            throw new Error("One or more properties have not been set")
+    build = (): IValidationRule<T> => {
+        if (!this.propertySelectionRule || (!this.innerValidatorCreationRule && (this.code === undefined || !this.propertyValidationRule || !this.message))) {
+            throw new Error("One or more properties have not been set.")
         }
 
         return new ValidationRule<T, TProp>(
-            this.source,
             this.code,
             this.propertySelectionRule,
             this.propertyValidationRule,

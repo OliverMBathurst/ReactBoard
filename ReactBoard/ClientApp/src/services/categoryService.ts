@@ -1,6 +1,6 @@
 import axios from "axios"
-import { HttpStatusCode } from "../global/enums/api/enums"
-import { ICategory, ICategoryService, INewCategory } from "../global/interfaces/category/interfaces"
+import { HttpStatusCode } from "../global/enums"
+import { ICategory, ICategoryService, INewCategory } from "../global/interfaces/category"
 
 class CategoryService implements ICategoryService {
     private endpoint: string = 'category'

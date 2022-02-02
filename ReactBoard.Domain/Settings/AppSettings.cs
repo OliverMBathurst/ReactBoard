@@ -6,6 +6,8 @@
 
         public string DatabaseConnectionString { get; set; }
 
-        public string Secret { get; set; } 
+        public string Secret { get; set; }
+
+        public int ThreadsPerPage { get; set; } = 10;
     }
 }

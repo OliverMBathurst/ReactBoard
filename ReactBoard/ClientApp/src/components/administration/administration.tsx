@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import SiteIcon from '../../assets/siteIcon/siteIcon'
-import Panel from '../../global/components/panel/panel'
+import { SiteIcon } from '../../assets'
+import { Panel } from '../../global/components'
 import { HomeRoute } from '../../global/constants/routes'
-import { IBoard, INewBoard } from '../../global/interfaces/board/interfaces'
-import { ICategory, INewCategory } from '../../global/interfaces/category/interfaces'
-import BoardService from '../../services/boardService'
-import CategoryService from '../../services/categoryService'
-import CategoryValidator from '../../validators/categoryValidator'
-import CreateBoardPanel from './components/createBoardPanel/createBoardPanel'
-import CreateCategoryPanel from './components/createCategoryPanel/createCategoryPanel'
+import { IBoard, INewBoard } from '../../global/interfaces/board'
+import { ICategory, INewCategory } from '../../global/interfaces/category'
+import { BoardService, CategoryService } from '../../services'
+import { BoardValidator, CategoryValidator } from '../../validators'
+import { CreateBoardPanel, CreateCategoryPanel } from './components'
 import './styles.scss'
 
-const boardService = new BoardService(), categoriesService = new CategoryService()
+const boardService = new BoardService(), categoryService = new CategoryService()
+const boardValidator = new BoardValidator(), categoryValidator = new CategoryValidator()
 
 const Administration = () => {
     const [redirectToHome, setRedirectToHome] = useState<boolean>(false)
@@ -22,19 +21,11 @@ const Administration = () => {
     useEffect(() => {
         let mounted = true
 
-        categoriesService.getAll().then(c => {
+        categoryService.getAll().then(c => {
             if (mounted) {
                 setCategories(c)
             }
         })
-
-        return () => {
-            mounted = false
-        }
-    }, [])
-
-    useEffect(() => {
-        let mounted = true
 
         boardService.getAll().then(b => {
             if (mounted) {
@@ -47,15 +38,31 @@ const Administration = () => {
         }
     }, [])
 
-    const onBoardCreate = async (board: INewBoard) => boardService.createBoard(board)
+    const onBoardCreate = async (board: INewBoard) => {
+        const validationResult = boardValidator.execute(board)
 
-    const onCategoryCreate = async (category: INewCategory) => {
-        const categoryValidationResult = new CategoryValidator(category).execute()
+        if (validationResult.length > 0) {
+
+        } else {
+            boardService.createBoard(board).then(() =>
+                boardService.getAll()
+                    .then(b => setBoards(b))
+                    .catch(err => console.error(err))
+            ).catch(err => console.error(err))
+        }
+    }
+
+    const onCategoryCreate = (category: INewCategory)=> {
+        const categoryValidationResult = categoryValidator.execute(category)
 
         if (categoryValidationResult.length > 0) {
 
         } else {
-            await categoriesService.createCategory(category)
+            categoryService.createCategory(category).then(() =>
+                categoryService.getAll()
+                    .then(c => setCategories(c))
+                    .catch(err => console.error(err))
+            ).catch(err => console.error(err))
         }
     }
 

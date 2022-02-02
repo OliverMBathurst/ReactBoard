@@ -1,8 +1,8 @@
-import { ICategory } from "../category/interfaces"
-import { IEntity } from "../common/interfaces"
-import { IThread } from "../thread/interfaces"
+import { ICategory } from "../category"
+import { IEntity } from "../common"
+import { IThread } from "../thread"
 
-export interface IBoard extends IEntity<number | null> {
+export interface IBoard extends IEntity<number> {
     name: string
     description: string
     category: ICategory
@@ -19,7 +19,7 @@ export interface INewBoard {
     name: string
     description: string
     urlName: string
-    category?: ICategory
+    category: ICategory
     isWorkSafe: boolean
     maxThreads: number
 }

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
-import SubmitButton from '../../../../global/components/submitButton/submitButton'
-import { INewCategory } from '../../../../global/interfaces/category/interfaces'
+import { SubmitButton } from '../../../../global/components'
+import { INewCategory } from '../../../../global/interfaces/category'
 import Input from '../textInput/textInput'
 import './styles.scss'
 

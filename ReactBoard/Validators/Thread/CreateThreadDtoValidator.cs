@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.Validators.Thread
 {
-    public class CreateThreadDtoValidator : AbstractValidator<CreateThreadDto>
+    public class CreateThreadDtoValidator : AbstractValidator<CreateThreadDto>, 
+        IAsynchronousValidator<CreateThreadDto>
     {
         private readonly IBoardService _boardService;
 
@@ -16,7 +17,7 @@ namespace ReactBoard.Validators.Thread
             RuleFor(x => x).CustomAsync(async (dto, ctx, _) => await ValidateDto(dto, ctx));
         }
 
-        private async Task ValidateDto(CreateThreadDto dto, ValidationContext<CreateThreadDto> context)
+        public async Task ValidateDto(CreateThreadDto dto, ValidationContext<CreateThreadDto> context)
         {
             if (dto == null)
             {

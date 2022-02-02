@@ -1,20 +1,19 @@
-import { ValidationCode } from "../global/enums/validation/enums"
-import ValidationHelper from "../global/helpers/validationHelper"
-import { INewPost } from "../global/interfaces/post/interfaces"
-import { IValidationExecutable } from "../global/interfaces/validation/interfaces"
-import AbstractValidator from "../global/types/validation/abstractValidator"
-import ValidationRuleBuilder from "../global/types/validation/validationRuleBuilder"
+import { ValidationCode } from "../global/enums"
+import { ValidationHelper } from "../global/helpers"
+import { INewPost } from "../global/interfaces/post"
+import { IValidationExecutable } from "../global/interfaces/validation"
+import { AbstractValidator, ValidationRuleBuilder } from "../global/types/validation"
 
-class PostValidator extends AbstractValidator {
-    constructor(post: INewPost) {
-        const textRule = new ValidationRuleBuilder(post)
+class PostValidator extends AbstractValidator<INewPost> {
+    constructor() {
+        const textRule = new ValidationRuleBuilder<INewPost, string>()
             .withPropertySelectionRule(x => x.text)
             .withPropertyValidationRule(x => ValidationHelper.isTruthy(x))
             .withMessage("Invalid Post text")
             .withCode(ValidationCode.PostText)
             .build()
 
-        const rules: IValidationExecutable[] = [textRule]
+        const rules: IValidationExecutable<INewPost>[] = [textRule]
 
         super(rules)
     }

@@ -1,7 +1,7 @@
 import axios from "axios"
-import { HttpStatusCode } from "../global/enums/api/enums"
+import { HttpStatusCode } from "../global/enums"
 import { formatString } from "../global/helpers/stringFormatter"
-import { IPost, IPostService } from "../global/interfaces/post/interfaces"
+import { IPost, IPostService } from "../global/interfaces/post"
 
 class PostService implements IPostService {
     private endpoint: string = 'post'

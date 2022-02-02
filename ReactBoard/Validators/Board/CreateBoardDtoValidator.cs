@@ -5,7 +5,8 @@ using System.Linq;
 
 namespace ReactBoard.Validators.Board
 {
-    public class CreateBoardDtoValidator : AbstractValidator<CreateBoardDto>
+    public class CreateBoardDtoValidator : AbstractValidator<CreateBoardDto>,
+        ISynchronousValidator<CreateBoardDto>
     {
         private readonly IBoardService _boardService;
 
@@ -16,7 +17,7 @@ namespace ReactBoard.Validators.Board
             RuleFor(x => x).Custom(ValidateDto);
         }
 
-        private void ValidateDto(CreateBoardDto dto, ValidationContext<CreateBoardDto> context)
+        public void ValidateDto(CreateBoardDto dto, ValidationContext<CreateBoardDto> context)
         {
             if (dto == null)
             {

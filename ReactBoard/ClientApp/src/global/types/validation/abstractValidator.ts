@@ -1,14 +1,15 @@
-import { IAbstractValidator, IValidationExecutable, IValidationFailure } from "../../interfaces/validation/interfaces"
+import { IAbstractValidator, IValidationExecutable, IValidationFailure } from "../../interfaces/validation"
 
-abstract class AbstractValidator implements IAbstractValidator {
-    private rules: IValidationExecutable[]
+abstract class AbstractValidator<T> implements IAbstractValidator<T> {
+    private rules: IValidationExecutable<T>[]
 
-    constructor(rules: IValidationExecutable[]) {
+    constructor(rules: IValidationExecutable<T>[]) {
         this.rules = rules
     }
 
-    execute = (): IValidationFailure[] => {
-        return this.rules.map(r => r.execute()).reduce((a, b) => a.concat(b), [])
+    execute = (source: T): IValidationFailure[] => {
+        return this.rules.map(r => r.execute(source))
+            .reduce((a, b) => a.concat(b), [])
     }
 }
 
