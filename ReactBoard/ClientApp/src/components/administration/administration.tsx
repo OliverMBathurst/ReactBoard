@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { Redirect } from 'react-router-dom'
 import { SiteIcon } from '../../assets'
 import { Panel } from '../../global/components'
@@ -38,7 +38,9 @@ const Administration = () => {
         }
     }, [])
 
-    const onBoardCreate = async (board: INewBoard) => {
+    const redirectToHomeCallback = useCallback(() => setRedirectToHome(true), [])
+
+    const onBoardCreate = useCallback(async (board: INewBoard) => {
         const validationResult = boardValidator.execute(board)
 
         if (validationResult.length > 0) {
@@ -50,9 +52,9 @@ const Administration = () => {
                     .catch(err => console.error(err))
             ).catch(err => console.error(err))
         }
-    }
+    }, [])
 
-    const onCategoryCreate = (category: INewCategory)=> {
+    const onCategoryCreate = useCallback((category: INewCategory) => {
         const categoryValidationResult = categoryValidator.execute(category)
 
         if (categoryValidationResult.length > 0) {
@@ -64,7 +66,8 @@ const Administration = () => {
                     .catch(err => console.error(err))
             ).catch(err => console.error(err))
         }
-    }
+    }, [])
+
 
     if (redirectToHome) {
         return <Redirect to={HomeRoute} />
@@ -72,7 +75,7 @@ const Administration = () => {
 
     return (
         <div className="admin-page">
-            <SiteIcon onClick={() => setRedirectToHome(true)} />
+            <SiteIcon onClick={redirectToHomeCallback} />
             <Panel title='Create Categories'>
                 <CreateCategoryPanel
                     onCategoryCreate={onCategoryCreate} />

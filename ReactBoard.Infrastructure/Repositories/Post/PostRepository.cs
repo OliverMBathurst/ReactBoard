@@ -13,10 +13,10 @@ namespace ReactBoard.Infrastructure.Repositories.Post
     {
         public PostRepository(DatabaseContext context) : base(context) { }
 
-        public IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId)
+        public IEnumerable<IPost> GetAllPostsForThread(long threadId)
         {
             return _context.Set<_Post>()
-                .Where(x => x.BoardId.Equals(boardId) && x.ThreadId.Equals(threadId))
+                .Where(x => x.ThreadId.Equals(threadId))
                 .OrderByDescending(x => x.Time);
         }
 

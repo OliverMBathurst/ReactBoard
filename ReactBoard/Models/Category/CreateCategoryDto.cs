@@ -1,4 +1,4 @@
-﻿namespace ReactBoard.Models.Category
+﻿namespace ReactBoard.API.Models.Category
 {
     public class CreateCategoryDto
     {

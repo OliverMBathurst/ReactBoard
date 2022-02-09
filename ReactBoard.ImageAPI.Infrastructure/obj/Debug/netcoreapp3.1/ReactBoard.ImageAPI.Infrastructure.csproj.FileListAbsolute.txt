@@ -1,0 +1,13 @@
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.AssemblyInfo.cs
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.deps.json
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.dll
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.pdb
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.dll
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.pdb
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.csproj.CopyComplete
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.dll
+C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Infrastructure\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Infrastructure.pdb

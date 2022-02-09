@@ -6,19 +6,19 @@ import './styles.scss'
 const Footer = () => {
     return (
         <div className="footer">
-            <a className="footer-link" href="/">
+            <a className="footer__link" href="/">
                 <FooterText text='Link1' />
             </a>
-            <a className="footer-link" href="/">
+            <a className="footer__link" href="/">
                 <FooterText text='Link2' />
             </a>
-            <a className="footer-link" href="/">
+            <a className="footer__link" href="/">
                 <FooterText text='Link3' />
             </a>
-            <a className="footer-link" href="/">
+            <a className="footer__link" href="/">
                 <FooterText text='Link4' />
             </a>
-            <span className="footer-copyright-notice">{SITE_COPYRIGHT_NOTICE}</span>
+            <span className="footer__copyright-notice">{SITE_COPYRIGHT_NOTICE}</span>
         </div>)
 }
 

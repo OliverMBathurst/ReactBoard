@@ -1,18 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReactBoard.Attributes;
+using ReactBoard.API.Models.Thread;
 using ReactBoard.Domain.Entities.Thread;
-using ReactBoard.Models.Thread;
+using System.Linq;
 using System.Threading.Tasks;
-using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactBoard.Controllers
+namespace ReactBoard.API.Controllers
 {
     [Route("[controller]")]
     public class ThreadController : EntityApiController<Thread, long>
     {
         private readonly IThreadService _threadService;
 
-        public ThreadController(IThreadService threadService) : base(threadService) 
+        public ThreadController(IThreadService threadService) : base(threadService)
         {
             _threadService = threadService;
         }
@@ -21,7 +20,8 @@ namespace ReactBoard.Controllers
         [Route("updates")]
         public async Task<IActionResult> GetUpdates([FromBody] ThreadUpdateRequestDto updateRequestDto)
         {
-            return Ok(await _threadService.GetNewPosts(updateRequestDto.ThreadId, updateRequestDto.Latest));
+            var newPosts = await _threadService.GetNewPosts(updateRequestDto.ThreadId, updateRequestDto.Latest);
+            return Ok(newPosts.ToList());
         }
 
         [HttpGet]
@@ -46,7 +46,6 @@ namespace ReactBoard.Controllers
         }
 
         [HttpDelete]
-        [Authorise(UserRole.Admin, UserRole.BoardAdmin)]
         public async Task<IActionResult> DeleteThread([FromQuery] long threadId)
         {
             //todo: check board admin has admin access to board thread is in

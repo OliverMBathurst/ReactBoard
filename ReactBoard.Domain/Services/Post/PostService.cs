@@ -10,19 +10,19 @@ namespace ReactBoard.Domain.Services.Post
     {
         private readonly IPostRepository _postRepository;
 
-        public PostService(IPostRepository postRepository) : base(postRepository) 
+        public PostService(IPostRepository postRepository) : base(postRepository)
         {
             _postRepository = postRepository;
         }
 
-        public async Task<IPost> GetPostAsync(long postId) 
+        public async Task<IPost> GetPostAsync(long postId)
         {
             return await _postRepository.GetPostAsync(postId);
         }
 
-        public IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId)
+        public IEnumerable<IPost> GetAllPostsForThread(long threadId)
         {
-            return _postRepository.GetAllPostsForThread(threadId, boardId);
+            return _postRepository.GetAllPostsForThread(threadId);
         }
     }
 }

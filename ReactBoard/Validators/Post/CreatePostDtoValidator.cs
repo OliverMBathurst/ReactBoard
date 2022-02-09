@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Options;
+using ReactBoard.API.Models.Post;
 using ReactBoard.Domain.Entities.Thread;
-using ReactBoard.Models.Post;
+using ReactBoard.Domain.Settings;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Validators.Post
+namespace ReactBoard.API.Validators.Post
 {
     public class CreatePostDtoValidator : AbstractValidator<CreatePostDto>,
         IAsynchronousValidator<CreatePostDto>
@@ -27,7 +28,7 @@ namespace ReactBoard.Validators.Post
             if (dto == null)
             {
                 context.AddFailure(nameof(CreatePostDto), "Null DTO");
-            } 
+            }
             else
             {
                 if (string.IsNullOrWhiteSpace(dto.Text))
@@ -46,7 +47,7 @@ namespace ReactBoard.Validators.Post
                         if (thread == null)
                         {
                             context.AddFailure(nameof(CreatePostDto.ThreadId), "Invalid thread identifier");
-                        } 
+                        }
                         else if (thread.Locked)
                         {
                             context.AddFailure(nameof(CreatePostDto.ThreadId), "Thread is locked");

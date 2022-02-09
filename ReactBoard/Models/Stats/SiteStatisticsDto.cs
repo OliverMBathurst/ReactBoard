@@ -1,4 +1,4 @@
-﻿namespace ReactBoard.Models.Stats
+﻿namespace ReactBoard.API.Models.Stats
 {
     public sealed class SiteStatisticsDto
     {

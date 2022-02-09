@@ -1,6 +1,6 @@
 ﻿using _Board = ReactBoard.Domain.Entities.Board.Board;
 
-namespace ReactBoard.Models.Board
+namespace ReactBoard.API.Models.Board
 {
     public sealed class CreateBoardDto
     {
@@ -14,7 +14,7 @@ namespace ReactBoard.Models.Board
 
         public int MaxThreads { get; set; } = int.MaxValue;
 
-        public static implicit operator _Board(CreateBoardDto dto) 
+        public static implicit operator _Board(CreateBoardDto dto)
         {
             return new _Board
             {

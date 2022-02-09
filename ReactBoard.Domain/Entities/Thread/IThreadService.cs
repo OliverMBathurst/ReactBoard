@@ -15,5 +15,7 @@ namespace ReactBoard.Domain.Entities.Thread
         Task<IPaginationResult<IThread>> GetPaginatedThreadsForBoard(int boardId, int pageNumber);
 
         Task<IEnumerable<IPost>> GetNewPosts(long threadId, DateTime latest);
+
+        IEnumerable<IThread> GetAllBoardThreads(int boardId);
     }
 }

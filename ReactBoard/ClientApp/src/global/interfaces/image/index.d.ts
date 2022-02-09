@@ -1,3 +1,3 @@
-﻿import { IImage, IImageMetadata } from './interfaces'
+﻿import { IImage, INewImage, IImageMetadata } from './interfaces'
 
-export { IImage, IImageMetadata }
+export { IImage, INewImage, IImageMetadata }

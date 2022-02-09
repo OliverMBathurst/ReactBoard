@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ReactBoard.Domain\ReactBoard.Domain.csproj" />
+    <ProjectReference Include="..\ReactBoard.ImageAPI.Domain\ReactBoard.ImageAPI.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

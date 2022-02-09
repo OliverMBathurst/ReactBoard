@@ -9,6 +9,6 @@ namespace ReactBoard.Domain.Entities.Post
     {
         Task<IPost> GetPostAsync(long postId);
 
-        IEnumerable<IPost> GetAllPostsForThread(long threadId, int boardId);
+        IEnumerable<IPost> GetAllPostsForThread(long threadId);
     }
 }

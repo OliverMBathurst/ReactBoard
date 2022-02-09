@@ -1,0 +1,217 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI\\ReactBoard.ImageAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
+        "projectName": "ReactBoard.ImageAPI.Domain",
+        "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
+        "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Oliver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj",
+        "projectName": "ReactBoard.ImageAPI.Infrastructure",
+        "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Oliver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
+                "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI\\ReactBoard.ImageAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI\\ReactBoard.ImageAPI.csproj",
+        "projectName": "ReactBoard.ImageAPI",
+        "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI\\ReactBoard.ImageAPI.csproj",
+        "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Oliver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
+                "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj"
+              },
+              "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

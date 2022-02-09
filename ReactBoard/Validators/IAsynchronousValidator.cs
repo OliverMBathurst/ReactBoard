@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Validators
+namespace ReactBoard.API.Validators
 {
     public interface IAsynchronousValidator<TDto>
     {

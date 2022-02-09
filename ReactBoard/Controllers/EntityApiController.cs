@@ -3,9 +3,9 @@ using ReactBoard.Domain.Common;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Controllers
+namespace ReactBoard.API.Controllers
 {
-    public abstract class EntityApiController<TEntity, TId> : Controller 
+    public abstract class EntityApiController<TEntity, TId> : Controller
         where TEntity : class, IEntity<TId>
     {
         protected readonly IEntityService<TEntity, TId> _service;

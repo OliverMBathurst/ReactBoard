@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using ReactBoard.Domain.Entities.User;
 using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactBoard.Attributes
+namespace ReactBoard.API.Attributes
 {
     public class AuthoriseAttribute : AuthorizeAttribute
     {
@@ -26,7 +26,7 @@ namespace ReactBoard.Attributes
 
             var c = (IUser)user; //todo sort out auth
 
-            if (c.HasAnyRole(_roles)) 
+            if (c.HasAnyRole(_roles))
             {
                 context.Result = new OkResult();
                 return;

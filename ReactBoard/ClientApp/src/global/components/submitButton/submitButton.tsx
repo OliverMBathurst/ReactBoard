@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './styles.scss'
 
 interface ISubmitButtonProps {
@@ -18,4 +18,4 @@ const SubmitButton = (props: ISubmitButtonProps) => {
         />)
 }
 
-export default SubmitButton
+export default memo(SubmitButton)

@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
+using ReactBoard.API.Models.Thread;
 using ReactBoard.Domain.Entities.Board;
-using ReactBoard.Models.Thread;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Validators.Thread
+namespace ReactBoard.API.Validators.Thread
 {
-    public class CreateThreadDtoValidator : AbstractValidator<CreateThreadDto>, 
+    public class CreateThreadDtoValidator : AbstractValidator<CreateThreadDto>,
         IAsynchronousValidator<CreateThreadDto>
     {
         private readonly IBoardService _boardService;

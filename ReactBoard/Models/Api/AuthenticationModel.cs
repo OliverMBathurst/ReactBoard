@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ReactBoard.Models.Api
+namespace ReactBoard.API.Models.Api
 {
-    public class AuthenticationModel
+    public sealed class AuthenticationModel
     {
         [Required]
         public string Username { get; set; }

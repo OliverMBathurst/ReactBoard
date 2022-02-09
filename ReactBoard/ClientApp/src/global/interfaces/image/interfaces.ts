@@ -1,12 +1,13 @@
-import { IEntity } from "../common";
-
-export interface IImage extends IEntity<number | null> {
-    location: string
+export interface IImage {
+    data: string
     metadata: IImageMetadata
 }
 
-export interface IImageMetadata extends IEntity<number | null> {
-    imageId: number
+export interface INewImage {
+    data: File
+}
+
+export interface IImageMetadata {
     size: number
     width: number
     height: number

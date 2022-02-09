@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ReactBoard.Validators
+namespace ReactBoard.API.Validators
 {
     public interface ISynchronousValidator<TDto>
     {

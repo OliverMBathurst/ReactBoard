@@ -9,14 +9,14 @@ const FooterText = (props: IFooterTextProps) => {
     const { text } = props
 
     return (
-        <>
-            <span className="footer-text-period">
+        <div className="footer-text">
+            <span className="footer-text__period">
                 •
             </span>
-            <span className="footer-text">
+            <span className="footer-text__text">
                 {text}
             </span>
-        </>
+        </div>
     )
 }
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import CloseIcon from '../../../assets'
+import React, { memo } from 'react'
+import { CloseIcon } from '../../../assets'
 import './styles.scss'
 
 interface IPanelProps {
@@ -19,19 +19,18 @@ const Panel = (props: IPanelProps) => {
 
     return (
         <div className="panel">
-            <div className="panel-top-box">
-                <span className="panel-top-box-text">
+            <div className="panel__top-box">
+                <span className="panel__top-box__text">
                     {title}
                 </span>
                 {dismissable &&
-                    <CloseIcon
-                        onClick={() => onClose && onClose()} />
+                    <CloseIcon onClick={() => onClose && onClose()} />
                 }
             </div>
-            <div className="panel-description-box">
+            <div className="panel__description-box">
                 {children}
             </div>
         </div>)
 }
 
-export default Panel
+export default memo(Panel)

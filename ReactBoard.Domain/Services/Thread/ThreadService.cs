@@ -12,7 +12,7 @@ namespace ReactBoard.Domain.Services.Thread
     {
         private readonly IThreadRepository _threadRepository;
 
-        public ThreadService(IThreadRepository threadRepository) : base(threadRepository) 
+        public ThreadService(IThreadRepository threadRepository) : base(threadRepository)
         {
             _threadRepository = threadRepository;
         }
@@ -35,6 +35,11 @@ namespace ReactBoard.Domain.Services.Thread
         public async Task<IEnumerable<IPost>> GetNewPosts(long threadId, DateTime latest)
         {
             return await _threadRepository.GetNewPosts(threadId, latest);
+        }
+
+        public IEnumerable<IThread> GetAllBoardThreads(int boardId)
+        {
+            return _threadRepository.GetAllBoardThreads(boardId);
         }
     }
 }

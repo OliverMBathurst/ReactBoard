@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ReactBoard.API.Models.Stats;
 using ReactBoard.Domain.Entities.Post;
 using ReactBoard.Domain.Entities.User;
-using ReactBoard.Models.Stats;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Controllers
+namespace ReactBoard.API.Controllers
 {
     public class StatisticsController : Controller
     {
@@ -14,7 +14,7 @@ namespace ReactBoard.Controllers
 
         public StatisticsController(
             IUserService userService,
-            IPostService postService) 
+            IPostService postService)
         {
             _userService = userService;
             _postService = postService;
@@ -22,10 +22,10 @@ namespace ReactBoard.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> GetSiteStatistics() 
+        public async Task<IActionResult> GetSiteStatistics()
         {
             return Ok(new SiteStatisticsDto
-            { 
+            {
                 TotalPosts = await _postService.GetEntityCountAsync(),
                 TotalUsers = await _userService.GetEntityCountAsync()
             });

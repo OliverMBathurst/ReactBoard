@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
-namespace ReactBoard.Models.Thread
+namespace ReactBoard.API.Models.Thread
 {
     public sealed class PaginatedThreadResultDto
     {

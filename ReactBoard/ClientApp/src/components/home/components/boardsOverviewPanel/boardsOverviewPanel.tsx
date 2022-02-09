@@ -12,12 +12,12 @@ const BoardsOverviewPanel = (props: IBoardsOverviewPanelProps) => {
 
     return (
         <div className="boards-overview-panel">
-            <div className="boards-overview-panel-top-box">
-                <span className="boards-overview-panel-top-box-text">
+            <div className="boards-overview-panel__top-box">
+                <span className="boards-overview-panel__top-box__text">
                     Boards
                 </span>
             </div>
-            <div className="boards-overview-panel-description-box">
+            <div className="boards-overview-panel__description-box">
                 {categories.map(category => {
                     return (
                         <BoardCategory

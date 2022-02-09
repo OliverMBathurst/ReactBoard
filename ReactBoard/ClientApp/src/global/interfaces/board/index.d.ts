@@ -1,3 +1,17 @@
-﻿import { IBoard, IBoardAdminMapping, IBoardService, INewBoard } from './interfaces'
+﻿import {
+    IBoard,
+    IBoardAdminMapping,
+    IBoardService,
+    INewBoard,
+    IBoardCatalog,
+    IBoardCatalogItem
+} from './interfaces'
 
-export { IBoard, IBoardAdminMapping, IBoardService, INewBoard }
+export {
+    IBoard,
+    IBoardAdminMapping,
+    IBoardService,
+    INewBoard,
+    IBoardCatalog,
+    IBoardCatalogItem
+}

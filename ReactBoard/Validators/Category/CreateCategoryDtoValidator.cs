@@ -1,16 +1,17 @@
 ﻿using FluentValidation;
+using ReactBoard.API.Models.Category;
+using ReactBoard.API.Validators;
 using ReactBoard.Domain.Entities.Category;
-using ReactBoard.Models.Category;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Validators.Category
+namespace ReactBoard.API.Validators.Category
 {
-    public class CreateCategoryDtoValidator : AbstractValidator<CreateCategoryDto>, 
+    public class CreateCategoryDtoValidator : AbstractValidator<CreateCategoryDto>,
         IAsynchronousValidator<CreateCategoryDto>
     {
         private readonly ICategoryService _categoryService;
 
-        public CreateCategoryDtoValidator(ICategoryService categoryService) 
+        public CreateCategoryDtoValidator(ICategoryService categoryService)
         {
             _categoryService = categoryService;
 

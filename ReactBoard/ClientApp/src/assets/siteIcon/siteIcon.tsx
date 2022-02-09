@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './styles.scss'
 
 interface ISiteIconProps {
-	onClick: () => void
+    onClick: () => void
 }
 
 const SiteIcon = (props: ISiteIconProps) => {
-	const { onClick } = props
+    const { onClick } = props
 
     return (
-		<svg id="siteIcon" version="1.1" x="0px" y="0px" onClick={onClick}
+        <svg id="siteIcon" version="1.1" x="0rem" y="0rem" onClick={onClick}
             viewBox="0 0 841.9 595.3" enableBackground="new 0 0 841.9 595.3" xmlSpace="preserve">
             <g>
                 <path fill="#61DAFB" d="M666.3,296.5c0-32.5-40.7-63.3-103.1-82.4c14.4-63.6,8-114.2-20.2-130.4c-6.5-3.8-14.1-5.6-22.4-5.6v22.3
@@ -43,4 +43,4 @@ const SiteIcon = (props: ISiteIconProps) => {
         </svg>)
 }
 
-export default SiteIcon
+export default memo(SiteIcon)

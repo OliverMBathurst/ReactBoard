@@ -1,6 +1,6 @@
 ﻿using _Post = ReactBoard.Domain.Entities.Post.Post;
 
-namespace ReactBoard.Models.Post
+namespace ReactBoard.API.Models.Post
 {
     public sealed class CreatePostDto
     {

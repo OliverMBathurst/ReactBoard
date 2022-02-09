@@ -1,27 +1,27 @@
 .panel {
     width: 100%;
-    border: 1px solid black;
+    border: 0.063rem solid black;
+}
 
-    svg {
-        float: right;
-    }
+.panel__top-box {
+    background-color: maroon;
+    font-size: 131%;
+    font-weight: 700;
+    position: relative;
+}
 
-    &-top-box {
-        background-color: maroon;
-        font-size: 131%;
-        font-weight: 700;
-        position: relative;
+.panel__top-box__text {
+    padding-left: 0.5em;
+    font-size: 0.938rem;
+    color: white;
+    font-weight: bold;
+}
 
-        &-text {
-            padding-left: .5em;
-            font-size: 15px;
-            color: white;
-            font-weight: bold;
-        }
-    }
+.panel__description-box {
+    padding: 0.5em;
+    line-height: 1.5em;
+}
 
-    &-description-box {
-        padding: .5em;
-        line-height: 1.5em;
-    }
+svg {
+    float: right;
 }

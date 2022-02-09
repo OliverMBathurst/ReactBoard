@@ -1,15 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ReactBoard.Attributes;
+using ReactBoard.API.Models.Category;
 using ReactBoard.Domain.Entities.Category;
-using ReactBoard.Models.Category;
 using System.Linq;
 using System.Threading.Tasks;
-using static ReactBoard.Domain.Entities.User.Enums;
 
-namespace ReactBoard.Controllers
+namespace ReactBoard.API.Controllers
 {
-    [Route("[controller]")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
@@ -20,7 +17,6 @@ namespace ReactBoard.Controllers
         }
 
         [HttpPost]
-        [Authorise(UserRole.Admin)]
         public async Task<IActionResult> CreateNewCategory([FromBody] CreateCategoryDto dto)
         {
             await _categoryService.SaveOrUpdateAsync(new Category { Name = dto.Name });

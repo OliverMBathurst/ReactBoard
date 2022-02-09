@@ -1,0 +1,59 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ReactBoard.ImageAPI.Domain.Common;
+using ReactBoard.ImageAPI.Infrastructure.DAL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ReactBoard.ImageAPI.Infrastructure.Common
+{
+    public abstract class EntityRepository<TEntity, TId> : IEntityRepository<TEntity, TId>
+        where TEntity : class, IEntity<TId>
+    {
+        protected readonly DatabaseContext _context;
+
+        protected EntityRepository(DatabaseContext context)
+        {
+            _context = context;
+        }
+
+        public virtual IQueryable<TEntity> GetAll()
+        {
+            return _context.Set<TEntity>();
+        }
+
+        public virtual Task<TEntity> GetByIdAsync(TId id)
+        {
+            return _context.Set<TEntity>().FirstOrDefaultAsync(x => x.Id.Equals(id));
+        }
+
+        public virtual IEnumerable<TEntity> Fetch(Func<TEntity, bool> predicate)
+        {
+            return _context.Set<TEntity>().Where(predicate);
+        }
+
+        public virtual async Task SaveOrUpdateAsync(TEntity entity)
+        {
+            _context.Add(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public virtual async Task<long> GetEntityCountAsync()
+        {
+            return await _context.Set<TEntity>().LongCountAsync();
+        }
+
+        public virtual async Task DeleteAsync(TId id)
+        {
+            var removal = _context.Set<TEntity>()
+                .FirstOrDefaultAsync(x => x.Id.Equals(id));
+
+            if (removal != null)
+            {
+                _context.Remove(removal);
+                await _context.SaveChangesAsync();
+            }
+        }
+    }
+}

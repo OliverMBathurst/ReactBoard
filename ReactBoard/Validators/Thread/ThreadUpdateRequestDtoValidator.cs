@@ -1,16 +1,16 @@
 ﻿using FluentValidation;
+using ReactBoard.API.Models.Thread;
 using ReactBoard.Domain.Entities.Thread;
-using ReactBoard.Models.Thread;
 using System.Threading.Tasks;
 
-namespace ReactBoard.Validators.Thread
+namespace ReactBoard.API.Validators.Thread
 {
     public class ThreadUpdateRequestDtoValidator : AbstractValidator<ThreadUpdateRequestDto>,
         IAsynchronousValidator<ThreadUpdateRequestDto>
     {
         private readonly IThreadService _threadService;
 
-        public ThreadUpdateRequestDtoValidator(IThreadService threadService) 
+        public ThreadUpdateRequestDtoValidator(IThreadService threadService)
         {
             _threadService = threadService;
 

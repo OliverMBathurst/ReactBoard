@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using ReactBoard.API.Models.Board;
+using ReactBoard.API.Validators;
 using ReactBoard.Domain.Entities.Board;
-using ReactBoard.Models.Board;
 using System.Linq;
 
-namespace ReactBoard.Validators.Board
+namespace ReactBoard.API.Validators.Board
 {
     public class CreateBoardDtoValidator : AbstractValidator<CreateBoardDto>,
         ISynchronousValidator<CreateBoardDto>

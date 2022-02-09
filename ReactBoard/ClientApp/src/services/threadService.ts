@@ -34,9 +34,9 @@ class ThreadService implements IThreadService {
         })
     }
 
-    getThread = (threadId: number, boardId: number): Promise<IThread> => {
+    getThread = (threadId: number): Promise<IThread> => {
         return new Promise<IThread>((resolve, reject) => {
-            axios.get<IThread>(formatString(this.getEndpoint, threadId, boardId)).then(res => {
+            axios.get<IThread>(formatString(this.getEndpoint, threadId)).then(res => {
                 if (res.status === HttpStatusCode.Status200OK) {
                     resolve(res.data)
                 }
@@ -46,9 +46,9 @@ class ThreadService implements IThreadService {
         })
     }
 
-    deleteThread = (threadId: number, boardId: number): Promise<void> => {
+    deleteThread = (threadId: number): Promise<void> => {
         return new Promise<void>((resolve, reject) => {
-            axios.delete<void>(formatString(this.deleteEndpoint, threadId, boardId)).then(res => {
+            axios.delete<void>(formatString(this.deleteEndpoint, threadId)).then(res => {
                 if (res.status === HttpStatusCode.Status200OK) {
                     resolve()
                 }

@@ -2,7 +2,7 @@
 using _Post = ReactBoard.Domain.Entities.Post.Post;
 using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
-namespace ReactBoard.Models.Thread
+namespace ReactBoard.API.Models.Thread
 {
     public sealed class CreateThreadDto
     {
@@ -12,9 +12,10 @@ namespace ReactBoard.Models.Thread
 
         public static implicit operator _Thread(CreateThreadDto dto)
         {
-            return new _Thread {
+            return new _Thread
+            {
                 BoardId = dto.BoardId,
-                Posts = new List<_Post> { 
+                Posts = new List<_Post> {
                     dto.Post
                 }
             };

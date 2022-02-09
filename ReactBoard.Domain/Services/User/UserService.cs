@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using ReactBoard.Domain.Common;
 using ReactBoard.Domain.Entities.User;
+using ReactBoard.Domain.Settings;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;

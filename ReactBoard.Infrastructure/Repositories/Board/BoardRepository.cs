@@ -11,6 +11,11 @@ namespace ReactBoard.Infrastructure.Repositories.Board
     {
         public BoardRepository(DatabaseContext context) : base(context) { }
 
+        public async Task<IBoard> GetByUrlNameAsync(string urlName)
+        {
+            return await _context.Set<_Board>().FirstOrDefaultAsync(x => x.UrlName.Equals(urlName));
+        }
+
         public override async Task DeleteAsync(int id)
         {
             var removal = await _context.Set<_Board>()

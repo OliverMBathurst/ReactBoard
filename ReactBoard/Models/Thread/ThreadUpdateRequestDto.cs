@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReactBoard.Models.Thread
+namespace ReactBoard.API.Models.Thread
 {
     public sealed class ThreadUpdateRequestDto
     {

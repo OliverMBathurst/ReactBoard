@@ -1,9 +1,9 @@
-.footer-text {
+.footer-text__text {
     text-decoration: underline;
+}
 
-    &-period {
-        text-decoration: none;
-        color: black;
-        padding-right: 5px;
-    }
+.footer-text__period {
+    text-decoration: none;
+    color: black;
+    padding-right: 0.313rem;
 }

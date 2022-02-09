@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using ReactBoard.Models.Api;
+using ReactBoard.API.Models.Api;
 using System.Linq;
 
-namespace ReactBoard.Attributes
+namespace ReactBoard.API.Attributes
 {
     public class ValidateModelStateAttribute : ActionFilterAttribute
     {

@@ -1,7 +1,7 @@
 ﻿using static ReactBoard.Domain.Entities.User.Enums;
 using _User = ReactBoard.Domain.Entities.User.User;
 
-namespace ReactBoard.Models.User
+namespace ReactBoard.API.Models.User
 {
     public class UserDto
     {
@@ -22,10 +22,11 @@ namespace ReactBoard.Models.User
 
         public static implicit operator UserDto(_User user)
         {
-            return new UserDto { 
-                Username = user.Username, 
-                Token = user.Token, 
-                Role = user.Role 
+            return new UserDto
+            {
+                Username = user.Username,
+                Token = user.Token,
+                Role = user.Role
             };
         }
     }

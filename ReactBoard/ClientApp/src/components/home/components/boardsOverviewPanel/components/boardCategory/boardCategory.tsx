@@ -13,7 +13,7 @@ const BoardCategory = (props: IBoardCategoryProps) => {
 
     return (
         <div className="board-category">
-            <span className="board-category-text">{category}</span>
+            <span className="board-category__text">{category}</span>
             {boards.map(board => {
                 return (
                     <BoardLink

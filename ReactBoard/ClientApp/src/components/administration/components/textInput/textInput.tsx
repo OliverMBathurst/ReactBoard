@@ -20,10 +20,10 @@ const Input = (props: IInputProps) => {
 
     return (
         <div className="input-box">
-            <label className="input-text">{title}</label>
+            <label className="input-box__text">{title}</label>
             <input
                 required={required}
-                className="input"
+                className="input-box__input"
                 ref={inputRef}
                 defaultValue={text}
                 onChange={e => onChange && onChange(e.target.value)}

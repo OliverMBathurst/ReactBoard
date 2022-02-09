@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReactBoard.Domain.Entities.Board;
 using ReactBoard.Domain.Entities.Category;
-using ReactBoard.Domain.Entities.Image;
 using ReactBoard.Domain.Entities.Post;
 using ReactBoard.Domain.Entities.Thread;
 using ReactBoard.Domain.Entities.User;
@@ -23,11 +22,7 @@ namespace ReactBoard.Infrastructure.DAL
 
         public DbSet<Post> Posts { get; set; }
 
-        public DbSet<Image> Images { get; set; }
-
         public DbSet<Category> Categories { get; set; }
-
-        public DbSet<ImageMetadata> ImageMetadata { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,8 +33,6 @@ namespace ReactBoard.Infrastructure.DAL
             modelBuilder.Entity<BoardAdminMapping>().ToTable("BoardAdminMapping");
             modelBuilder.Entity<Thread>().ToTable("Thread");
             modelBuilder.Entity<Post>().ToTable("Post");
-            modelBuilder.Entity<Image>().ToTable("Image");
-            modelBuilder.Entity<ImageMetadata>().ToTable("ImageMetadata");
             modelBuilder.Entity<Category>().ToTable("Category");
 
             //Key setups
@@ -49,16 +42,9 @@ namespace ReactBoard.Infrastructure.DAL
             modelBuilder.Entity<BoardAdminMapping>().HasKey(x => x.Id);
             modelBuilder.Entity<Thread>().HasKey(x => x.Id);
             modelBuilder.Entity<Post>().HasKey(x => x.Id);
-            modelBuilder.Entity<Image>().HasKey(x => x.Id);
-            modelBuilder.Entity<ImageMetadata>().HasKey(x => x.Id);
             modelBuilder.Entity<Category>().HasKey(x => x.Id);
 
             //Delete behaviour
-            modelBuilder.Entity<Image>()
-                .HasOne<ImageMetadata>()
-                .WithOne()
-                .HasForeignKey<ImageMetadata>(x => x.ImageId)
-                .OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<User>()
                 .HasOne<UserRoleMapping>()
                 .WithOne()
@@ -83,11 +69,6 @@ namespace ReactBoard.Infrastructure.DAL
                 .HasForeignKey(x => x.ThreadId)
                 .OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Post>()
-                .HasOne<Image>()
-                .WithOne()
-                .HasForeignKey<Post>(x => x.ImageId)
-                .OnDelete(DeleteBehavior.ClientCascade);
-            modelBuilder.Entity<Post>()
                 .HasOne<Board>()
                 .WithOne()
                 .HasForeignKey<Post>(x => x.BoardId);
@@ -104,10 +85,6 @@ namespace ReactBoard.Infrastructure.DAL
             modelBuilder.Entity<Thread>().Property(x => x.Id).UseIdentityColumn().ValueGeneratedOnAdd()
                 .Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
             modelBuilder.Entity<Post>().Property(x => x.Id).UseIdentityColumn().ValueGeneratedOnAdd()
-                .Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
-            modelBuilder.Entity<Image>().Property(x => x.Id).UseIdentityColumn().ValueGeneratedOnAdd()
-                .Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
-            modelBuilder.Entity<ImageMetadata>().Property(x => x.Id).UseIdentityColumn().ValueGeneratedOnAdd()
                 .Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
             modelBuilder.Entity<Category>().Property(x => x.Id).UseIdentityColumn().ValueGeneratedOnAdd()
                 .Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);

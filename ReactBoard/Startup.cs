@@ -10,12 +10,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using ReactBoard.Attributes;
+using ReactBoard.API.Attributes;
+using ReactBoard.Domain.Settings;
 using ReactBoard.Infrastructure.DAL;
 using ReactBoard.Infrastructure.Models;
 using System.Text;
 
-namespace ReactBoard
+namespace ReactBoard.API
 {
     public class Startup
     {
@@ -26,7 +27,6 @@ namespace ReactBoard
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDependencies();
@@ -65,7 +65,7 @@ namespace ReactBoard
 
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"), 
+                    Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly("ReactBoard.Infrastructure")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -97,7 +97,7 @@ namespace ReactBoard
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-            
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
