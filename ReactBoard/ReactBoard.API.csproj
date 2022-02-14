@@ -51,6 +51,9 @@
     <None Remove="ClientApp\src\components\home\components\boardsOverviewPanel\components\boardCategory\components\boardLink\boardLink.tsx" />
     <None Remove="ClientApp\src\components\home\components\index.d.ts" />
     <None Remove="ClientApp\src\components\thread\components\index.d.ts" />
+    <None Remove="ClientApp\src\components\thread\components\threadControls\components\index.d.ts" />
+    <None Remove="ClientApp\src\components\thread\components\threadControls\components\threadControlsRow\interfaces.ts" />
+    <None Remove="ClientApp\src\components\thread\components\threadControls\components\threadControlsRow\threadControlsRow.tsx" />
     <None Remove="ClientApp\src\components\thread\components\threadControls\threadControls.tsx" />
     <None Remove="ClientApp\src\components\thread\components\threadPost\threadPost.tsx" />
     <None Remove="ClientApp\src\components\thread\index.d.ts" />
@@ -62,6 +65,7 @@
     <None Remove="ClientApp\src\global\enums\user\enums.ts" />
     <None Remove="ClientApp\src\global\enums\validation\enums.ts" />
     <None Remove="ClientApp\src\global\helpers\index.d.ts" />
+    <None Remove="ClientApp\src\global\helpers\routeHelper.ts" />
     <None Remove="ClientApp\src\global\HOC\globalWrapper.tsx" />
     <None Remove="ClientApp\src\global\interfaces\board\index.d.ts" />
     <None Remove="ClientApp\src\global\interfaces\board\interfaces.ts" />
@@ -120,6 +124,9 @@
     <TypeScriptCompile Include="ClientApp\src\components\home\components\index.d.ts" />
     <TypeScriptCompile Include="ClientApp\src\components\index.d.ts" />
     <TypeScriptCompile Include="ClientApp\src\components\thread\components\index.d.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\thread\components\threadControls\components\index.d.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\thread\components\threadControls\components\threadControlsRow\interfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\thread\components\threadControls\components\threadControlsRow\threadControlsRow.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\thread\components\threadControls\threadControls.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\thread\components\threadPost\threadPost.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\thread\thread.tsx" />
@@ -130,6 +137,7 @@
     <TypeScriptCompile Include="ClientApp\src\global\enums\user\enums.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\enums\validation\enums.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\helpers\index.d.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\helpers\routeHelper.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\globalWrapper.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\interfaces\board\index.d.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\interfaces\board\interfaces.ts" />

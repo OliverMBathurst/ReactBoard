@@ -11,10 +11,10 @@ const App = () => {
         <Switch>
             <Route exact path={HomeRoute} component={Home} />
             <Route path={AdminRoute} component={Administration} />
-            <Route path="/board/:boardUrlName/catalog" render={({ match }) => <BoardCatalogView boardUrlName={match.params.boardUrlName} />} />
-            <Route path="/board/:boardUrlName/:pageNumber" render={({ match }) => <Board boardUrlName={match.params.boardUrlName} pageNumber={match.params.page} />} />
-            <Route path="/board/:boardUrlName" render={({ match }) => <Board boardUrlName={match.params.boardUrlName} />} />
-            <Route path="/thread/:threadId" render={({ match }) => <Thread id={match.params.threadId} />} />
+            <Route path="/:boardUrlName/catalog" render={({ match }) => <BoardCatalogView boardUrlName={match.params.boardUrlName} />} />
+            <Route path="/:boardUrlName/:pageNumber" render={({ match }) => <Board boardUrlName={match.params.boardUrlName} pageNumber={match.params.page} />} />
+            <Route path="/:boardUrlName" render={({ match }) => <Board boardUrlName={match.params.boardUrlName} />} />
+            <Route path="/:boardUrlName/:threadId" render={({ match }) => <Thread id={match.params.threadId} boardUrlName={match.params.boardUrlName} />} />
         </Switch>
     )
 }

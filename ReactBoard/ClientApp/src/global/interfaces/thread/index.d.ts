@@ -1,3 +1,3 @@
-﻿import { IThread, INewThread, IThreadService } from './interfaces'
+﻿import { IThread, INewThread, IThreadService, IThreadUpdateRequest } from './interfaces'
 
-export { IThread, INewThread, IThreadService }
+export { IThread, INewThread, IThreadService, IThreadUpdateRequest }
