@@ -5,23 +5,27 @@
 
 .panel__top-box {
     background-color: maroon;
-    font-size: 131%;
-    font-weight: 700;
+    font-weight: bold;
     position: relative;
+
+    #closeIcon {
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        right: 0.125rem;
+        top: 15%;
+    }
 }
 
 .panel__top-box__text {
-    padding-left: 0.5em;
-    font-size: 0.938rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-left: 0.5rem;
     color: white;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .panel__description-box {
     padding: 0.5em;
     line-height: 1.5em;
-}
-
-svg {
-    float: right;
 }

@@ -1,0 +1,13 @@
+﻿.board-footer__left-container__bracket-option__link {
+    color: blue;
+    cursor: pointer;
+}
+
+.board-footer__left-container__bracket-option__link:visited {
+    color: purple;
+}
+
+.board-footer__left-container__bracket-option__link--selected {
+    color: blue;
+    font-weight: bold;
+}

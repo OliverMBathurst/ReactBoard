@@ -1,20 +1,20 @@
 ﻿import React, { useEffect, useState } from 'react'
-import withGlobalWrapper from '../../global/HOC/globalWrapper'
 import { IThread } from '../../global/interfaces/thread'
 import { ThreadService } from '../../services'
-import { ThreadControls, ThreadPost } from './components'
+import { ThreadPost } from './components'
 import './styles.scss'
+import { withThreadWrapper } from '../../global/HOC'
 
 interface IThreadProps {
-    id: number
+    threadId: number
     boardUrlName: string
 }
 
-const threadService = new ThreadService()
+const _threadService = new ThreadService()
 
 const Thread = (props: IThreadProps) => {
     const {
-        id: threadId,
+        threadId,
         boardUrlName
     } = props
 
@@ -25,7 +25,7 @@ const Thread = (props: IThreadProps) => {
     useEffect(() => {
         let mounted = true
 
-        threadService.getThread(threadId).then(res => {
+        _threadService.getThread(threadId).then(res => {
             if (mounted) {
                 setThread(res)
             }
@@ -47,7 +47,7 @@ const Thread = (props: IThreadProps) => {
 
         const threadCopy: IThread = { ...thread }
 
-        const newPosts = await threadService.getNewPostsForThread(threadId, threadCopy.posts[threadCopy.posts.length - 1].time)
+        const newPosts = await _threadService.getNewPostsForThread(threadId, threadCopy.posts[threadCopy.posts.length - 1].time)
         threadCopy.posts = threadCopy.posts.concat(newPosts)
 
         setThread(threadCopy)
@@ -80,18 +80,18 @@ const Thread = (props: IThreadProps) => {
         return null
     }
 
-    return (
-        <div className="thread">
-            <ThreadControls
-                thread={thread}
-                boardUrlName={boardUrlName}
-                onAutoRefreshToggled={onAutoRefreshToggled}
-                onUpdateRequested={onUpdateRequested}
-                autoRefreshEnabled={autoRefreshEnabled}
-            >
+    return (withThreadWrapper(() => {
+        return (
+            <div className="thread">
                 {thread.posts.map(post => <ThreadPost post={post} />)}
-            </ThreadControls>
-        </div>)
+            </div>)
+    }, {
+        thread: thread,
+        boardUrlName: boardUrlName,
+        onAutoRefreshToggled: onAutoRefreshToggled,
+        onUpdateRequested: onUpdateRequested,
+        autoRefreshEnabled: autoRefreshEnabled
+    }))
 }
 
-export default withGlobalWrapper(Thread)
+export default Thread

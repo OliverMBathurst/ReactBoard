@@ -5,37 +5,97 @@
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\thread\components\threadControls\components\threadControlsRow\interfaces.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\thread\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\helpers\routeHelper.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withThreadWrapper\threadControlsRow\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\thread\components\threadControls\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withThreadWrapper\withThreadWrapper.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\thread\components\threadControls\components\threadControlsRow\threadControlsRow.tsx">
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\HOC\globalWrapper.tsx">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\statistic\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\thread\components\threadControls\threadControls.tsx">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\statistic\interfaces.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\thread\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\components\statistic\statistic.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\link\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\link\interfaces.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\components\bracketedLink\bracketedLink.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withBoardWrapper\components\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withBoardWrapper\components\boardHeader\boardHeader.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withBoardWrapper\withBoardWrapper.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\components\linkButton\linkButton.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\components\button\button.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\helpers\paginationHelper.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withThreadWrapper\threadControlsRow\threadControlsRow.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withGlobalWrapper\withGlobalWrapper.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\components\thread\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
@@ -45,7 +105,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\board\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\board\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
@@ -55,127 +115,122 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\administration\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\administration\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\validation\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\validation\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\user\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\user\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\thread\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\thread\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\post\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\post\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\pagination\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\pagination\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\misc\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\misc\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\image\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\image\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\common\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\common\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\category\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\category\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\interfaces\board\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\interfaces\board\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\assets\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\assets\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\enums\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\enums\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\helpers\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\helpers\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\global\types\validation\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\global\types\validation\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\home\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\home\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\boardPaginatedView\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\boardPaginatedView\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\validators\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\validators\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\services\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\services\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\index.d.ts">
+    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\boardPaginatedView\components\threadsViewFooter\components\pageSelector.tsx">
+    <TypeScriptCompile Update="ClientApp\src\global\HOC\withBoardWrapper\components\boardFooter\boardFooter.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\boardPaginatedView\components\threadsViewFooter\threadsViewFooter.tsx">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\boardPaginatedView\components\threadsView\threadsView.tsx">
+    <TypeScriptCompile Update="ClientApp\src\components\board\board\components\boardPaginatedView\components\threads\threads.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
@@ -205,7 +260,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\home\components\boardsOverviewPanel\components\boardCategory\components\boardLink\boardLink.tsx">
+    <TypeScriptCompile Update="ClientApp\src\global\components\boardLink\boardLink.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
@@ -230,7 +285,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\components\administration\components\categorySelect\categorySelect.tsx">
+    <TypeScriptCompile Update="ClientApp\src\global\components\categorySelect\categorySelect.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

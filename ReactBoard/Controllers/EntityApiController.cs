@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.API.Controllers
 {
+    [Route("[controller]")]
     public abstract class EntityApiController<TEntity, TId> : Controller
         where TEntity : class, IEntity<TId>
     {

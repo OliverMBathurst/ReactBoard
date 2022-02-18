@@ -47,7 +47,7 @@ class BoardService implements IBoardService {
 
     createBoard = (board: INewBoard): Promise<void> => {
         return new Promise<void>((resolve, reject) => {
-            axios.post<INewBoard>(this.endpoint, { data: board }).then(res => {
+            axios.post<INewBoard>(this.endpoint, board).then(res => {
                 if (res.status === HttpStatusCode.Status200OK) {
                     resolve()
                 }

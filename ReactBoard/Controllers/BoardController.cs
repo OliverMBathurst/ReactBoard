@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ReactBoard.API.Attributes;
 using ReactBoard.API.Models.Board;
 using ReactBoard.Domain.Entities.Board;
 using ReactBoard.Domain.Entities.Thread;
 using System.Linq;
 using System.Threading.Tasks;
-using static ReactBoard.Domain.Entities.User.Enums;
 
 namespace ReactBoard.API.Controllers
 {
-    [Route("[controller]")]
     public class BoardController : EntityApiController<Board, int>
     {
         private readonly IBoardService _boardService;

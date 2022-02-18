@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { SiteIcon } from '../../assets'
 import { Panel } from '../../global/components'
@@ -40,7 +40,7 @@ const Administration = () => {
 
     const redirectToHomeCallback = useCallback(() => setRedirectToHome(true), [])
 
-    const onBoardCreate = useCallback(async (board: INewBoard) => {
+    const onBoardCreate = (board: INewBoard) => {
         const validationResult = boardValidator.execute(board)
 
         if (validationResult.length > 0) {
@@ -52,9 +52,9 @@ const Administration = () => {
                     .catch(err => console.error(err))
             ).catch(err => console.error(err))
         }
-    }, [])
+    }
 
-    const onCategoryCreate = useCallback((category: INewCategory) => {
+    const onCategoryCreate = (category: INewCategory) => {
         const categoryValidationResult = categoryValidator.execute(category)
 
         if (categoryValidationResult.length > 0) {
@@ -66,7 +66,7 @@ const Administration = () => {
                     .catch(err => console.error(err))
             ).catch(err => console.error(err))
         }
-    }, [])
+    }
 
 
     if (redirectToHome) {

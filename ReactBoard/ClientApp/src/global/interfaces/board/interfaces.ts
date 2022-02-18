@@ -6,7 +6,7 @@ import { IPost } from "../post"
 export interface IBoard extends IEntity<number> {
     name: string
     description: string
-    category: ICategory
+    categoryId: number
     urlName: string
     threads?: IThread[]
 }

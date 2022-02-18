@@ -1,0 +1,29 @@
+﻿.thread-controls__row {
+    width: 100%;
+}
+
+.thread-controls__row__link__text {
+    color: blue;
+    cursor: pointer;
+}
+
+.thread-controls__row__link__text:visited {
+    color: purple;
+}
+
+.thread-controls__row__link {
+    display: inline-block;
+}
+
+.thread-controls__row__link__text__auto {
+    cursor: default;
+}
+
+.thread-controls__row__stats-container {
+    display: inline-block;
+    margin-left: auto;
+}
+
+.thread-controls__row__stats-container__stat {
+    font-size: 0.75rem;
+}

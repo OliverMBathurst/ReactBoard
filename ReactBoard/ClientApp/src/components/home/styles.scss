@@ -1,7 +1,20 @@
-﻿.home-panel {
+﻿@import '../../breakpoints.scss';
+
+.home-panel {
     margin: auto;
     text-align: left;
-    width: 57.69em;
-    *width: 56.301em;
-    min-width: 46.875rem;
+    min-width: 20rem;
+
+    #siteIcon {
+        cursor: pointer;
+    }
+
+    @include breakpoint-device(desktop) {
+        width: 46.875rem;
+    }
+
+    @include breakpoint-device(mobile) {
+        width: 21.5rem;
+        font-size: 1rem;
+    }
 }

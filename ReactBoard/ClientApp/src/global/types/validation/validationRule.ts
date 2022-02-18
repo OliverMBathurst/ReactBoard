@@ -28,7 +28,7 @@ class ValidationRule<T, TProp> implements IValidationRule<T> {
             return this.innerValidatorCreationRule(prop).execute(prop)
         }
 
-        if (this.propertyValidationRule && this.code && this.message) {
+        if (this.propertyValidationRule && this.code !== undefined && this.message) {
             return this.propertyValidationRule(prop)
                 ? []
                 : [{

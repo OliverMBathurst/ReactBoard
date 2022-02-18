@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.API.Controllers
 {
-    [Route("[controller]")]
     public class PostController : EntityApiController<Post, long>
     {
         private readonly IPostService _postService;

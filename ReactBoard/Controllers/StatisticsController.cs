@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.API.Controllers
 {
-    public class StatisticsController : Controller
+    public class StatisticsController : AbstractApiController
     {
         private readonly IUserService _userService;
         private readonly IPostService _postService;

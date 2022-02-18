@@ -4,10 +4,11 @@ import { Panel } from '../../global/components';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../global/constants/strings';
 import { ICategory } from '../../global/interfaces/category';
 import { CategoryService } from '../../services';
-import { BoardsOverviewPanel, Footer } from './components';
+import { Footer } from './components';
+import BoardCategory from './components/boardCategory/boardCategory';
 import './styles.scss';
 
-const categoryService = new CategoryService()
+const _categoryService = new CategoryService()
 
 const Home = () => {
     const [descriptionDismissed, setDescriptionDismissed] = useState<boolean>(false)
@@ -16,7 +17,7 @@ const Home = () => {
     useEffect(() => {
         let mounted = true
 
-        categoryService.getAll().then(c => {
+        _categoryService.getAll().then(c => {
             if (mounted) {
                 setCategories(c)
             }
@@ -35,7 +36,16 @@ const Home = () => {
                     <span>{SITE_DESCRIPTION}</span>
                 </Panel>
             }
-            <BoardsOverviewPanel categories={categories} />
+            <Panel title="Boards">
+                {categories.map(category => {
+                    return (
+                        <BoardCategory
+                            key={category.id}
+                            category={category.name}
+                            boards={category.boards}
+                        />)
+                })}
+            </Panel>
             <Footer />
         </div>)
 }

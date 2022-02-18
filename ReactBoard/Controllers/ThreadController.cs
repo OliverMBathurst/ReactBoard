@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.API.Controllers
 {
-    [Route("[controller]")]
     public class ThreadController : EntityApiController<Thread, long>
     {
         private readonly IThreadService _threadService;

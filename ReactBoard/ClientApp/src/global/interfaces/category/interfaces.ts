@@ -1,7 +1,7 @@
 import { IBoard } from "../board";
 import { IEntity } from "../common";
 
-export interface ICategory extends IEntity<number | null> {
+export interface ICategory extends IEntity<number> {
     name: string
     boards: IBoard[]
 }

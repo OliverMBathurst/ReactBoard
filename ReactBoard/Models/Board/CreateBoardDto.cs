@@ -1,4 +1,5 @@
-﻿using _Board = ReactBoard.Domain.Entities.Board.Board;
+﻿using ReactBoard.API.Models.Category;
+using _Board = ReactBoard.Domain.Entities.Board.Board;
 
 namespace ReactBoard.API.Models.Board
 {
@@ -12,6 +13,8 @@ namespace ReactBoard.API.Models.Board
 
         public bool IsWorkSafe { get; set; }
 
+        public CategoryDto Category { get; set; }
+
         public int MaxThreads { get; set; } = int.MaxValue;
 
         public static implicit operator _Board(CreateBoardDto dto)
@@ -22,7 +25,8 @@ namespace ReactBoard.API.Models.Board
                 Description = dto.Description,
                 UrlName = dto.UrlName,
                 IsWorkSafe = dto.IsWorkSafe,
-                MaxThreads = dto.MaxThreads
+                MaxThreads = dto.MaxThreads,
+                CategoryId = dto.Category.Id
             };
         }
     }

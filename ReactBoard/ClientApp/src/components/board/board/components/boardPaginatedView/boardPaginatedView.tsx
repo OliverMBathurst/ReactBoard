@@ -1,16 +1,17 @@
 ﻿import React, { useEffect, useState } from 'react'
+import { withBoardWrapper } from '../../../../../global/HOC'
 import { IBoard } from '../../../../../global/interfaces/board'
 import { IPaginationResult } from '../../../../../global/interfaces/pagination'
 import { IThread } from '../../../../../global/interfaces/thread'
 import { ThreadService } from '../../../../../services'
-import { ThreadsView, ThreadsViewFooter } from './components'
+import { Threads } from './components'
 
 interface IBoardPaginatedViewProps {
     board: IBoard
     pageNumber: number
 }
 
-const threadService = new ThreadService()
+const _threadService = new ThreadService()
 
 const BoardPaginatedView = (props: IBoardPaginatedViewProps) => {
     const {
@@ -23,7 +24,7 @@ const BoardPaginatedView = (props: IBoardPaginatedViewProps) => {
     useEffect(() => {
         let mounted = true
 
-        threadService.getPaginatedThreadsForBoard(board.id, pageNumber).then(res => {
+        _threadService.getPaginatedThreadsForBoard(board.id, pageNumber).then(res => {
             if (mounted) {
                 setPaginatedResult(res)
             }
@@ -34,19 +35,22 @@ const BoardPaginatedView = (props: IBoardPaginatedViewProps) => {
         }
     }, [board.id, pageNumber])
 
+    const onAllRequested = () => {
+        //todo
+    }
+
     if (!paginatedResult) {
         return null
     }
 
-    return (
-        <>
-            <ThreadsView threads={paginatedResult.entities} />
-            <ThreadsViewFooter
-                boardId={board.id}
-                currentPage={paginatedResult.currentPage}
-                totalPages={paginatedResult.totalPages}
-            />
-        </>)
+    return withBoardWrapper(
+        () => <Threads boardUrlName={board.urlName} threads={paginatedResult.entities} />,
+        {
+            board: board,
+            currentPage: paginatedResult.currentPage,
+            totalPages: paginatedResult.totalPages,
+            onAllRequested: onAllRequested
+        })
 }
 
 export default BoardPaginatedView

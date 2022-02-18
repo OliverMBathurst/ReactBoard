@@ -1,0 +1,17 @@
+.board-category {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1.25rem;
+}
+
+.board-category__text {
+    text-decoration: underline;
+    display: inline;
+    font-weight: bold;
+}
+
+.board-category__boards-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

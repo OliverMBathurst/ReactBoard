@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ReactBoard.API.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : AbstractApiController
     {
         private readonly ICategoryService _categoryService;
 
