@@ -4,16 +4,22 @@ import './styles.scss'
 interface IButtonProps {
     text: string
     onClick: () => void
+    className?: string
 }
 
 const Button = (props: IButtonProps) => {
     const {
         text,
-        onClick
+        onClick,
+        className
     } = props
 
     return (
-        <button className="button" type="submit" onClick={() => onClick()}>
+        <button
+            className={`${className || ""} button`}
+            type="submit"
+            onClick={() => onClick()}
+        >
             {text}
         </button>
     )

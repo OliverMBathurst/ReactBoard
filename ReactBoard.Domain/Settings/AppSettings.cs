@@ -9,5 +9,7 @@
         public string Secret { get; set; }
 
         public int ThreadsPerPage { get; set; } = 10;
+
+        public int MaxFeaturedThreads { get; set; } = 8;
     }
 }

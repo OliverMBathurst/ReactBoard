@@ -8,7 +8,7 @@ interface IBoardProps {
     pageNumber?: number
 }
 
-const boardService = new BoardService()
+const _boardService = new BoardService()
 
 const Board = (props: IBoardProps) => {
     const {
@@ -21,7 +21,7 @@ const Board = (props: IBoardProps) => {
     useEffect(() => {
         let mounted = true
 
-        boardService.getBoardByUrlName(boardUrlName).then(res => {
+        _boardService.getBoardByUrlName(boardUrlName).then(res => {
             if (mounted) {
                 setBoard(res)
             }

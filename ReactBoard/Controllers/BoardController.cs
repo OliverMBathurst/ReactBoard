@@ -21,12 +21,11 @@ namespace ReactBoard.API.Controllers
             _threadService = threadService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateNewBoard([FromBody] CreateBoardDto dto)
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult GetAllBoards() 
         {
-            Board newBoard = dto;
-            await _service.SaveOrUpdateAsync(newBoard);
-            return Ok();
+            return Ok(_service.GetAll().ToList());
         }
 
         [HttpGet]
@@ -52,28 +51,34 @@ namespace ReactBoard.API.Controllers
             return Ok(new BoardCatalogDto { Items = dtos });
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetBoardByUrlName([FromRoute] string urlName)
+        {
+            if (string.IsNullOrWhiteSpace(urlName))
+                return BadRequest("Invalid Board identifier");
+
+            var board = await _boardService.GetByUrlNameAsync(urlName);
+            if (board == null)
+                return NotFound();
+
+            return Ok(board);
+        }
+
         [HttpDelete]
         [Route("{id}/delete")]
         public async Task<IActionResult> DeleteBoard([FromRoute] int id)
         {
             await _service.DeleteAsync(id);
-
             return Ok();
         }
 
-        [HttpGet]
-        [Route("{urlName}")]
-        [AllowAnonymous]
-        public IActionResult GetBoardByUrlName([FromRoute] string urlName)
+        [HttpPost]
+        public async Task<IActionResult> CreateNewBoard([FromBody] CreateBoardDto dto)
         {
-            if (string.IsNullOrWhiteSpace(urlName))
-                return BadRequest("Invalid Board identifier");
-
-            var board = _boardService.GetByUrlNameAsync(urlName);
-            if (board == null)
-                return NotFound();
-
-            return Ok(board);
+            Board newBoard = dto;
+            await _service.SaveOrUpdateAsync(newBoard);
+            return Ok();
         }
     }
 }

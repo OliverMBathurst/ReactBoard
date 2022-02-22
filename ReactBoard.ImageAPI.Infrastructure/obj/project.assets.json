@@ -5660,11 +5660,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj",
       "projectName": "ReactBoard.ImageAPI.Infrastructure",
-      "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Infrastructure\\ReactBoard.ImageAPI.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5684,8 +5684,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
-              "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj"
+            "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
+              "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj"
             }
           }
         }

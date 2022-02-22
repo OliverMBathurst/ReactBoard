@@ -20,6 +20,6 @@ namespace ReactBoard.Domain.Entities.Board
 
         public int MaxThreads { get; set; }
 
-        public virtual List<_Thread> Threads { get; set; }
+        public virtual List<_Thread> Threads { get; set; } = new List<_Thread>();
     }
 }

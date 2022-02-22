@@ -1,27 +1,48 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import { Button } from '../../../../global/components'
 import { IBoard } from '../../../../global/interfaces/board'
+import { ICategory } from '../../../../global/interfaces/category'
+import './styles.scss'
 
 interface IBoardRowProps {
-    boards: IBoard[]
-    onBoardDeleteRequested: (boardId: number) => void
+    board: IBoard
+    categories: ICategory[]
+    onBoardDeleteRequested: () => void
 }
 
 const BoardRow = (props: IBoardRowProps) => {
-    const { boards, onBoardDeleteRequested } = props
+    const {
+        board: {
+            id,
+            name,
+            categoryId,
+            description
+        },
+        categories,
+        onBoardDeleteRequested
+    } = props
 
+    const categoryName = useMemo(() => {
+        if (categories.length === 0)
+            return ""
+
+        const filtered = categories.filter(category => category.id === categoryId)
+        return filtered.length > 0 ? filtered[0].name : ""
+    }, [categories])
 
     return (
-        <>
-            {boards.map(b => {
-                return (
-                    <div className="board-row">
-                        <span className="board-row-id">{`ID: ${b.id}`}</span>
-                        <span className="board-row-name">{`Name: ${b.name}`}</span>
-                        <span className="board-row-category">{`Category: ${b.categoryId}`}</span>
-                        <span className="board-row-description">{`Description: ${b.description}`}</span>
-                    </div>)
-            })}
-        </>)
+        <div className="board-row">
+            <ul className="board-row__list">
+                <li className="board-row__list__entry">{`ID: ${id}`}</li>
+                <li className="board-row__list__entry--bold">{`Name: ${name}`}</li>
+                <li className="board-row__list__entry">{`Category: ${categoryName} (${categoryId})`}</li>
+                <li className="board-row__list__entry">{`Description: ${description}`}</li>
+            </ul>
+            <Button
+                className="board-row__delete-button"
+                text="Delete"
+                onClick={onBoardDeleteRequested} />
+        </div>)
 }
 
 export default BoardRow

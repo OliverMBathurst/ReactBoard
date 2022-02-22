@@ -1,6 +1,13 @@
 import { IEntity } from "../common";
 import { INewPost, IPost } from "../post";
 
+export interface IFeaturedThread {
+    threadId: number
+    boardName: string
+    boardUrlName: string
+    originalPost: IPost
+}
+
 export interface IThread extends IEntity<number | null> {
     locked: boolean
     boardId: number

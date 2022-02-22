@@ -8,6 +8,6 @@ namespace ReactBoard.Domain.Entities.Category
     {
         public string Name { get; set; }
 
-        public virtual List<_Board> Boards { get; set; }
+        public virtual List<_Board> Boards { get; set; } = new List<_Board>();
     }
 }

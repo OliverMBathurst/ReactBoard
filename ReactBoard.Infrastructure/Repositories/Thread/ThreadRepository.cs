@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static ReactBoard.Domain.Entities.Thread.Enums;
 using _Thread = ReactBoard.Domain.Entities.Thread.Thread;
 
 namespace ReactBoard.Infrastructure.Repositories.Thread
@@ -18,9 +19,18 @@ namespace ReactBoard.Infrastructure.Repositories.Thread
     {
         private readonly AppSettings _appSettings;
 
-        public ThreadRepository(DatabaseContext context, IOptions<AppSettings> options) : base(context)
+        public ThreadRepository(
+            DatabaseContext context,
+            IOptions<AppSettings> options) : base(context)
         {
             _appSettings = options.Value;
+        }
+
+        public IEnumerable<IThread> GetAllBoardThreads(int boardId)
+        {
+            return _context.Set<_Thread>()
+                .Include(x => x.Posts)
+                .Where(x => x.BoardId.Equals(boardId));
         }
 
         public async Task<IThread> GetThreadAsync(long threadId)
@@ -53,6 +63,14 @@ namespace ReactBoard.Infrastructure.Repositories.Thread
             return thread.Posts.Where(x => x.Time > latest).OrderBy(x => x.Time);
         }
 
+        public async Task<IThread> GetTopThreadByBoardIdAsync(int boardId)
+        {
+            return await _context.Set<_Thread>()
+                .Where(x => x.BoardId.Equals(boardId))
+                .OrderBy(x => x.Posts.Count)
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<IPaginationResult<IThread>> GetPaginatedThreadsForBoard(int boardId, int pageNumber)
         {
             var threadsForBoard = _context.Set<_Thread>().Where(x => x.BoardId.Equals(boardId));
@@ -68,13 +86,6 @@ namespace ReactBoard.Infrastructure.Repositories.Thread
                 TotalPages = totalPageCount,
                 Entities = threads
             };
-        }
-
-        public IEnumerable<IThread> GetAllBoardThreads(int boardId)
-        {
-            return _context.Set<_Thread>()
-                .Include(x => x.Posts)
-                .Where(x => x.BoardId.Equals(boardId));
         }
     }
 }

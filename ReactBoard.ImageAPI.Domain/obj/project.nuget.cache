@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d2HPJ6g3aFA7K0bscEzO+HCzWkvGmjx9gpmqcaWdK2yJKOPrVcWaVEYwstPpcpyndVM22ytqURu5HuYfCUD6Pg==",
+  "dgSpecHash": "9+Jf1raNgprh+TBpd3tYxeKyxP/oK42K8GutHRXsfeo+/cr43tYLLJKo594vSxM/t1UD2JZW4WSIwJU7nMWB/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

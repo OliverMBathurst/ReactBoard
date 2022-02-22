@@ -33,7 +33,7 @@ $xs-s-threshold: 36rem;
         }
     }
     @else {
-        @warn 'Invalid breakpoint for mixin - supports xl, l, m, s, and xs only.'
+        @warn 'Invalid breakpoint for mixin.'
     }
 }
 
@@ -57,6 +57,6 @@ $xs-s-threshold: 36rem;
         }
     }
     @else {
-        @warn 'Invalid device breakpoint for mixin - supports desktop, tablet, print, and mobile only.'
+        @warn 'Invalid device breakpoint for mixin.'
     }
 }

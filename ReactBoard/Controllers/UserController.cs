@@ -46,7 +46,7 @@ namespace ReactBoard.API.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public override async Task<IActionResult> GetEntityById([FromRoute] int id)
+        public async Task<IActionResult> GetEntityById([FromRoute] int id)
         {
             var user = await _userService.GetByIdAsync(id);
             if (user == null)

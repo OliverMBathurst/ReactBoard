@@ -12,6 +12,6 @@ namespace ReactBoard.Domain.Entities.Thread
 
         public bool Locked { get; set; }
 
-        public virtual List<_Post> Posts { get; set; }
+        public virtual List<_Post> Posts { get; set; } = new List<_Post>();
     }
 }

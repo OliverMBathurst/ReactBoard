@@ -22,16 +22,5 @@ namespace ReactBoard.API.Controllers
         {
             return Ok(_service.GetAll().ToList());
         }
-
-        [HttpGet]
-        [Route("{id}")]
-        public virtual async Task<IActionResult> GetEntityById([FromRoute] TId id)
-        {
-            var entity = await _service.GetByIdAsync(id);
-            if (entity == null)
-                return NotFound();
-
-            return Ok(entity);
-        }
     }
 }

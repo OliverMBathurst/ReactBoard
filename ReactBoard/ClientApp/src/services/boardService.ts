@@ -5,9 +5,9 @@ import { IBoard, IBoardCatalog, IBoardService, INewBoard } from "../global/inter
 
 class BoardService implements IBoardService {
     private endpoint: string = 'board'
-    private allBoardsRoute: string = `${this.endpoint}/all`
-    private boardByUrlNameRoute: string = `${this.endpoint}/{0}`
-    private getCatalogRoute: string = `${this.endpoint}/{0}/catalog`
+    private allBoardsRoute: string = `/${this.endpoint}/all`
+    private boardByUrlNameRoute: string = `/${this.endpoint}/{0}`
+    private getCatalogRoute: string = `/${this.endpoint}/{0}/catalog`
 
     getAll = (): Promise<IBoard[]> => {
         return new Promise<IBoard[]>((resolve, reject) => {

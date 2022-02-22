@@ -27,7 +27,7 @@ namespace ReactBoard.API.Controllers
         [AllowAnonymous]
         public IActionResult GetAllCategories()
         {
-            return Ok(_categoryService.GetAll().ToList());
+            return Ok(_categoryService.GetAll().Select(x => new CategoryDto(x)).ToList());
         }
     }
 }

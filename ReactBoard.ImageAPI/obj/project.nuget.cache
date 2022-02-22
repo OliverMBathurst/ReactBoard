@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xog5Oi+fpXigNldg6aIB3YAsKbdNM9b1MUOek3L8TKENLn/0vEfg0Ttn7sv3ftHbMgFWLTkEThY/Xavs2wVGSg==",
+  "dgSpecHash": "3Kxf6EWlPxSajwvvu52TR4JOjRgH6Ln23j/onXdNPHV6iFtycw4nzkbCuz9uutijQ6pa9exnKT4QiBXNz7aRXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI\\ReactBoard.ImageAPI.csproj",
+  "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI\\ReactBoard.ImageAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oliver\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Oliver\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

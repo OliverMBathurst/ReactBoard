@@ -41,5 +41,10 @@ namespace ReactBoard.Domain.Services.Thread
         {
             return _threadRepository.GetAllBoardThreads(boardId);
         }
+
+        public async Task<IThread> GetTopThreadByBoardIdAsync(int boardId)
+        {
+            return await _threadRepository.GetTopThreadByBoardIdAsync(boardId);
+        }
     }
 }

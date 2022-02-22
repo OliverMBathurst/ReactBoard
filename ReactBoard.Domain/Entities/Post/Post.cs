@@ -18,6 +18,6 @@ namespace ReactBoard.Domain.Entities.Post
 
         public string Text { get; set; }
 
-        public virtual List<Post> Replies { get; set; }
+        public virtual List<Post> Replies { get; set; } = new List<Post>();
     }
 }

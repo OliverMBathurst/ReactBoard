@@ -18,5 +18,7 @@ namespace ReactBoard.Domain.Entities.Thread
         Task<IEnumerable<IPost>> GetNewPosts(long threadId, DateTime latest);
 
         IEnumerable<IThread> GetAllBoardThreads(int boardId);
+
+        Task<IThread> GetTopThreadByBoardIdAsync(int boardId);
     }
 }

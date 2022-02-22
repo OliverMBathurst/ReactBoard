@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {}
+    "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
+    "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
         "projectName": "ReactBoard.ImageAPI.Domain",
-        "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
+        "projectPath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\ReactBoard.ImageAPI.Domain.csproj",
         "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactChan\\ReactBoard.ImageAPI.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Oliver\\source\\repos\\ReactBoard\\ReactBoard.ImageAPI.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

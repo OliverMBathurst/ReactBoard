@@ -20,9 +20,6 @@ namespace ReactBoard.Domain.Entities.User
 
         public UserRole Role { get; set; }
 
-        public bool HasAnyRole(params UserRole[] roles)
-        {
-            return roles.Any(r => r == Role);
-        }
+        public bool HasAnyRole(params UserRole[] roles) => roles.Any(r => r == Role);
     }
 }

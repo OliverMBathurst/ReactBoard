@@ -49,6 +49,9 @@
     <None Remove="ClientApp\src\components\home\index.ts" />
     <None Remove="ClientApp\src\components\thread\components\index.ts" />
     <None Remove="ClientApp\src\components\thread\index.ts" />
+    <None Remove="ClientApp\src\global\components\panel\components\index.ts" />
+    <None Remove="ClientApp\src\global\components\panel\components\panelDropdown.tsx" />
+    <None Remove="ClientApp\src\global\enums\filtering\enums.ts" />
     <None Remove="ClientApp\src\global\enums\index.ts" />
     <None Remove="ClientApp\src\global\helpers\index.ts" />
     <None Remove="ClientApp\src\global\HOC\index.ts" />
@@ -97,6 +100,7 @@
     <None Remove="ClientApp\src\global\interfaces\validation\index.ts" />
     <None Remove="ClientApp\src\global\types\validation\index.ts" />
     <None Remove="ClientApp\src\global\types\validation\interfaces.ts" />
+    <None Remove="ClientApp\src\services\homeService.ts" />
     <None Remove="ClientApp\src\services\index.ts" />
     <None Remove="ClientApp\src\validators\index.ts" />
     <None Remove="ClientApp\src\validators\postValidator.ts" />
@@ -132,6 +136,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\components\thread\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\components\panel\components\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\components\panel\components\panelDropdown\panelDropdown.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\global\enums\filtering\enums.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\withBoardWrapper.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\components\boardHeader\boardHeader.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\components\index.ts" />
@@ -186,6 +193,7 @@
     <TypeScriptCompile Include="ClientApp\src\global\interfaces\validation\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\interfaces\validation\interfaces.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\types\validation\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\homeService.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\postValidator.ts" />

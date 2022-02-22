@@ -1,12 +1,13 @@
 import { ICategory } from "../category"
 import { IEntity } from "../common"
-import { IThread } from "../thread"
 import { IPost } from "../post"
+import { IThread } from "../thread"
 
 export interface IBoard extends IEntity<number> {
     name: string
     description: string
     categoryId: number
+    isWorkSafe: boolean
     urlName: string
     threads?: IThread[]
 }
