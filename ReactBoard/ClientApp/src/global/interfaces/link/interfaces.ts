@@ -1,4 +1,4 @@
-﻿export interface ILinkItem {
+export interface ILinkItem {
     title?: string
     element?: JSX.Element
     onClick?: () => void

@@ -1,3 +1,3 @@
-﻿import { IStatisticItem } from './interfaces'
+import { IStatisticItem } from './interfaces'
 
 export type { IStatisticItem }

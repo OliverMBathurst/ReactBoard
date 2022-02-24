@@ -1,6 +1,6 @@
-export interface ISiteStatistics {
-    totalPosts: number
-    totalUsers: number
+export interface ISiteStatistic {
+    placeholder: string
+    value: string
 }
 
 export interface IDropdownOptions {

@@ -28,7 +28,7 @@ const BoardRow = (props: IBoardRowProps) => {
 
         const filtered = categories.filter(category => category.id === categoryId)
         return filtered.length > 0 ? filtered[0].name : ""
-    }, [categories])
+    }, [categories, categoryId])
 
     return (
         <div className="board-row">

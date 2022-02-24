@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { IThread } from '../../../../../../../global/interfaces/thread'
 
 interface IThreadsProps {

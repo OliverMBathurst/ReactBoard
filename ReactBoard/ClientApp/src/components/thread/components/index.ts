@@ -1,3 +1,3 @@
-﻿import ThreadPost from './threadPost/threadPost'
+import ThreadPost from './threadPost/threadPost'
 
 export { ThreadPost }

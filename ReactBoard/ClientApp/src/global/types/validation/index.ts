@@ -1,4 +1,4 @@
-﻿import AbstractValidator from './abstractValidator'
+import AbstractValidator from './abstractValidator'
 import ValidationRule from './validationRule'
 import ValidationRuleBuilder from './validationRuleBuilder'
 

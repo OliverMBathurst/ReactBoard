@@ -1,4 +1,4 @@
-﻿import BoardRow from './boardRow/boardRow'
+import BoardRow from './boardRow/boardRow'
 import CategorySelect from '../../../global/components/categorySelect/categorySelect'
 import CreateBoardPanel from './createBoardPanel/createBoardPanel'
 import CreateCategoryPanel from './createCategoryPanel/createCategoryPanel'

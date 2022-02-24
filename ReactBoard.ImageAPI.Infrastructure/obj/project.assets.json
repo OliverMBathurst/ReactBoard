@@ -1471,11 +1471,24 @@
       "ReactBoard.ImageAPI.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ReactBoard.Shared": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ReactBoard.ImageAPI.Domain.dll": {}
         },
         "runtime": {
           "bin/placeholder/ReactBoard.ImageAPI.Domain.dll": {}
+        }
+      },
+      "ReactBoard.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/ReactBoard.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReactBoard.Shared.dll": {}
         }
       }
     }
@@ -5643,6 +5656,11 @@
       "type": "project",
       "path": "../ReactBoard.ImageAPI.Domain/ReactBoard.ImageAPI.Domain.csproj",
       "msbuildProject": "../ReactBoard.ImageAPI.Domain/ReactBoard.ImageAPI.Domain.csproj"
+    },
+    "ReactBoard.Shared/1.0.0": {
+      "type": "project",
+      "path": "../ReactBoard.Shared/ReactBoard.Shared.csproj",
+      "msbuildProject": "../ReactBoard.Shared/ReactBoard.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {

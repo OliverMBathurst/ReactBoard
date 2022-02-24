@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { IPost } from '../../../../global/interfaces/post'
 
 interface IThreadPostProps {

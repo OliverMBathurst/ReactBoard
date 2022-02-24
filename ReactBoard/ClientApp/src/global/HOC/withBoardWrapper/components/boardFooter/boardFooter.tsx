@@ -1,4 +1,4 @@
-﻿import React, { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { LinkButton } from '../../../../components'
 import { getPageNumbers } from '../../../../helpers'

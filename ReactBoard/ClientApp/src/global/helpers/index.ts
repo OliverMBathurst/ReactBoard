@@ -1,4 +1,4 @@
-﻿import { groupBy } from './grouper'
+import { groupBy } from './grouper'
 import { getPageNumbers } from './paginationHelper'
 import { formatString } from './stringFormatter'
 import ValidationHelper from './validationHelper'

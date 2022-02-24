@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.Domain", "..\Rea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.Infrastructure", "..\ReactBoard.Infrastructure\ReactBoard.Infrastructure.csproj", "{3C93883D-98C4-4298-BC83-3DAD8119B3EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactBoard.ImageAPI", "..\ReactBoard.ImageAPI\ReactBoard.ImageAPI.csproj", "{95797047-5E19-438F-B7AC-ED6F8DA8FB58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.ImageAPI", "..\ReactBoard.ImageAPI\ReactBoard.ImageAPI.csproj", "{95797047-5E19-438F-B7AC-ED6F8DA8FB58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactBoard.ImageAPI.Domain", "..\ReactBoard.ImageAPI.Domain\ReactBoard.ImageAPI.Domain.csproj", "{2821086E-8400-4BAD-AB86-6C6A6FEE4F74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.ImageAPI.Domain", "..\ReactBoard.ImageAPI.Domain\ReactBoard.ImageAPI.Domain.csproj", "{2821086E-8400-4BAD-AB86-6C6A6FEE4F74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactBoard.ImageAPI.Infrastructure", "..\ReactBoard.ImageAPI.Infrastructure\ReactBoard.ImageAPI.Infrastructure.csproj", "{71033E56-6BC2-457A-B7CF-0C00F285DEFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactBoard.ImageAPI.Infrastructure", "..\ReactBoard.ImageAPI.Infrastructure\ReactBoard.ImageAPI.Infrastructure.csproj", "{71033E56-6BC2-457A-B7CF-0C00F285DEFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactBoard.Shared", "..\ReactBoard.Shared\ReactBoard.Shared.csproj", "{852BBC6E-5EBE-4AB8-88E8-CDF763DC7052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{71033E56-6BC2-457A-B7CF-0C00F285DEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71033E56-6BC2-457A-B7CF-0C00F285DEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71033E56-6BC2-457A-B7CF-0C00F285DEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852BBC6E-5EBE-4AB8-88E8-CDF763DC7052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852BBC6E-5EBE-4AB8-88E8-CDF763DC7052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852BBC6E-5EBE-4AB8-88E8-CDF763DC7052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852BBC6E-5EBE-4AB8-88E8-CDF763DC7052}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { IThread } from "../../interfaces/thread"
 import './styles.scss'
 import { IThreadControlsRowProps, ThreadControlsRow } from './threadControlsRow'

@@ -1,0 +1,10 @@
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\bin\Debug\netcoreapp3.1\ReactBoard.Shared.deps.json
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\bin\Debug\netcoreapp3.1\ReactBoard.Shared.dll
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\bin\Debug\netcoreapp3.1\ReactBoard.Shared.pdb
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.csproj.AssemblyReference.cache
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.AssemblyInfoInputs.cache
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.AssemblyInfo.cs
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.dll
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.Shared\obj\Debug\netcoreapp3.1\ReactBoard.Shared.pdb

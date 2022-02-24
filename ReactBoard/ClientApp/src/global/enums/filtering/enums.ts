@@ -1,4 +1,4 @@
-﻿export enum ThreadFilter {
+export enum ThreadFilter {
     ShowSFWContentOnly,
     ShowNSFWContentOnly,
     ShowAllContent

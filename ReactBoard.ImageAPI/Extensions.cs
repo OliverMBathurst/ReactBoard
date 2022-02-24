@@ -10,6 +10,8 @@ namespace ReactBoard.ImageAPI
     {
         public static void AddDependencies(this IServiceCollection collection)
         {
+            collection.AddSwaggerGen();
+
             AddServices(collection);
             AddRepositories(collection);
         }

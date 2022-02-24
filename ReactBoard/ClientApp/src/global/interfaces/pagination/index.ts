@@ -1,3 +1,3 @@
-﻿import { IPaginationResult } from './interfaces'
+import { IPaginationResult } from './interfaces'
 
 export type { IPaginationResult }

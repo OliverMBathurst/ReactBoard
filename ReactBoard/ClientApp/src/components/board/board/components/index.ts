@@ -1,3 +1,3 @@
-﻿import BoardPaginatedView from './boardPaginatedView/boardPaginatedView'
+import BoardPaginatedView from './boardPaginatedView/boardPaginatedView'
 
 export { BoardPaginatedView }

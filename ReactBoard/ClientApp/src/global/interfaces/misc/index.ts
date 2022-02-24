@@ -1,7 +1,7 @@
-﻿import {
-    ISiteStatistics,
+import {
+    ISiteStatistic,
     IDropdownOptions,
     IDropdownOption
 } from './interfaces'
 
-export type { ISiteStatistics, IDropdownOptions, IDropdownOption }
+export type { ISiteStatistic, IDropdownOptions, IDropdownOption }

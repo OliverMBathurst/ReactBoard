@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { ILinkItem } from '../../interfaces/link'
 import './styles.scss'
 

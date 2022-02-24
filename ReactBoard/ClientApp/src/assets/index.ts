@@ -1,4 +1,4 @@
-﻿import CloseIcon from './closeIcon'
+import CloseIcon from './closeIcon'
 import SiteIcon from './siteIcon'
 
 export {

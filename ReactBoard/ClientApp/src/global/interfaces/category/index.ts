@@ -1,4 +1,4 @@
-﻿import { ICategory, ICategoryService, INewCategory } from './interfaces'
+import { ICategory, ICategoryService, INewCategory } from './interfaces'
 
 export type {
     ICategory,

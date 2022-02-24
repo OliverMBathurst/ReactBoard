@@ -8,3 +8,16 @@ C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Domain\bin\Debug\netc
 C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Domain\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.pdb
 C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.dll
 C:\Users\Oliver\source\repos\ReactChan\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.pdb
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.deps.json
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.dll
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\bin\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.pdb
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\bin\Debug\netcoreapp3.1\ReactBoard.Shared.dll
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\bin\Debug\netcoreapp3.1\ReactBoard.Shared.pdb
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.csproj.AssemblyReference.cache
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.AssemblyInfoInputs.cache
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.AssemblyInfo.cs
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.csproj.CopyComplete
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.dll
+C:\Users\Oliver\source\repos\ReactBoard\ReactBoard.ImageAPI.Domain\obj\Debug\netcoreapp3.1\ReactBoard.ImageAPI.Domain.pdb

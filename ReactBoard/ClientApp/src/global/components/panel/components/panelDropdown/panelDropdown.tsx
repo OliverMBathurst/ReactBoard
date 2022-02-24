@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { IDropdownOptions } from '../../../../interfaces/misc'
 import './styles.scss'
 

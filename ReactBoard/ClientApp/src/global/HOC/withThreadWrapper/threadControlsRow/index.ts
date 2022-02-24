@@ -1,4 +1,4 @@
-﻿import { IThread } from '../../../interfaces/thread'
+import { IThread } from '../../../interfaces/thread'
 import ThreadControlsRow from './threadControlsRow'
 
 export interface IThreadControlsRowProps {

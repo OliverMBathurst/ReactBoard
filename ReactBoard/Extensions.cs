@@ -9,7 +9,7 @@ using ReactBoard.Domain.Services.Category;
 using ReactBoard.Domain.Services.Post;
 using ReactBoard.Domain.Services.Thread;
 using ReactBoard.Domain.Services.User;
-using ReactBoard.ImageAPI.Domain.Services.Api;
+using ReactBoard.Infrastructure.Interfaces;
 using ReactBoard.Infrastructure.Repositories.Board;
 using ReactBoard.Infrastructure.Repositories.Category;
 using ReactBoard.Infrastructure.Repositories.Post;
@@ -24,6 +24,8 @@ namespace ReactBoard.API
     {
         public static void AddDependencies(this IServiceCollection collection)
         {
+            collection.AddSwaggerGen();
+
             AddServices(collection);
             AddRepositories(collection);
             AddClients(collection);
@@ -39,7 +41,7 @@ namespace ReactBoard.API
             collection.AddTransient<ICategoryService, CategoryService>();
             collection.AddSingleton<IUserPasswordSaltingService, UserPasswordSaltingService>();
             collection.AddSingleton<IImageApiHttpService, ImageApiHttpService>();
-            
+
         }
 
         private static void AddRepositories(IServiceCollection collection)
@@ -56,6 +58,7 @@ namespace ReactBoard.API
         private static void AddClients(IServiceCollection collection)
         {
             collection.AddHttpClient<HttpClient>();
+            collection.AddHttpClient<IImageApiHttpService, ImageApiHttpService>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿import axios from "axios";
+import axios from "axios";
 import { HttpStatusCode, ThreadFilter } from "../global/enums";
 import { formatString } from "../global/helpers";
 import { IFeaturedThread } from "../global/interfaces/thread/interfaces";

@@ -1,4 +1,4 @@
-﻿import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Redirect } from 'react-router'
 import './styles.scss'
 

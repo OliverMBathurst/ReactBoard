@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { BoardFooter } from '../../../components/board/board/components/boardPaginatedView/components'
 import { IBoard } from '../../interfaces/board'
 import { BoardHeader } from './components'

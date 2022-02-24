@@ -1,3 +1,3 @@
-﻿import Administration from './administration'
+import Administration from './administration'
 
 export { Administration }

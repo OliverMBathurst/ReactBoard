@@ -1,3 +1,3 @@
-﻿import PanelDropdown from './panelDropdown/panelDropdown'
+import PanelDropdown from './panelDropdown/panelDropdown'
 
 export { PanelDropdown }

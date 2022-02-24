@@ -1,4 +1,4 @@
-﻿export interface IPaginationResult<T> {
+export interface IPaginationResult<T> {
     currentPage: number
     totalPages: number
     entities: T[]

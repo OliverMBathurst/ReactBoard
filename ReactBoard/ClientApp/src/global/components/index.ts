@@ -1,4 +1,4 @@
-﻿import BracketedLink from './bracketedLink/bracketedLink'
+import BracketedLink from './bracketedLink/bracketedLink'
 import Button from './button/button'
 import LinkButton from './linkButton/linkButton'
 import Panel from './panel/panel'

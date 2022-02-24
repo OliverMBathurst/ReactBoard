@@ -21,6 +21,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.22" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -102,6 +103,7 @@
     <None Remove="ClientApp\src\global\types\validation\interfaces.ts" />
     <None Remove="ClientApp\src\services\homeService.ts" />
     <None Remove="ClientApp\src\services\index.ts" />
+    <None Remove="ClientApp\src\services\statisticsService.ts" />
     <None Remove="ClientApp\src\validators\index.ts" />
     <None Remove="ClientApp\src\validators\postValidator.ts" />
     <None Remove="ClientApp\src\validators\threadValidator.ts" />
@@ -195,9 +197,14 @@
     <TypeScriptCompile Include="ClientApp\src\global\types\validation\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\homeService.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\statisticsService.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\postValidator.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\threadValidator.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\components\home\components\featuredThread\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

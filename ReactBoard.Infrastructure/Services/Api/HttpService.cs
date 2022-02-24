@@ -1,4 +1,4 @@
-﻿using ReactBoard.Domain.Interfaces;
+﻿using ReactBoard.Infrastructure.Interfaces;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -32,6 +32,15 @@ namespace ReactBoard.Infrastructure.Services.Api
             var result = await _httpClient.PostAsync(endpoint, data);
 
             if (!result.IsSuccessStatusCode)
+            {
+                //handle failure
+            }
+        }
+
+        public virtual async Task DeleteAsync(string endpoint)
+        {
+            var response = await _httpClient.DeleteAsync(endpoint);
+            if (!response.IsSuccessStatusCode)
             {
                 //handle failure
             }

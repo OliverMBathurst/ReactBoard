@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BoardService } from '../../../services'
 import { IBoardCatalogItem } from '../../../global/interfaces/board'
 

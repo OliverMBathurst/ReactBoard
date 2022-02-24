@@ -1,4 +1,4 @@
-﻿import { IThread, INewThread, IThreadService, IThreadUpdateRequest } from './interfaces'
+import { IThread, INewThread, IThreadService, IThreadUpdateRequest } from './interfaces'
 
 export type {
     IThread,

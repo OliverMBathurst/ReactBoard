@@ -1,3 +1,3 @@
-﻿import Thread from './thread'
+import Thread from './thread'
 
 export { Thread }

@@ -4,7 +4,7 @@
     {
         public int MaxPostLength { get; set; } = 500;
 
-        public string ImageAPIEndpoint { get; set; }
+        public string ImageAPIConnectionString { get; set; }
 
         public string Secret { get; set; }
 

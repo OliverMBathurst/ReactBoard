@@ -4,9 +4,10 @@ using ReactBoard.ImageAPI.Domain.Services.Misc;
 using ReactBoard.ImageAPI.Models;
 using System.Threading.Tasks;
 
-namespace ReactBoard.ImageAPI.Controllers
+namespace ReactBoard.ImageAPI.Controllers.V1
 {
-    public class ImageController : Controller
+    [ApiVersion("1.0")]
+    public class ImageController : AbstractApiController
     {
         private readonly IImageEntityService _imageEntityService;
         private readonly IImageDeletionService _imageDeletionService;
@@ -39,7 +40,7 @@ namespace ReactBoard.ImageAPI.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("{imageId}")]
         public async Task<IActionResult> GetImage([FromRoute] long imageId)
         {
@@ -57,6 +58,13 @@ namespace ReactBoard.ImageAPI.Controllers
             };
 
             return Ok(dto);
+        }
+
+        [HttpGet]
+        [Route("count")]
+        public async Task<IActionResult> GetEntityCount()
+        {
+            return Ok(await _imageEntityService.GetEntityCountAsync());
         }
     }
 }

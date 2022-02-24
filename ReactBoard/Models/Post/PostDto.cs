@@ -1,5 +1,5 @@
 ﻿using ReactBoard.Domain.Entities.Post;
-using ReactBoard.ImageAPI.Domain.Models;
+using ReactBoard.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

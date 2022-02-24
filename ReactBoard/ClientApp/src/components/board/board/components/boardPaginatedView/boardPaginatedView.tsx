@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { withBoardWrapper } from '../../../../../global/HOC'
 import { IBoard } from '../../../../../global/interfaces/board'
 import { IPaginationResult } from '../../../../../global/interfaces/pagination'

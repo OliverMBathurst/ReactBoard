@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IThread } from '../../global/interfaces/thread'
 import { ThreadService } from '../../services'
 import { ThreadPost } from './components'

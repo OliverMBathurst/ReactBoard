@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IBoard } from '../../../global/interfaces/board'
 import { BoardService } from '../../../services'
 import { BoardPaginatedView } from './components'

@@ -1,4 +1,4 @@
-﻿namespace ReactBoard.ImageAPI.Domain.Models
+﻿namespace ReactBoard.Shared.Models
 {
     public sealed class ApiImageDto
     {

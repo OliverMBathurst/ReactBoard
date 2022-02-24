@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { IStatisticItem } from '../../interfaces/statistic'
 import './styles.scss'
 

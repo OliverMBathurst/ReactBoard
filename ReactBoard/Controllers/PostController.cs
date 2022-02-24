@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReactBoard.API.Models.Post;
 using ReactBoard.Domain.Entities.Post;
-using ReactBoard.ImageAPI.Domain.Services.Api;
+using ReactBoard.Infrastructure.Interfaces;
 using System.Linq;
 using System.Threading.Tasks;
 

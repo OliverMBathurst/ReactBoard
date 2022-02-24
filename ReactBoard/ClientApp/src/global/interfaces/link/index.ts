@@ -1,3 +1,3 @@
-﻿import { ILinkItem } from './interfaces'
+import { ILinkItem } from './interfaces'
 
 export type { ILinkItem }

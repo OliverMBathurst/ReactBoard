@@ -1,12 +1,14 @@
-﻿using ReactBoard.ImageAPI.Domain.Models;
+﻿using ReactBoard.Shared.Models;
 using System.Threading.Tasks;
 
-namespace ReactBoard.ImageAPI.Domain.Services.Api
+namespace ReactBoard.Infrastructure.Interfaces
 {
     public interface IImageApiHttpService
     {
         Task<ApiImageDto> GetImageAsync(long imageId);
 
         Task DeleteImageAsync(long imageId);
+
+        Task<long> GetEntityCountAsync();
     }
 }

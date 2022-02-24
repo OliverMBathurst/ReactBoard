@@ -5,18 +5,19 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../global/constants/strings';
 import { BoardFilter, ThreadFilter } from '../../global/enums';
 import { IBoard } from '../../global/interfaces/board';
 import { ICategory } from '../../global/interfaces/category';
-import { IDropdownOptions } from '../../global/interfaces/misc';
+import { IDropdownOptions, ISiteStatistic } from '../../global/interfaces/misc';
 import { IFeaturedThread } from '../../global/interfaces/thread/interfaces';
-import { CategoryService, HomeService } from '../../services';
+import { CategoryService, HomeService, StatisticsService } from '../../services';
 import { BoardCategory, Footer } from './components';
 import './styles.scss';
 
-const _categoryService = new CategoryService(), _homeService = new HomeService()
+const _categoryService = new CategoryService(), _homeService = new HomeService(), _statisticsService = new StatisticsService()
 
 const Home = () => {
     const [descriptionDismissed, setDescriptionDismissed] = useState<boolean>(false)
     const [categories, setCategories] = useState<ICategory[]>([])
     const [featuredThreads, setFeaturedThreads] = useState<IFeaturedThread[]>([])
+    const [siteStatistics, setSiteStatistics] = useState<ISiteStatistic[]>([])
     const [threadsFilter, setThreadsFilter] = useState<ThreadFilter>(ThreadFilter.ShowSFWContentOnly)
     const [boardsFilter, setBoardsFilter] = useState<BoardFilter>(BoardFilter.ShowAllBoards)
 
@@ -29,9 +30,9 @@ const Home = () => {
             }
         })
 
-        _homeService.getFeaturedThreadsByFilter(threadsFilter).then(res => {
+        _statisticsService.getSiteStatistics().then(res => {
             if (mounted) {
-                setFeaturedThreads(res)
+                setSiteStatistics(res)
             }
         })
 
@@ -55,7 +56,15 @@ const Home = () => {
     }, [threadsFilter])
 
     const shouldDisplayBoard = (board: IBoard) => {
-        return !(board.isWorkSafe && boardsFilter === BoardFilter.ShowNSFWBoardsOnly || (!board.isWorkSafe && boardsFilter === BoardFilter.ShowSFWBoardsOnly))
+        if (board.isWorkSafe && boardsFilter === BoardFilter.ShowNSFWBoardsOnly) {
+            return false
+        }
+
+        if (!board.isWorkSafe && boardsFilter === BoardFilter.ShowSFWBoardsOnly) {
+            return false
+        }
+
+        return true
     }
 
     const boardsDropdownOptions: IDropdownOptions = useMemo(() => {
@@ -114,9 +123,27 @@ const Home = () => {
                         />)
                 })}
             </Panel>
-            <Panel title="Featured Threads" dropdownOptions={threadsDropdownOptions}>
+            {featuredThreads &&
+                <Panel title="Featured Threads" dropdownOptions={threadsDropdownOptions}>
 
-            </Panel>
+                </Panel>
+            }
+            {siteStatistics &&
+                <Panel title="Stats">
+                    <table className="home-panel__statistics-table">
+                        <tbody className="home-panel__statistics-table__body">
+                            <tr className="home-panel__statistics-table__body__row">
+                                {siteStatistics.map(stat => {
+                                    return (
+                                        <th key={stat.placeholder} className="home-panel__statistics-table__body__row__head">
+                                            {`${stat.placeholder}: ${stat.value}`}
+                                        </th>)
+                                })}
+                            </tr>
+                        </tbody>
+                    </table>
+                </Panel>
+            }
             <Footer />
         </div>)
 }
