@@ -1,0 +1,19 @@
+﻿.board-header {
+    margin: 0.5rem 0 0.5rem 0;
+    border: 0.0625rem solid black;
+
+    .bracketed-link {
+        margin-right: 0.25rem;
+    }
+}
+
+.board-header__search-form__search-box {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.board-header__search-form {
+    padding-left: 0.5rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IThread } from '../../../../../../../global/interfaces/thread'
+import { IThread } from '../../../../../global/interfaces/thread'
 
 interface IThreadsProps {
     boardUrlName: string
@@ -15,7 +15,10 @@ const Threads = (props: IThreadsProps) => {
     return (
         <div className="threads-view">
             {threads.map(thread => {
-                return <></>
+                return (
+                    <>
+
+                    </>)
             })}
         </div>)
 }

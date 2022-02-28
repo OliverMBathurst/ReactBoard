@@ -1,4 +1,4 @@
-import Board from './board/board'
 import BoardCatalogView from './boardCatalogView/boardCatalogView'
+import BoardPaginatedView from './boardPaginatedView/boardPaginatedView'
 
-export { Board, BoardCatalogView }
+export { BoardPaginatedView, BoardCatalogView }

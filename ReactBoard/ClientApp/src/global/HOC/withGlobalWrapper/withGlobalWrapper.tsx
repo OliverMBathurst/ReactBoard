@@ -1,13 +1,16 @@
 import React from 'react'
 
-
 interface IGlobalWrapperProps {
+
 
 }
 
-const withGlobalWrapper = <P extends object>(component: React.ComponentType<P>, props: IGlobalWrapperProps) => {
-    //todo
-    return component
+const withGlobalWrapper = (component: any) => {
+    return (props: IGlobalWrapperProps) => {
+
+        //todo
+        return (<></>)
+    }
 }
 
 export default withGlobalWrapper

@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { BoardService } from '../../../services'
+import { useParams } from 'react-router'
 import { IBoardCatalogItem } from '../../../global/interfaces/board'
-
-interface IBoardCatalogViewProps {
-    boardUrlName: string
-}
+import { BoardService } from '../../../services'
 
 const boardService = new BoardService()
 
-const BoardCatalogView = (props: IBoardCatalogViewProps) => {
-    const { boardUrlName } = props
-
+const BoardCatalogView = () => {
+    const { boardUrlName } = useParams()
     const [catalogItems, setCatalogItems] = useState<IBoardCatalogItem[]>([])
 
     useEffect(() => {

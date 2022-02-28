@@ -11,16 +11,22 @@ const BracketedLink = (props: IBracketedLinkProps) => {
 
     return (
         <div className="bracketed-link">
-            [{link.element
+            <span className="bracketed-link__divider">
+                [
+            </span>
+            {link.element
                 ? link.element
                 : (
                     <span
-                        className="bracketed-link__text"
+                        className="bracketed-link__text highlightable-link"
                         onClick={link.onClick}
                     >
                         {link.title}
                     </span>)
-            }]
+            }
+            <span className="bracketed-link__divider">
+                ]
+            </span>
         </div>)
 }
 

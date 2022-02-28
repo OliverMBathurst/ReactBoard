@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { LinkButton } from '../../../../components'
+import { LinkButton, BracketedLink } from '../../../../components'
 import { getPageNumbers } from '../../../../helpers'
 import './styles.scss'
 
@@ -24,13 +24,7 @@ const BoardFooter = (props: IBoardFooterProps) => {
     return (
         <div className="board-footer">
             <div className="board-footer__left-container">
-                <span className="board-footer__left-container__bracket-option">
-                    [
-                    <span className="board-footer__left-container__bracket-option__link" onClick={() => onAllRequested()}>
-                        All
-                    </span>
-                    ]
-                </span>
+                <BracketedLink link={{ title: "All", onClick: onAllRequested }} />
                 {pageNumbers.map(num => {
                     return (
                         <span className="board-footer__left-container__bracket-option">
@@ -50,7 +44,7 @@ const BoardFooter = (props: IBoardFooterProps) => {
                     text="Next"
                     visible={currentPage + 1 <= totalPages}
                 />
-                <Link to={`/${boardUrlName}/catalog`}>
+                <Link className="board-footer__left-container__link highlightable-link" to={`/${boardUrlName}/catalog`}>
                     Catalog
                 </Link>
             </div>

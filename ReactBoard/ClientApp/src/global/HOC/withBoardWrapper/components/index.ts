@@ -1,4 +1,4 @@
 import BoardFooter from './boardFooter/boardFooter'
-import BoardHeader from './boardHeader/boardHeader'
+import BoardOptionsHeader from './boardOptionsHeader/boardOptionsHeader'
 
-export { BoardHeader, BoardFooter }
+export { BoardOptionsHeader, BoardFooter }

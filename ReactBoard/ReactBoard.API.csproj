@@ -35,6 +35,7 @@
     <None Remove="ClientApp\src\assets\index.ts" />
     <None Remove="ClientApp\src\components\administration\administration.tsx" />
     <None Remove="ClientApp\src\components\administration\components\boardRow\boardRow.tsx" />
+    <None Remove="ClientApp\src\global\components\boardsNavBar\boardsNavBar.tsx" />
     <None Remove="ClientApp\src\global\components\categorySelect\categorySelect.tsx" />
     <None Remove="ClientApp\src\components\administration\components\createBoardPanel\createBoardPanel.tsx" />
     <None Remove="ClientApp\src\components\administration\components\index.ts" />
@@ -42,9 +43,7 @@
     <None Remove="ClientApp\src\components\administration\index.ts" />
     <None Remove="ClientApp\src\components\board\board.tsx" />
     <None Remove="ClientApp\src\components\board\boardCatalogView\boardCatalogView.tsx" />
-    <None Remove="ClientApp\src\components\board\board\components\boardPaginatedView.tsx" />
-    <None Remove="ClientApp\src\components\board\board\components\boardPaginatedView\components\index.ts" />
-    <None Remove="ClientApp\src\components\board\board\components\index.ts" />
+    <None Remove="ClientApp\src\components\board\boardPaginatedView\components\index.ts" />
     <None Remove="ClientApp\src\components\board\index.ts" />
     <None Remove="ClientApp\src\components\home\components\index.ts" />
     <None Remove="ClientApp\src\components\home\index.ts" />
@@ -52,14 +51,20 @@
     <None Remove="ClientApp\src\components\thread\index.ts" />
     <None Remove="ClientApp\src\global\components\panel\components\index.ts" />
     <None Remove="ClientApp\src\global\components\panel\components\panelDropdown.tsx" />
+    <None Remove="ClientApp\src\global\context\boardsContext.tsx" />
+    <None Remove="ClientApp\src\global\context\index.ts" />
+    <None Remove="ClientApp\src\global\context\messageKeysContext.tsx" />
     <None Remove="ClientApp\src\global\enums\filtering\enums.ts" />
+    <None Remove="ClientApp\src\global\enums\globalisation\enums.ts" />
     <None Remove="ClientApp\src\global\enums\index.ts" />
     <None Remove="ClientApp\src\global\helpers\index.ts" />
+    <None Remove="ClientApp\src\global\helpers\toMap.ts" />
     <None Remove="ClientApp\src\global\HOC\index.ts" />
+    <None Remove="ClientApp\src\global\HOC\withBoardNavigation\withBoardNavigation.tsx" />
     <None Remove="ClientApp\src\global\HOC\withBoardWrapper\components\boardFooter\boardFooter.tsx" />
-    <None Remove="ClientApp\src\global\HOC\withBoardWrapper\components\boardHeader\boardHeader.tsx" />
-    <None Remove="ClientApp\src\components\board\board\components\boardPaginatedView\components\threadsView.tsx" />
+    <None Remove="ClientApp\src\components\board\boardPaginatedView\components\threadsView.tsx" />
     <None Remove="ClientApp\src\global\components\boardLink\boardLink.tsx" />
+    <None Remove="ClientApp\src\global\HOC\withBoardWrapper\components\boardOptionsHeader\boardOptionsHeader.tsx" />
     <None Remove="ClientApp\src\global\HOC\withBoardWrapper\components\index.ts" />
     <None Remove="ClientApp\src\global\HOC\withThreadWrapper\threadControlsRow\index.ts" />
     <None Remove="ClientApp\src\global\HOC\withThreadWrapper\threadControlsRow\threadControlsRow.tsx" />
@@ -71,7 +76,6 @@
     <None Remove="ClientApp\src\global\components\panel\index.d.ts" />
     <None Remove="ClientApp\src\global\components\statistic\statistic.tsx" />
     <None Remove="ClientApp\src\global\components\submitButton\submitButton.tsx" />
-    <None Remove="ClientApp\src\global\constants\routes.ts" />
     <None Remove="ClientApp\src\global\enums\user\enums.ts" />
     <None Remove="ClientApp\src\global\enums\validation\enums.ts" />
     <None Remove="ClientApp\src\global\helpers\paginationHelper.ts" />
@@ -103,6 +107,7 @@
     <None Remove="ClientApp\src\global\types\validation\interfaces.ts" />
     <None Remove="ClientApp\src\services\homeService.ts" />
     <None Remove="ClientApp\src\services\index.ts" />
+    <None Remove="ClientApp\src\services\messageKeyService.ts" />
     <None Remove="ClientApp\src\services\statisticsService.ts" />
     <None Remove="ClientApp\src\validators\index.ts" />
     <None Remove="ClientApp\src\validators\postValidator.ts" />
@@ -124,6 +129,7 @@
     <TypeScriptCompile Include="ClientApp\src\assets\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\administration.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\components\boardRow\boardRow.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\global\components\boardsNavBar\boardsNavBar.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\components\categorySelect\categorySelect.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\components\createBoardPanel\createBoardPanel.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\administration\components\index.ts" />
@@ -132,21 +138,25 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\components\board\boardCatalogView\boardCatalogView.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\components\board\board\board.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\components\board\board\components\boardPaginatedView\boardPaginatedView.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\board\boardPaginatedView\boardPaginatedView.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\home\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\components\thread\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\components\panel\components\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\components\panel\components\panelDropdown\panelDropdown.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\global\context\boardsContext.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\global\context\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\context\messageKeysContext.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\enums\filtering\enums.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\enums\globalisation\enums.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\helpers\toMap.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardNavigation\withBoardNavigation.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\withBoardWrapper.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\components\boardHeader\boardHeader.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\components\boardOptionsHeader\boardOptionsHeader.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\components\index.ts" />
-    <TypeScriptCompile Include="ClientApp\src\components\board\board\components\boardPaginatedView\components\index.ts" />
-    <TypeScriptCompile Include="ClientApp\src\components\board\board\components\boardPaginatedView\components\threads\threads.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\components\board\board\components\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\board\boardPaginatedView\components\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\board\boardPaginatedView\components\threads\threads.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\HOC\withBoardWrapper\components\boardFooter\boardFooter.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\board\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\components\boardLink\boardLink.tsx" />
@@ -163,7 +173,6 @@
     <TypeScriptCompile Include="ClientApp\src\global\components\linkButton\linkButton.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\components\statistic\statistic.tsx" />
     <TypeScriptCompile Include="ClientApp\src\global\components\submitButton\submitButton.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\global\constants\routes.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\enums\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\enums\user\enums.ts" />
     <TypeScriptCompile Include="ClientApp\src\global\enums\validation\enums.ts" />
@@ -197,6 +206,7 @@
     <TypeScriptCompile Include="ClientApp\src\global\types\validation\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\homeService.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\messageKeyService.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\statisticsService.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\validators\postValidator.ts" />

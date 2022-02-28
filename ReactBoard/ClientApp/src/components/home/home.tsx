@@ -3,6 +3,7 @@ import { SiteIcon } from '../../assets';
 import { Panel } from '../../global/components';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../global/constants/strings';
 import { BoardFilter, ThreadFilter } from '../../global/enums';
+import { withBoardNavigation } from '../../global/HOC';
 import { IBoard } from '../../global/interfaces/board';
 import { ICategory } from '../../global/interfaces/category';
 import { IDropdownOptions, ISiteStatistic } from '../../global/interfaces/misc';
@@ -148,4 +149,4 @@ const Home = () => {
         </div>)
 }
 
-export default Home
+export default withBoardNavigation(Home)

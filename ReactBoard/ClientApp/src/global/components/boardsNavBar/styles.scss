@@ -1,0 +1,21 @@
+﻿.boards-nav-bar {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.boards-nav-bar__container {
+    display: inline-block;
+}
+
+.boards-nav-bar__container__link {
+    display: inline-block;
+    cursor: pointer;
+    color: blue;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+}
+
+.boards-nav-bar__container__link:visited {
+    color: purple;
+}

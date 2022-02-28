@@ -1,4 +1,10 @@
-﻿.board-footer__left-container__bracket-option__link {
+﻿.board-footer {
+    padding: 0.5rem 0 0 0.5rem;
+    margin-top: 1rem;
+    border-top: 0.0625rem solid black;
+}
+
+.board-footer__left-container__bracket-option__link {
     color: blue;
     cursor: pointer;
 }
@@ -10,4 +16,8 @@
 .board-footer__left-container__bracket-option__link--selected {
     color: blue;
     font-weight: bold;
+}
+
+.board-footer__left-container__link {
+    margin-left: 0.25rem;
 }

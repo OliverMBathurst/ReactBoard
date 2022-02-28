@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ComponentType } from 'react'
 import { IThread } from "../../interfaces/thread"
 import './styles.scss'
-import { IThreadControlsRowProps, ThreadControlsRow } from './threadControlsRow'
+import { ThreadControlsRow } from './threadControlsRow'
 
 interface IThreadWrapperProps {
     thread: IThread
@@ -11,31 +11,16 @@ interface IThreadWrapperProps {
     onUpdateRequested: () => void
 }
 
-const withThreadWrapper = <P extends object>(component: React.ComponentType<P>, props: IThreadWrapperProps) => {
-    const {
-        thread,
-        boardUrlName,
-        autoRefreshEnabled,
-        onAutoRefreshToggled,
-        onUpdateRequested
-    } = props
-
-    const controlsRowProps: IThreadControlsRowProps = {
-        thread: thread,
-        boardUrlName: boardUrlName,
-        autoRefreshEnabled: autoRefreshEnabled,
-        onUpdateRequested: onUpdateRequested,
-        onAutoRefreshToggled: onAutoRefreshToggled,
-        isBottom: false
+const withThreadWrapper = (Component: ComponentType) => {
+    return (props: IThreadWrapperProps) => {
+        return (
+            <div className="thread-wrapper">
+                <ThreadControlsRow {...props} isBottom={false} />
+                <Component />
+                <ThreadControlsRow {...props} isBottom />
+            </div>
+        )
     }
-
-    return (
-        <div className="thread-wrapper">
-            <ThreadControlsRow {...controlsRowProps} />
-            {component}
-            <ThreadControlsRow {...controlsRowProps} isBottom />
-        </div>
-    )
 }
 
 export default withThreadWrapper

@@ -7,10 +7,13 @@
 
     .panel {
         margin-bottom: 1.25rem;
-    } 
+    }
 
     #siteIcon {
         cursor: pointer;
+        display: block;
+        padding: 1rem 0 1rem 0;
+        margin: auto;
     }
 
     @include breakpoint-device(desktop) {

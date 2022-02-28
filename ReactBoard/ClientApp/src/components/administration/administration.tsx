@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { SiteIcon } from '../../assets'
 import { Panel } from '../../global/components'
-import { HomeRoute } from '../../global/constants/routes'
-import { IBoard, INewBoard } from '../../global/interfaces/board'
+import { BoardContext } from '../../global/context/boardsContext'
+import { INewBoard } from '../../global/interfaces/board'
 import { ICategory, INewCategory } from '../../global/interfaces/category'
 import { BoardService, CategoryService } from '../../services'
 import { BoardValidator, CategoryValidator } from '../../validators'
@@ -14,9 +14,9 @@ const _boardService = new BoardService(), categoryService = new CategoryService(
 const _boardValidator = new BoardValidator(), categoryValidator = new CategoryValidator()
 
 const Administration = () => {
+    const { boards } = useContext(BoardContext)
     const [redirectToHome, setRedirectToHome] = useState<boolean>(false)
     const [categories, setCategories] = useState<ICategory[]>([])
-    const [boards, setBoards] = useState<IBoard[]>([])
 
     useEffect(() => {
         let mounted = true
@@ -24,12 +24,6 @@ const Administration = () => {
         categoryService.getAll().then(c => {
             if (mounted) {
                 setCategories(c)
-            }
-        })
-
-        _boardService.getAll().then(b => {
-            if (mounted) {
-                setBoards(b)
             }
         })
 
@@ -47,9 +41,7 @@ const Administration = () => {
 
         } else {
             _boardService.createBoard(board).then(() =>
-                _boardService.getAll()
-                    .then(b => setBoards(b))
-                    .catch(err => console.error(err))
+                _boardService.getAll().catch(err => console.error(err))
             ).catch(err => console.error(err))
         }
     }
@@ -73,7 +65,7 @@ const Administration = () => {
     }
 
     if (redirectToHome) {
-        return <Redirect to={HomeRoute} />
+        return <Redirect to="/" />
     }
 
     return (

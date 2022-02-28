@@ -1,35 +1,81 @@
-import React from 'react'
-import { BoardFooter } from '../../../components/board/board/components/boardPaginatedView/components'
-import { IBoard } from '../../interfaces/board'
-import { BoardHeader } from './components'
+import React, { useContext, useState } from 'react'
+import { Redirect, useParams } from 'react-router'
+import { SiteIcon } from '../../../assets'
+import { BoardFooter } from '../../../components/board/boardPaginatedView/components'
+import { BoardsNavBar } from '../../components'
+import { BoardContext } from '../../context/boardsContext'
+import { BoardOptionsHeader } from './components'
 import './styles.scss'
 
-interface IBoardWrapperProps {
-    board: IBoard
-    currentPage: number
-    totalPages: number
-    onAllRequested: () => void
+interface IBoardWrapperParams {
+    boardUrlName: string
 }
 
-const withBoardWrapper = <P extends object>(component: React.ComponentType<P>, props: IBoardWrapperProps) => {
-    const {
-        board,
-        currentPage,
-        totalPages,
-        onAllRequested
-    } = props
+interface IBoardWrapperProps {
+    pageNumber: number
+    totalPages: number
+    onAllRequested: () => void
+    onNewThreadRequested: () => void
+}
 
-    return (
-        <div className="board-wrapper">
-            <BoardHeader boardUrlName={board.urlName} />
-            {component}
-            <BoardFooter
-                boardUrlName={board.urlName}
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onAllRequested={onAllRequested}
-            />
-        </div>)
+const withBoardWrapper = (Component: any) => {
+    return (props: IBoardWrapperProps) => {
+        const {
+            pageNumber,
+            totalPages,
+            onAllRequested,
+            onNewThreadRequested
+        } = props
+
+        const { boardUrlName } = useParams<IBoardWrapperParams>()
+        const { boardsMappedByUrlName } = useContext(BoardContext)
+        const [redirect, setRedirect] = useState<string>('')
+
+        const board = boardsMappedByUrlName.get(boardUrlName)
+
+        if (redirect) {
+            return <Redirect to={redirect} />
+        }
+
+        if (!board) {
+            return null
+        }
+
+        return (
+            <div className="board-wrapper">
+                <div className="board-wrapper__boards-nav-bar">
+                    <BoardsNavBar />
+                </div>
+                <div className="board-wrapper__board-intro">
+                    <SiteIcon onClick={() => setRedirect("/")} />
+                    <span className="board-wrapper__board-intro__board-descriptor">
+                        {`/${board.urlName}/ - ${board.name}`}
+                    </span>
+                    <div className="board-wrapper__board-intro__start-thread">
+                        <span className="board-wrapper__board-intro__start-thread__separator">
+                            [
+                        </span>
+                        <span
+                            className="board-wrapper__board-intro__start-thread__text highlightable-link"
+                            onClick={onNewThreadRequested}
+                        >
+                            Start A New Thread
+                        </span>
+                        <span className="board-wrapper__board-intro__start-thread__separator">
+                            ]
+                        </span>
+                    </div>
+                </div>
+                <BoardOptionsHeader boardUrlName={boardUrlName} />
+                <Component />
+                <BoardFooter
+                    boardUrlName={boardUrlName}
+                    currentPage={pageNumber}
+                    totalPages={totalPages}
+                    onAllRequested={onAllRequested}
+                />
+            </div>)
+    }
 }
 
 export default withBoardWrapper

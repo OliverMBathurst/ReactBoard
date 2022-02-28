@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
+import { withThreadWrapper } from '../../global/HOC'
 import { IThread } from '../../global/interfaces/thread'
 import { ThreadService } from '../../services'
 import { ThreadPost } from './components'
 import './styles.scss'
-import { withThreadWrapper } from '../../global/HOC'
-
-interface IThreadProps {
-    threadId: number
-    boardUrlName: string
-}
 
 const _threadService = new ThreadService()
 
-const Thread = (props: IThreadProps) => {
+const Thread = () => {
     const {
-        threadId,
-        boardUrlName
-    } = props
+        boardUrlName,
+        threadId: id
+    } = useParams()
 
+    const threadId = parseInt(id)
     const [thread, setThread] = useState<IThread>()
     const [autoRefreshEnabled, setAutoRefreshEnabled] = useState<boolean>(false)
     const [autoRefreshTimeout, setAutoRefreshTimeout] = useState<NodeJS.Timeout>()
@@ -80,18 +77,10 @@ const Thread = (props: IThreadProps) => {
         return null
     }
 
-    return (withThreadWrapper(() => {
-        return (
-            <div className="thread">
-                {thread.posts.map(post => <ThreadPost post={post} />)}
-            </div>)
-    }, {
-        thread: thread,
-        boardUrlName: boardUrlName,
-        onAutoRefreshToggled: onAutoRefreshToggled,
-        onUpdateRequested: onUpdateRequested,
-        autoRefreshEnabled: autoRefreshEnabled
-    }))
+    return (
+        <div className="thread">
+            {thread.posts.map(post => <ThreadPost post={post} />)}
+        </div>)
 }
 
-export default Thread
+export default withThreadWrapper(Thread)

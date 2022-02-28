@@ -6,6 +6,7 @@ import Statistic from './statistic/statistic'
 import SubmitButton from './submitButton/submitButton'
 import CategorySelect from './categorySelect/categorySelect'
 import BoardLink from './boardLink/boardLink'
+import BoardsNavBar from './boardsNavBar/boardsNavBar'
 
 export {
     Panel,
@@ -15,5 +16,6 @@ export {
     BracketedLink,
     Statistic,
     CategorySelect,
-    BoardLink
+    BoardLink,
+    BoardsNavBar
 }

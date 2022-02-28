@@ -1,7 +1,9 @@
 ﻿.bracketed-link {
+    display: inline-block;
     font-size: 0.8125rem;
 }
 
 .bracketed-link__text {
     font-size: 0.8125rem;
+    cursor: pointer;
 }

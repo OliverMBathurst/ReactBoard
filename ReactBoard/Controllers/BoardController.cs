@@ -52,6 +52,7 @@ namespace ReactBoard.API.Controllers
         }
 
         [HttpGet]
+        [Route("{urlName}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetBoardByUrlName([FromRoute] string urlName)
         {
