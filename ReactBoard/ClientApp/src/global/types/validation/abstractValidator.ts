@@ -1,9 +1,9 @@
-import { IAbstractValidator, IValidationExecutable, IValidationFailure } from "../../interfaces/validation"
+import { IAbstractValidator, IValidationFailure, IValidationRule } from "../../interfaces/validation"
 
 abstract class AbstractValidator<T> implements IAbstractValidator<T> {
-    private rules: IValidationExecutable<T>[]
+    private rules: IValidationRule<T>[]
 
-    constructor(rules: IValidationExecutable<T>[]) {
+    constructor(rules: IValidationRule<T>[]) {
         this.rules = rules
     }
 

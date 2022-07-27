@@ -3,7 +3,6 @@ import { ValidationCode } from "../global/enums"
 import { ValidationHelper } from "../global/helpers"
 import { INewBoard } from "../global/interfaces/board/interfaces"
 import { ICategory } from "../global/interfaces/category/interfaces"
-import { IValidationExecutable } from "../global/interfaces/validation"
 import { AbstractValidator, ValidationRuleBuilder } from "../global/types/validation"
 
 class BoardValidator extends AbstractValidator<INewBoard> {
@@ -40,15 +39,13 @@ class BoardValidator extends AbstractValidator<INewBoard> {
             .withCode(ValidationCode.BoardMaxThreads)
             .build()
 
-        const rules: IValidationExecutable<INewBoard>[] = [
+        super([
             nameRule,
             descriptionRule,
             boardUrlRule,
             categoryRule,
             maxThreadsRule
-        ]
-
-        super(rules)
+        ])
     }
 }
 

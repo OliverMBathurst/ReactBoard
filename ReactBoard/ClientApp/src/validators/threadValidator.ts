@@ -1,7 +1,6 @@
 import { PostValidator } from "."
 import { INewPost } from "../global/interfaces/post"
 import { INewThread } from "../global/interfaces/thread"
-import { IValidationExecutable } from "../global/interfaces/validation"
 import { AbstractValidator, ValidationRuleBuilder } from "../global/types/validation"
 
 class ThreadValidator extends AbstractValidator<INewThread> {
@@ -10,9 +9,7 @@ class ThreadValidator extends AbstractValidator<INewThread> {
             .withPropertySelectionRule(x => x.post)
             .withInnerValidator(() => new PostValidator())
 
-        const rules: IValidationExecutable<INewThread>[] = [postRule]
-
-        super(rules)
+        super([postRule])
     }
 }
 

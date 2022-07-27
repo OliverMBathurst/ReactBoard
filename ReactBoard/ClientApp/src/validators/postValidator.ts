@@ -1,7 +1,6 @@
 import { ValidationCode } from "../global/enums"
 import { ValidationHelper } from "../global/helpers"
 import { INewPost } from "../global/interfaces/post"
-import { IValidationExecutable } from "../global/interfaces/validation"
 import { AbstractValidator, ValidationRuleBuilder } from "../global/types/validation"
 
 class PostValidator extends AbstractValidator<INewPost> {
@@ -13,9 +12,7 @@ class PostValidator extends AbstractValidator<INewPost> {
             .withCode(ValidationCode.PostText)
             .build()
 
-        const rules: IValidationExecutable<INewPost>[] = [textRule]
-
-        super(rules)
+        super([textRule])
     }
 }
 

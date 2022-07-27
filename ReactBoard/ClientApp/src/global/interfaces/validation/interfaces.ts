@@ -1,8 +1,6 @@
 import { ValidationCode } from "../../enums";
 
-export interface IValidationRule<T> extends IValidationExecutable<T> {}
-
-export interface IValidationExecutable<T> {
+export interface IValidationRule<T> {
     execute: (source: T) => IValidationFailure[]
 }
 

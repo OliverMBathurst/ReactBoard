@@ -1,7 +1,6 @@
 import { ValidationCode } from "../global/enums"
 import { ValidationHelper } from "../global/helpers"
 import { INewCategory } from "../global/interfaces/category"
-import { IValidationExecutable } from "../global/interfaces/validation"
 import { AbstractValidator, ValidationRuleBuilder } from "../global/types/validation"
 
 class CategoryValidator extends AbstractValidator<INewCategory> {
@@ -13,9 +12,7 @@ class CategoryValidator extends AbstractValidator<INewCategory> {
             .withCode(ValidationCode.CategoryName)
             .build()
 
-        const rules: IValidationExecutable<INewCategory>[] = [nameRule]
-
-        super(rules)
+        super([nameRule])
     }
 }
 
